@@ -5,6 +5,8 @@ en:
         name: Building Features
       category-golf:
         name: Golf Features
+      category-indoor:
+        name: Indoor Features
       category-landuse:
         name: Land Use Features
       category-path:
@@ -315,6 +317,9 @@ en:
       dock:
         # 'dock=*'
         label: Type
+      door:
+        # 'door=*'
+        label: Door
       drive_through:
         # 'drive_through=*'
         label: Drive-Through
@@ -434,6 +439,9 @@ en:
       handrail:
         # 'handrail=*'
         label: Handrail
+      height:
+        # 'height=*'
+        label: Height (Meters)
       highway:
         # 'highway=*'
         label: Type
@@ -462,6 +470,9 @@ en:
           down: Down
           # incline=up
           up: Up
+      indoor:
+        # 'indoor=*'
+        label: Type
       information:
         # 'information=*'
         label: Type
@@ -813,6 +824,9 @@ en:
         label: Type
       restrictions:
         label: Turn Restrictions
+      room:
+        # 'room=*'
+        label: Type
       route:
         # 'route=*'
         label: Type
@@ -2053,6 +2067,10 @@ en:
         # craft=winery
         name: Winery
         terms: "<translate with synonyms or related terms for 'Winery', separated by commas>"
+      door:
+        # 'door=*'
+        name: Door
+        terms: "<translate with synonyms or related terms for 'Door', separated by commas>"
       embankment:
         # embankment=yes
         name: Embankment
@@ -2345,6 +2363,26 @@ en:
         # historic=wayside_shrine
         name: Wayside Shrine
         terms: "<translate with synonyms or related terms for 'Wayside Shrine', separated by commas>"
+      indoor:
+        # 'indoor=*'
+        name: Indoor
+        terms: "<translate with synonyms or related terms for 'Indoor', separated by commas>"
+      indoor/area:
+        # indoor=area
+        name: Area
+        terms: "<translate with synonyms or related terms for 'Area', separated by commas>"
+      indoor/corridor:
+        # indoor=corridor
+        name: Corridor
+        terms: "<translate with synonyms or related terms for 'Corridor', separated by commas>"
+      indoor/room:
+        # indoor=room
+        name: Room
+        terms: "<translate with synonyms or related terms for 'Room', separated by commas>"
+      indoor/wall:
+        # indoor=wall
+        name: Wall
+        terms: "<translate with synonyms or related terms for 'Wall', separated by commas>"
       junction:
         # junction=yes
         name: Junction

@@ -429,6 +429,11 @@
         "type": "combo",
         "label": "Type"
     },
+    "door": {
+        "key": "door",
+        "type": "typeCombo",
+        "label": "Door"
+    },
     "drive_through": {
         "key": "drive_through",
         "type": "check",
@@ -604,6 +609,11 @@
         "type": "check",
         "label": "Handrail"
     },
+    "height": {
+        "key": "height",
+        "type": "number",
+        "label": "Height (Meters)"
+    },
     "highway": {
         "key": "highway",
         "type": "typeCombo",
@@ -645,6 +655,11 @@
                 "down": "Down"
             }
         }
+    },
+    "indoor": {
+        "key": "indoor",
+        "type": "combo",
+        "label": "Type"
     },
     "information": {
         "key": "information",
@@ -1089,6 +1104,11 @@
             "rtype": "restriction"
         },
         "label": "Turn Restrictions"
+    },
+    "room": {
+        "key": "room",
+        "type": "combo",
+        "label": "Type"
     },
     "route": {
         "key": "route",

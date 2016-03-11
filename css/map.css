@@ -1307,6 +1307,27 @@ path.fill.tag-amenity-shelter {
 }
 
 
+/* Indoor */
+path.stroke.tag-indoor {
+    stroke: rgb(169, 169, 169);
+}
+path.fill.tag-indoor {
+    fill: rgba(169, 169, 169, 0.3);
+}
+path.stroke.tag-indoor-wall,
+path.stroke.tag-indoor-room,
+path.stroke.tag-indoor-corridor {
+    stroke: rgb(90, 90, 90);
+    stroke-width: 8;
+}
+path.stroke.tag-indoor-area {
+    stroke-width: 1;
+}
+path.fill.tag-indoor-wall {
+    fill: rgba(169, 169, 169, 0.7);
+}
+
+
 /* Labels / Markers */
 
 text {

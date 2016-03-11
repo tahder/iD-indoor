@@ -873,6 +873,9 @@
             "value": "winery"
         },
         {
+            "key": "door"
+        },
+        {
             "key": "embankment",
             "value": "yes"
         },
@@ -1136,6 +1139,25 @@
         {
             "key": "historic",
             "value": "wayside_shrine"
+        },
+        {
+            "key": "indoor"
+        },
+        {
+            "key": "indoor",
+            "value": "area"
+        },
+        {
+            "key": "indoor",
+            "value": "corridor"
+        },
+        {
+            "key": "indoor",
+            "value": "room"
+        },
+        {
+            "key": "indoor",
+            "value": "wall"
         },
         {
             "key": "junction",

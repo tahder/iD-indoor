@@ -26,6 +26,16 @@
             "golf/water_hazard"
         ]
     },
+    "category-indoor": {
+        "geometry": "area",
+        "name": "Indoor Features",
+        "icon": "building",
+        "members": [
+            "indoor/room",
+            "indoor/corridor",
+            "indoor"
+        ]
+    },
     "category-landuse": {
         "geometry": "area",
         "name": "Land Use Features",

@@ -614,6 +614,9 @@
             "category-golf": {
                 "name": "Golf Features"
             },
+            "category-indoor": {
+                "name": "Indoor Features"
+            },
             "category-landuse": {
                 "name": "Land Use Features"
             },
@@ -904,6 +907,9 @@
             "dock": {
                 "label": "Type"
             },
+            "door": {
+                "label": "Door"
+            },
             "drive_through": {
                 "label": "Drive-Through"
             },
@@ -1010,6 +1016,9 @@
             "handrail": {
                 "label": "Handrail"
             },
+            "height": {
+                "label": "Height (Meters)"
+            },
             "highway": {
                 "label": "Type"
             },
@@ -1035,6 +1044,9 @@
                     "up": "Up",
                     "down": "Down"
                 }
+            },
+            "indoor": {
+                "label": "Type"
             },
             "information": {
                 "label": "Type"
@@ -1316,6 +1328,9 @@
             },
             "restrictions": {
                 "label": "Turn Restrictions"
+            },
+            "room": {
+                "label": "Type"
             },
             "route": {
                 "label": "Type"
@@ -2406,6 +2421,10 @@
                 "name": "Winery",
                 "terms": ""
             },
+            "door": {
+                "name": "Door",
+                "terms": ""
+            },
             "embankment": {
                 "name": "Embankment",
                 "terms": ""
@@ -2672,6 +2691,26 @@
             },
             "historic/wayside_shrine": {
                 "name": "Wayside Shrine",
+                "terms": ""
+            },
+            "indoor": {
+                "name": "Indoor",
+                "terms": ""
+            },
+            "indoor/area": {
+                "name": "Area",
+                "terms": ""
+            },
+            "indoor/corridor": {
+                "name": "Corridor",
+                "terms": ""
+            },
+            "indoor/room": {
+                "name": "Room",
+                "terms": ""
+            },
+            "indoor/wall": {
+                "name": "Wall",
                 "terms": ""
             },
             "junction": {

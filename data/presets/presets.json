@@ -3907,6 +3907,25 @@
         },
         "name": "Winery"
     },
+    "door": {
+        "icon": "entrance",
+        "fields": [
+            "door",
+            "level",
+            "width",
+            "height"
+        ],
+        "geometry": [
+            "vertex",
+            "line"
+        ],
+        "tags": {
+            "door": "*"
+        },
+        "matchScore": 0.4,
+        "terms": [],
+        "name": "Door"
+    },
     "embankment": {
         "geometry": [
             "line"
@@ -5070,6 +5089,83 @@
             "historic": "wayside_shrine"
         },
         "name": "Wayside Shrine"
+    },
+    "indoor": {
+        "icon": "building",
+        "fields": [
+            "indoor",
+            "level"
+        ],
+        "geometry": [
+            "point",
+            "line",
+            "area"
+        ],
+        "tags": {
+            "indoor": "*"
+        },
+        "matchScore": 0.4,
+        "terms": [],
+        "name": "Indoor"
+    },
+    "indoor/area": {
+        "icon": "triangle-stroked",
+        "fields": [
+            "level",
+            "ref"
+        ],
+        "geometry": [
+            "area"
+        ],
+        "tags": {
+            "indoor": "area"
+        },
+        "matchScore": 0.5,
+        "name": "Area"
+    },
+    "indoor/corridor": {
+        "icon": "square-stroked",
+        "fields": [
+            "level"
+        ],
+        "geometry": [
+            "area"
+        ],
+        "tags": {
+            "indoor": "corridor"
+        },
+        "matchScore": 0.5,
+        "name": "Corridor"
+    },
+    "indoor/room": {
+        "icon": "triangle",
+        "fields": [
+            "room",
+            "level",
+            "ref"
+        ],
+        "geometry": [
+            "area"
+        ],
+        "tags": {
+            "indoor": "room"
+        },
+        "matchScore": 0.5,
+        "name": "Room"
+    },
+    "indoor/wall": {
+        "icon": "square",
+        "fields": [
+            "level"
+        ],
+        "geometry": [
+            "line"
+        ],
+        "tags": {
+            "indoor": "wall"
+        },
+        "matchScore": 0.5,
+        "name": "Wall"
     },
     "junction": {
         "geometry": [

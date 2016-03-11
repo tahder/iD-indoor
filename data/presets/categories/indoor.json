@@ -1,0 +1,10 @@
+{
+    "geometry": "area",
+    "name": "Indoor Features",
+    "icon": "building",
+    "members": [
+        "indoor/room",
+        "indoor/corridor",
+        "indoor"
+    ]
+}

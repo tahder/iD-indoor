@@ -1,0 +1,18 @@
+{
+    "icon": "building",
+    "fields": [
+        "indoor",
+        "level"
+    ],
+    "geometry": [
+        "point",
+        "line",
+        "area"
+    ],
+    "tags": {
+        "indoor": "*"
+    },
+    "matchScore": 0.4,
+    "terms": [],
+    "name": "Indoor"
+}

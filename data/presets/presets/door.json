@@ -1,0 +1,19 @@
+{
+    "icon": "entrance",
+    "fields": [
+        "door",
+        "level",
+        "width",
+        "height"
+    ],
+    "geometry": [
+        "vertex",
+        "line"
+    ],
+    "tags": {
+        "door": "*"
+    },
+    "matchScore": 0.4,
+    "terms": [],
+    "name": "Door"
+}

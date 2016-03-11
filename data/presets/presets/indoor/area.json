@@ -1,0 +1,15 @@
+{
+    "icon": "triangle-stroked",
+    "fields": [
+        "level",
+        "ref"
+    ],
+    "geometry": [
+        "area"
+    ],
+    "tags": {
+        "indoor": "area"
+    },
+    "matchScore": 0.5,
+    "name": "Area"
+}

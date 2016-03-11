@@ -1,0 +1,16 @@
+{
+    "icon": "triangle",
+    "fields": [
+        "room",
+        "level",
+        "ref"
+    ],
+    "geometry": [
+        "area"
+    ],
+    "tags": {
+        "indoor": "room"
+    },
+    "matchScore": 0.5,
+    "name": "Room"
+}

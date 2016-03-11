@@ -1,0 +1,14 @@
+{
+    "icon": "square",
+    "fields": [
+        "level"
+    ],
+    "geometry": [
+        "line"
+    ],
+    "tags": {
+        "indoor": "wall"
+    },
+    "matchScore": 0.5,
+    "name": "Wall"
+}

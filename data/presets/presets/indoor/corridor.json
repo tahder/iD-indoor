@@ -1,0 +1,14 @@
+{
+    "icon": "square-stroked",
+    "fields": [
+        "level"
+    ],
+    "geometry": [
+        "area"
+    ],
+    "tags": {
+        "indoor": "corridor"
+    },
+    "matchScore": 0.5,
+    "name": "Corridor"
+}
