@@ -1,4 +1,4 @@
-# iD - friendly JavaScript editor for [OpenStreetMap](http://www.openstreetmap.org/)
+# iD - friendly JavaScript editor for [OpenStreetMap](http://www.openstreetmap.org/) - Indoor edition
 
 [![Build Status](https://secure.travis-ci.org/openstreetmap/iD.png)](https://travis-ci.org/openstreetmap/iD)
 
