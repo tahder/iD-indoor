@@ -695,6 +695,13 @@ button.save.has-count .count::before {
     top: 0;
 }
 
+.mapillary-image .mapillary-img-key {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 5px 10px;
+}
+
 .feature-list-pane .inspector-body {
     top: 120px;
 }
