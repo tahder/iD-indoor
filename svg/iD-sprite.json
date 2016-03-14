@@ -25,6 +25,8 @@
     "icon-data":                { "viewBox": "480 0 20 20" },
     "icon-full-screen":         { "viewBox": "500 0 20 20" },
     "icon-collapse-screen":     { "viewBox": "520 0 20 20" },
+    "icon-up":                  { "viewBox": "540 0 20 20" },
+    "icon-down":                { "viewBox": "560 0 20 20" },
 
     "icon-alert-shape":               { "fill": "currentColor" },
     "icon-point-shape":               { "fill": "currentColor" },
@@ -53,6 +55,8 @@
     "icon-data-shape":                { "fill": "currentColor" },
     "icon-full-screen-shape":         { "fill": "currentColor" },
     "icon-collapse-screen-shape":     { "fill": "currentColor" },
+    "icon-up-shape":                  { "fill": "currentColor" },
+    "icon-down-shape":                { "fill": "currentColor" },
 
     "highway-motorway":         { "viewBox": "0 20 60 60" },
     "highway-trunk":            { "viewBox": "60 20 60 60" },

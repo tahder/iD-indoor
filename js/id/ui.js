@@ -76,6 +76,10 @@ iD.ui = function(context) {
             .call(iD.ui.Geolocate(context));
 
         controls.append('div')
+	    .attr('class', 'map-control level-control')
+	    .call(iD.ui.Level(context));
+
+        controls.append('div')
             .attr('class', 'map-control background-control')
             .call(iD.ui.Background(context));
 

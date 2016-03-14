@@ -200,6 +200,7 @@ dist/iD.js: \
 	js/id/ui/inspector.js \
 	js/id/ui/intro.js \
 	js/id/ui/lasso.js \
+	js/id/ui/level.js \
 	js/id/ui/loading.js \
 	js/id/ui/map_data.js \
 	js/id/ui/map_in_map.js \
