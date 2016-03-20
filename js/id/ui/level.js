@@ -21,6 +21,14 @@ iD.ui.Level = function(context) {
 		};
 	}
 	
+	function updateCombo() {
+		d3.select('input.lvl-value')
+			.attr('placeholder', context.level)
+			.property('value', '')
+			.call(d3.combobox().data(context.availableLevels().map(comboValues))
+			.on('accept', setLevel));
+	}
+	
 	return function(selection) {
 		selection.append('button')
 			.attr('tabindex', -1)
@@ -37,9 +45,9 @@ iD.ui.Level = function(context) {
 			.attr('class', 'value lvl-value')
 			.attr('type', 'text')
 			.value('')
-			.attr('placeholder', context.level())
+			.attr('placeholder', context.level)
 			.call(d3.combobox().data(context.availableLevels().map(comboValues))
-			.on('accept', setLevel));
+			.on('accept', context.setLevel));
 		
 		selection.append('button')
 			.attr('tabindex', -1)
@@ -51,15 +59,14 @@ iD.ui.Level = function(context) {
 			.placement('left')
 			.html(true)
 			.title(t('level.down')));
-		
-		context.on('levelchange', function() {
-			d3.select('input.lvl-value').attr('placeholder', context.level());
-		});
-		
+
 		context.map().on('drawn', function() {
 			context.updateAvailableLevels();
-			//console.log(d3.select('input.lvl-value'));
-			d3.select('input.lvl-value').data(context.availableLevels().map(comboValues));
+			updateCombo();
+		});
+		
+		context.on('levelchange', function() {
+			updateCombo();
 		});
 	};
 };
