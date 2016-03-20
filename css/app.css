@@ -2949,8 +2949,8 @@ input.lvl-value:hover {
     color: rgba(40,40,40,.5);
 }
 
-.lasso-box {
-    fill-opacity:0.1;
+.lasso-path {
+    fill-opacity:0.3;
     stroke: #fff;
     stroke-width: 1;
     stroke-opacity: 1;
