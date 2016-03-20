@@ -2,7 +2,7 @@ window.iD = function () {
     window.locale.en = iD.data.en;
     window.locale.current('en');
 
-    var dispatch = d3.dispatch('enter', 'exit'),
+    var dispatch = d3.dispatch('enter', 'exit', 'levelchange'),
         context = {};
 
     // https://github.com/openstreetmap/iD/issues/772
@@ -198,8 +198,8 @@ window.iD = function () {
             entity = graph.entity(id);
         return features.hasHiddenConnections(entity, graph);
     };
-
-
+    
+    
     /* Map */
     var map;
     context.map = function() { return map; };
@@ -215,6 +215,47 @@ window.iD = function () {
     };
 
 
+    /* Levels */
+    var level = 0;
+    var availableLevels = [ 0 ];
+    context.level = function() { return level; }
+    context.availableLevels = function() { return availableLevels; }
+    context.updateAvailableLevels = function() {
+	    var entities = context.graph().entities;
+	    var levels = d3.set([ 0 ]);
+	    for(var i in entities) {
+		    var entity = entities[i];
+		    for(var l in entity.getLevels()) {
+			    levels.add(entity.getLevels()[l]);
+		    }
+	    }
+	    levels = levels.values();
+	    for(var l in levels) {
+		    levels[l] = parseFloat(levels[l]);
+	    }
+	    levels.sort(iD.util.sortNumberArray);
+	    availableLevels = levels;
+    }
+    context.levelUp = function() {
+	    var al = context.availableLevels();
+	    var lvlId = al.indexOf(level);
+	    if(lvlId + 1 < al.length) { context.setLevel(al[lvlId+1]); }
+    };
+    context.levelDown = function() {
+	    var al = context.availableLevels();
+	    var lvlId = al.indexOf(level);
+	    if(lvlId > 0) { context.setLevel(al[lvlId-1]); }
+    };
+    context.setLevel = function(l) {
+	    var al = context.availableLevels();
+	    if(al.indexOf(level) >= 0 && level != l) {
+		    level = l;
+		    context.pan([0,0]);
+		    dispatch.levelchange();
+	    }
+    };
+
+    
     /* Presets */
     var presets;
     context.presets = function(_) {

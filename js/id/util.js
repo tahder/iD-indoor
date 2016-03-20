@@ -176,3 +176,7 @@ iD.util.wrap = function(index, length) {
         index += Math.ceil(-index/length)*length;
     return index % length;
 };
+
+iD.util.sortNumberArray = function(a, b) {
+	return a-b;
+};

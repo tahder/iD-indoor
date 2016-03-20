@@ -1,16 +1,17 @@
 iD.ui.Level = function(context) {
 	function lvlUp() {
 		d3.event.preventDefault();
-		if (!context.inIntro()) context.zoomIn();
+		if (!context.inIntro()) context.levelUp();
 	}
 	
 	function lvlDown() {
 		d3.event.preventDefault();
-		if (!context.inIntro()) context.zoomOut();
+		if (!context.inIntro()) context.levelDown();
 	}
 	
 	function setLevel(d) {
-		console.log(d.value);
+		d3.event.preventDefault();
+		if (!context.inIntro()) context.setLevel(d.value);
 	}
 	
 	function comboValues(d) {
@@ -19,7 +20,6 @@ iD.ui.Level = function(context) {
 			title: d.toString()
 		};
 	}
-	
 	
 	return function(selection) {
 		selection.append('button')
@@ -37,8 +37,8 @@ iD.ui.Level = function(context) {
 			.attr('class', 'value lvl-value')
 			.attr('type', 'text')
 			.value('')
-			.attr('placeholder', '-1')
-			.call(d3.combobox().data([ -1, 0, 0.5, 1, 2 ].map(comboValues))
+			.attr('placeholder', context.level())
+			.call(d3.combobox().data(context.availableLevels().map(comboValues))
 			.on('accept', setLevel));
 		
 		selection.append('button')
@@ -51,5 +51,15 @@ iD.ui.Level = function(context) {
 			.placement('left')
 			.html(true)
 			.title(t('level.down')));
+		
+		context.on('levelchange', function() {
+			d3.select('input.lvl-value').attr('placeholder', context.level());
+		});
+		
+		context.map().on('drawn', function() {
+			context.updateAvailableLevels();
+			//console.log(d3.select('input.lvl-value'));
+			d3.select('input.lvl-value').data(context.availableLevels().map(comboValues));
+		});
 	};
 };

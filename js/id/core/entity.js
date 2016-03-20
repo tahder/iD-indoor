@@ -38,6 +38,7 @@ iD.Entity.key = function(entity) {
 
 iD.Entity.prototype = {
     tags: {},
+    levels: [],
 
     initialize: function(sources) {
         for (var i = 0; i < sources.length; ++i) {
@@ -68,6 +69,8 @@ iD.Entity.prototype = {
             if (this.nodes) Object.freeze(this.nodes);
             if (this.members) Object.freeze(this.members);
         }
+        
+        this.initLevels();
 
         return this;
     },
@@ -142,5 +145,111 @@ iD.Entity.prototype = {
         });
 
         return deprecated;
-    }
+    },
+
+	getLevels: function() {
+		return this.levels;
+	},
+	
+	initLevels: function() {
+		//try to find levels for this feature
+		var currentLevel = null;
+		
+		//No this.tags
+		if(this.tags == null) {
+			currentLevel = [];
+		}
+		//Tag level
+		else if(this.tags.level != undefined) {
+			currentLevel = this.parseLevels(this.tags.level);
+		}
+		//Tag repeat_on
+		else if(this.tags.repeat_on != undefined) {
+			currentLevel = this.parseLevels(this.tags.repeat_on);
+		}
+		//Tag min_level and max_level
+		else if(this.tags.min_level != undefined && this.tags.max_level != undefined) {
+			currentLevel = this.parseLevels(this.tags.min_level+"-"+this.tags.max_level);
+		}
+		//Tag buildingpart:verticalpassage:floorrange
+		else if(this.tags["buildingpart:verticalpassage:floorrange"] != undefined) {
+			currentLevel = this.parseLevels(this.tags["buildingpart:verticalpassage:floorrange"]);
+		}
+		//TODO Handle levels defined in parent relations
+		
+		//Save found levels
+		if(currentLevel != null) {
+			currentLevel.sort(iD.util.sortNumberArray);
+			this.levels = currentLevel;
+		}
+		else {
+			this.levels = [ 0 ];
+		}
+	},
+    
+	parseLevels: function(str) {
+		var result = null;
+		
+		//Level values separated by ';'
+		var regex1 = /^-?\d+(?:\.\d+)?(?:;-?\d+(?:\.\d+)?)*$/;
+		
+		//Level values separated by ','
+		var regex2 = /^-?\d+(?:\.\d+)?(?:,-?\d+(?:\.\d+)?)*$/;
+		
+		if(regex1.test(str)) {
+			result = str.split(';');
+			for(var i=0; i < result.length; i++) {
+				result[i] = parseFloat(result[i]);
+			}
+			result.sort(iD.util.sortNumberArray);
+		}
+		else if(regex2.test(str)) {
+			result = str.split(',');
+			for(var i=0; i < result.length; i++) {
+				result[i] = parseFloat(result[i]);
+			}
+			result.sort(iD.util.sortNumberArray);
+		}
+		//Level intervals
+		else {
+			var regexResult = null;
+			var min = null;
+			var max = null;
+			
+			//Level values (only integers) in an interval, bounded with '-'
+			var regex3 = /^(-?\d+)-(-?\d+)$/;
+			
+			//Level values from start to end (example: "-3 to 2")
+			var regex4 = /^(?:\w+ )?(-?\d+) to (-?\d+)$/;
+			
+			if(regex3.test(str)) {
+				regexResult = regex3.exec(str);
+				min = parseInt(regexResult[1]);
+				max = parseInt(regexResult[2]);
+			}
+			else if(regex4.test(str)) {
+				regexResult = regex4.exec(str);
+				min = parseInt(regexResult[1]);
+				max = parseInt(regexResult[2]);
+			}
+			
+			//Add values between min and max
+			if(regexResult != null && min != null && max != null) {
+				result = [];
+				if(min > max) {
+					var tmp = min;
+					min = max;
+					max = tmp;
+				}
+				
+				//Add intermediate values
+				for(var i=min; i != max; i=i+((max-min)/Math.abs(max-min))) {
+					result.push(i);
+				}
+				result.push(max);
+			}
+		}
+		
+		return result;
+	}
 };
