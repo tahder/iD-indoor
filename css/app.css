@@ -1468,6 +1468,11 @@ div.combobox {
     overflow: hidden;
 }
 
+.combobox.small a {
+	padding: 2px;
+	font-size: 9px;
+}
+
 .combobox a.selected,
 .combobox a:hover {
     background: #ececec;
@@ -1484,6 +1489,11 @@ div.combobox {
     width: 30px;
     margin-left: -30px;
     vertical-align: top;
+}
+
+.combobox-caret.small {
+	width: 15px;
+	margin-left: -15px;
 }
 
 .combobox-caret::after {

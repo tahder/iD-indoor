@@ -25,7 +25,7 @@ iD.ui.Level = function(context) {
 		d3.select('input.lvl-value')
 			.attr('placeholder', context.level)
 			.property('value', '')
-			.call(d3.combobox().data(context.availableLevels().map(comboValues))
+			.call(d3.combobox(true).data(context.availableLevels().map(comboValues))
 			.on('accept', setLevel));
 	}
 	
@@ -46,7 +46,7 @@ iD.ui.Level = function(context) {
 			.attr('type', 'text')
 			.value('')
 			.attr('placeholder', context.level)
-			.call(d3.combobox().data(context.availableLevels().map(comboValues))
+			.call(d3.combobox(true).data(context.availableLevels().map(comboValues))
 			.on('accept', context.setLevel));
 		
 		selection.append('button')

@@ -1,4 +1,5 @@
-d3.combobox = function() {
+d3.combobox = function(isSmall) {
+    isSmall = isSmall || false;
     var event = d3.dispatch('accept'),
         data = [],
         suggestions = [],
@@ -36,7 +37,7 @@ d3.combobox = function() {
                     .data([input.node()]);
 
                 caret.enter().insert('div', function() { return sibling; })
-                    .attr('class', 'combobox-caret');
+                    .attr('class', 'combobox-caret'+((isSmall) ? ' small' : ''));
 
                 caret
                     .on('mousedown', function () {
@@ -66,7 +67,7 @@ d3.combobox = function() {
                 container = d3.select(document.body)
                     .insert('div', ':first-child')
                     .datum(input.node())
-                    .attr('class', 'combobox')
+                    .attr('class', 'combobox'+((isSmall) ? ' small' : ''))
                     .style({
                         position: 'absolute',
                         display: 'block',
