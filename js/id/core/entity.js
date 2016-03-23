@@ -144,43 +144,57 @@ iD.Entity.prototype = {
         return deprecated;
     },
 
-	getLevels: function() {
+	getLevels: function(resolver) {
 		//try to find levels for this feature
-		var currentLevel = null;
+		var currentLevel = this.parseLevelsTags(this.tags);
 		
-		//No this.tags
-		if(this.tags == null) {
-			currentLevel = [];
+		//Levels defined in parent relations
+		if(currentLevel.length == 0 && resolver != undefined && resolver.parentRelations(this).length > 0) {
+			var parentRels = resolver.parentRelations(this);
+			for(var i=0; i < parentRels.length; i++) {
+				currentLevel = currentLevel.concat(this.parseLevelsTags(parentRels[i].tags));
+			}
 		}
-		//Tag level
-		else if(this.tags.level != undefined) {
-			currentLevel = this.parseLevels(this.tags.level);
-		}
-		//Tag repeat_on
-		else if(this.tags.repeat_on != undefined) {
-			currentLevel = this.parseLevels(this.tags.repeat_on);
-		}
-		//Tag min_level and max_level
-		else if(this.tags.min_level != undefined && this.tags.max_level != undefined) {
-			currentLevel = this.parseLevels(this.tags.min_level+"-"+this.tags.max_level);
-		}
-		//Tag buildingpart:verticalpassage:floorrange
-		else if(this.tags["buildingpart:verticalpassage:floorrange"] != undefined) {
-			currentLevel = this.parseLevels(this.tags["buildingpart:verticalpassage:floorrange"]);
-		}
-		//TODO Handle levels defined in parent relations
 		
 		//Save found levels
-		if(currentLevel != null) {
+		if(currentLevel.length > 0) {
 			currentLevel.sort(iD.util.sortNumberArray);
-			return currentLevel;
 		}
 		else {
-			return [ 0 ];
+			currentLevel = [ 0 ];
 		}
+		
+		return currentLevel;
+	},
+	
+	parseLevelsTags: function(tags) {
+		var levels;
+		
+		//No this.tags
+		if(tags == null) {
+			levels = [];
+		}
+		//Tag level
+		else if(tags.level != undefined) {
+			levels = this.parseLevelString(tags.level);
+		}
+		//Tag repeat_on
+		else if(tags.repeat_on != undefined) {
+			levels = this.parseLevelString(tags.repeat_on);
+		}
+		//Tag min_level and max_level
+		else if(tags.min_level != undefined && tags.max_level != undefined) {
+			levels = this.parseLevelString(tags.min_level+"-"+tags.max_level);
+		}
+		//Tag buildingpart:verticalpassage:floorrange
+		else if(tags["buildingpart:verticalpassage:floorrange"] != undefined) {
+			levels = this.parseLevelString(tags["buildingpart:verticalpassage:floorrange"]);
+		}
+		
+		return (levels == null) ? [] : levels;
 	},
     
-	parseLevels: function(str) {
+	parseLevelString: function(str) {
 		var result = null;
 		
 		//Level values separated by ';'

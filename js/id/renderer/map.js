@@ -145,7 +145,7 @@ iD.Map = function(context) {
 	// Filter data by level
 	var dataFiltered = [];
 	for(var i = 0; i < data.length; i++) {
-		if(data[i].getLevels().indexOf(context.level()) >= 0) {
+		if(data[i].getLevels(graph).indexOf(context.level()) >= 0) {
 			dataFiltered.push(data[i]);
 		}
 	}
