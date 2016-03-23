@@ -16,7 +16,7 @@ iD.modes.AddPoint = function(context) {
         .on('finish', cancel);
 
     function add(loc) {
-        var node = iD.Node({loc: loc});
+        var node = iD.Node({loc: loc, tags: { level: context.level().toString() } });
 
         context.perform(
             iD.actions.AddEntity(node),

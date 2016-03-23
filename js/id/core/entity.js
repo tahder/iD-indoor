@@ -38,7 +38,6 @@ iD.Entity.key = function(entity) {
 
 iD.Entity.prototype = {
     tags: {},
-    levels: [],
 
     initialize: function(sources) {
         for (var i = 0; i < sources.length; ++i) {
@@ -69,8 +68,6 @@ iD.Entity.prototype = {
             if (this.nodes) Object.freeze(this.nodes);
             if (this.members) Object.freeze(this.members);
         }
-        
-        this.initLevels();
 
         return this;
     },
@@ -148,10 +145,6 @@ iD.Entity.prototype = {
     },
 
 	getLevels: function() {
-		return this.levels;
-	},
-	
-	initLevels: function() {
 		//try to find levels for this feature
 		var currentLevel = null;
 		
@@ -180,10 +173,10 @@ iD.Entity.prototype = {
 		//Save found levels
 		if(currentLevel != null) {
 			currentLevel.sort(iD.util.sortNumberArray);
-			this.levels = currentLevel;
+			return currentLevel;
 		}
 		else {
-			this.levels = [ 0 ];
+			return [ 0 ];
 		}
 	},
     

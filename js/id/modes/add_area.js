@@ -17,7 +17,7 @@ iD.modes.AddArea = function(context) {
     function start(loc) {
         var graph = context.graph(),
             node = iD.Node({loc: loc}),
-            way = iD.Way({tags: defaultTags});
+            way = iD.Way({tags: defaultTags}).mergeTags({ level: context.level().toString() });
 
         context.perform(
             iD.actions.AddEntity(node),
@@ -31,7 +31,7 @@ iD.modes.AddArea = function(context) {
     function startFromWay(loc, edge) {
         var graph = context.graph(),
             node = iD.Node({loc: loc}),
-            way = iD.Way({tags: defaultTags});
+            way = iD.Way({tags: defaultTags}).mergeTags({ level: context.level().toString() });
 
         context.perform(
             iD.actions.AddEntity(node),
@@ -45,7 +45,7 @@ iD.modes.AddArea = function(context) {
 
     function startFromNode(node) {
         var graph = context.graph(),
-            way = iD.Way({tags: defaultTags});
+            way = iD.Way({tags: defaultTags}).mergeTags({ level: context.level().toString() });
 
         context.perform(
             iD.actions.AddEntity(way),

@@ -225,8 +225,10 @@ window.iD = function () {
 	    var levels = d3.set([ 0 ]);
 	    for(var i in entities) {
 		    var entity = entities[i];
-		    for(var l in entity.getLevels()) {
-			    levels.add(entity.getLevels()[l]);
+		    if(entity != undefined) {
+			for(var l in entity.getLevels()) {
+				levels.add(entity.getLevels()[l]);
+			}
 		    }
 	    }
 	    levels = levels.values();

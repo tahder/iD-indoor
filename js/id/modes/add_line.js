@@ -16,7 +16,7 @@ iD.modes.AddLine = function(context) {
     function start(loc) {
         var baseGraph = context.graph(),
             node = iD.Node({loc: loc}),
-            way = iD.Way();
+            way = iD.Way({ tags: { level: context.level().toString() } });
 
         context.perform(
             iD.actions.AddEntity(node),
@@ -29,7 +29,7 @@ iD.modes.AddLine = function(context) {
     function startFromWay(loc, edge) {
         var baseGraph = context.graph(),
             node = iD.Node({loc: loc}),
-            way = iD.Way();
+            way = iD.Way({ tags: { level: context.level().toString() } });
 
         context.perform(
             iD.actions.AddEntity(node),
@@ -42,7 +42,7 @@ iD.modes.AddLine = function(context) {
 
     function startFromNode(node) {
         var baseGraph = context.graph(),
-            way = iD.Way();
+            way = iD.Way({ tags: { level: context.level().toString() } });
 
         context.perform(
             iD.actions.AddEntity(way),
