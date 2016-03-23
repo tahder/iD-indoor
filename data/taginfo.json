@@ -1955,6 +1955,10 @@
         },
         {
             "key": "shop",
+            "value": "coffee"
+        },
+        {
+            "key": "shop",
             "value": "computer"
         },
         {
