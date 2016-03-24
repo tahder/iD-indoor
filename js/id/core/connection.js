@@ -252,7 +252,7 @@ iD.Connection = function(useHttps) {
     connection.changesetTags = function(comment, imageryUsed) {
         var detected = iD.detect(),
             tags = {
-                created_by: 'iD ' + iD.version,
+                created_by: 'iD-indoor (iD ' + iD.version + ')',
                 imagery_used: imageryUsed.join(';').substr(0, 255),
                 host: (window.location.origin + window.location.pathname).substr(0, 255),
                 locale: detected.locale
