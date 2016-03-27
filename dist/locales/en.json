@@ -3733,6 +3733,10 @@
                 "name": "Newspaper/Magazine Shop",
                 "terms": ""
             },
+            "shop/nutrition_supplements": {
+                "name": "Nutrition Supplements Store",
+                "terms": ""
+            },
             "shop/optician": {
                 "name": "Optician",
                 "terms": "eye,glasses"
