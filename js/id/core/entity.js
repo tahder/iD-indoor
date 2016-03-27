@@ -79,7 +79,6 @@ iD.Entity.parseLevelString = function(str) {
 		for(var i=0; i < result.length; i++) {
 			result[i] = parseFloat(result[i]);
 		}
-		result.sort(iD.util.sortNumberArray);
 	}
 	//Level values separated by ','
 	else if(/^-?\d+(?:\.\d+)?(?:,-?\d+(?:\.\d+)?)*$/.test(str)) {
@@ -87,7 +86,6 @@ iD.Entity.parseLevelString = function(str) {
 		for(var i=0; i < result.length; i++) {
 			result[i] = parseFloat(result[i]);
 		}
-		result.sort(iD.util.sortNumberArray);
 	}
 	//Level intervals
 	else {
@@ -149,6 +147,9 @@ iD.Entity.prototype = {
         if (!this.hasOwnProperty('visible')) {
             this.visible = true;
         }
+        
+        //try to find levels for this feature
+		this.levels = iD.Entity.parseLevelsTags(this.tags);
 
         if (iD.debug) {
             Object.freeze(this);
@@ -233,27 +234,8 @@ iD.Entity.prototype = {
 
         return deprecated;
     },
-
-	getLevels: function(resolver) {
-		//try to find levels for this feature
-		var currentLevel = iD.Entity.parseLevelsTags(this.tags);
-		
-		//Levels defined in parent relations
-		if(currentLevel.length == 0 && resolver != undefined && resolver.parentRelations(this).length > 0) {
-			var parentRels = resolver.parentRelations(this);
-			for(var i=0; i < parentRels.length; i++) {
-				currentLevel = currentLevel.concat(iD.Entity.parseLevelsTags(parentRels[i].tags));
-			}
-		}
-		
-		//Save found levels
-		if(currentLevel.length > 0) {
-			currentLevel.sort(iD.util.sortNumberArray);
-		}
-		else {
-			currentLevel = [ 0 ];
-		}
-		
-		return currentLevel;
+	
+	isOnLevel: function(lvl) {
+		return this.levels.indexOf(lvl) >= 0 || (this.levels.length == 0 && lvl == 0);
 	}
 };

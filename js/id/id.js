@@ -221,22 +221,22 @@ window.iD = function () {
     context.level = function() { return level; }
     context.availableLevels = function() { return availableLevels; }
     context.updateAvailableLevels = function() {
-	    var entities = context.graph().entities;
-	    var levels = d3.set([ 0 ]);
-	    for(var i in entities) {
-		    var entity = entities[i];
-		    if(entity != undefined) {
-			for(var l in entity.getLevels()) {
-				levels.add(entity.getLevels()[l]);
+		var entities = context.graph().entities;
+		var levels = d3.set([ 0 ]);
+		for(var i in entities) {
+			var entity = entities[i];
+			if(entity != undefined) {
+				for(var l in entity.levels) {
+					levels.add(entity.levels[l]);
+				}
 			}
-		    }
-	    }
-	    levels = levels.values();
-	    for(var l in levels) {
-		    levels[l] = parseFloat(levels[l]);
-	    }
-	    levels.sort(iD.util.sortNumberArray);
-	    availableLevels = levels;
+		}
+		levels = levels.values();
+		for(var l in levels) {
+			levels[l] = parseFloat(levels[l]);
+		}
+		levels.sort(iD.util.sortNumberArray);
+		availableLevels = levels;
     }
     context.levelUp = function() {
 	    var al = context.availableLevels();

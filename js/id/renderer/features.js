@@ -402,6 +402,21 @@ iD.Features = function(context) {
         var fn = (geometry === 'vertex' ? features.isHiddenChild : features.isHiddenFeature);
         return fn(entity, resolver, geometry);
     };
+	
+	features.isOnCurrentLevel = function(entity, resolver, geometry) {
+		var onLevel = entity.isOnLevel(context.level());
+		if (context.level() != 0 && onLevel) return true;
+		
+		var parents = features.getParents(entity, resolver, geometry);
+		if (!parents.length) return onLevel;
+		
+		for (var i = 0; i < parents.length; i++) {
+			if (features.isOnCurrentLevel(parents[i], resolver, parents[i].geometry(resolver))) {
+				return true;
+			}
+		}
+		return false;
+	};
 
     features.filter = function(d, resolver) {
         //if (!_hidden.length) return d;
@@ -409,7 +424,7 @@ iD.Features = function(context) {
         var result = [];
         for (var i = 0; i < d.length; i++) {
             var entity = d[i];
-	    if ((!_hidden.length || !features.isHidden(entity, resolver, entity.geometry(resolver))) && entity.getLevels(resolver).indexOf(context.level()) >= 0) {
+			if ((!_hidden.length || !features.isHidden(entity, resolver, entity.geometry(resolver))) && features.isOnCurrentLevel(entity, resolver, entity.geometry(resolver))) {
                 result.push(entity);
             }
         }
