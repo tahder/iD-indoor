@@ -36,6 +36,96 @@ iD.Entity.key = function(entity) {
     return entity.id + 'v' + (entity.v || 0);
 };
 
+//Level values (only integers) in an interval, bounded with '-'
+iD.Entity.lvlRgx3 = /^(-?\d+)-(-?\d+)$/;
+//Level values from start to end (example: "-3 to 2")
+iD.Entity.lvlRgx4 = /^(?:\w+ )?(-?\d+) to (-?\d+)$/;
+
+//Looks for the write level tag to parse, and returns found levels
+iD.Entity.parseLevelsTags = function(tags) {
+	var levels;
+	
+	//No this.tags
+	if(tags == null) {
+		levels = [];
+	}
+	//Tag level
+	else if(tags.level != undefined) {
+		levels = iD.Entity.parseLevelString(tags.level);
+	}
+	//Tag repeat_on
+	else if(tags.repeat_on != undefined) {
+		levels = iD.Entity.parseLevelString(tags.repeat_on);
+	}
+	//Tag min_level and max_level
+	else if(tags.min_level != undefined && tags.max_level != undefined) {
+		levels = iD.Entity.parseLevelString(tags.min_level+"-"+tags.max_level);
+	}
+	//Tag buildingpart:verticalpassage:floorrange
+	else if(tags["buildingpart:verticalpassage:floorrange"] != undefined) {
+		levels = iD.Entity.parseLevelString(tags["buildingpart:verticalpassage:floorrange"]);
+	}
+	
+	return (levels == null) ? [] : levels;
+};
+
+//Parse one string value from a level-related tag
+iD.Entity.parseLevelString = function(str) {
+	var result = null;
+	
+	//Level values separated by ';'
+	if(/^-?\d+(?:\.\d+)?(?:;-?\d+(?:\.\d+)?)*$/.test(str)) {
+		result = str.split(';');
+		for(var i=0; i < result.length; i++) {
+			result[i] = parseFloat(result[i]);
+		}
+		result.sort(iD.util.sortNumberArray);
+	}
+	//Level values separated by ','
+	else if(/^-?\d+(?:\.\d+)?(?:,-?\d+(?:\.\d+)?)*$/.test(str)) {
+		result = str.split(',');
+		for(var i=0; i < result.length; i++) {
+			result[i] = parseFloat(result[i]);
+		}
+		result.sort(iD.util.sortNumberArray);
+	}
+	//Level intervals
+	else {
+		var regexResult = null;
+		var min = null;
+		var max = null;
+		
+		if(iD.Entity.lvlRgx3.test(str)) {
+			regexResult = iD.Entity.lvlRgx3.exec(str);
+			min = parseInt(regexResult[1]);
+			max = parseInt(regexResult[2]);
+		}
+		else if(iD.Entity.lvlRgx4.test(str)) {
+			regexResult = iD.Entity.lvlRgx4.exec(str);
+			min = parseInt(regexResult[1]);
+			max = parseInt(regexResult[2]);
+		}
+		
+		//Add values between min and max
+		if(regexResult != null && min != null && max != null) {
+			result = [];
+			if(min > max) {
+				var tmp = min;
+				min = max;
+				max = tmp;
+			}
+			
+			//Add intermediate values
+			for(var i=min; i != max; i=i+((max-min)/Math.abs(max-min))) {
+				result.push(i);
+			}
+			result.push(max);
+		}
+	}
+	
+	return result;
+};
+
 iD.Entity.prototype = {
     tags: {},
 
@@ -146,13 +236,13 @@ iD.Entity.prototype = {
 
 	getLevels: function(resolver) {
 		//try to find levels for this feature
-		var currentLevel = this.parseLevelsTags(this.tags);
+		var currentLevel = iD.Entity.parseLevelsTags(this.tags);
 		
 		//Levels defined in parent relations
 		if(currentLevel.length == 0 && resolver != undefined && resolver.parentRelations(this).length > 0) {
 			var parentRels = resolver.parentRelations(this);
 			for(var i=0; i < parentRels.length; i++) {
-				currentLevel = currentLevel.concat(this.parseLevelsTags(parentRels[i].tags));
+				currentLevel = currentLevel.concat(iD.Entity.parseLevelsTags(parentRels[i].tags));
 			}
 		}
 		
@@ -165,98 +255,5 @@ iD.Entity.prototype = {
 		}
 		
 		return currentLevel;
-	},
-	
-	parseLevelsTags: function(tags) {
-		var levels;
-		
-		//No this.tags
-		if(tags == null) {
-			levels = [];
-		}
-		//Tag level
-		else if(tags.level != undefined) {
-			levels = this.parseLevelString(tags.level);
-		}
-		//Tag repeat_on
-		else if(tags.repeat_on != undefined) {
-			levels = this.parseLevelString(tags.repeat_on);
-		}
-		//Tag min_level and max_level
-		else if(tags.min_level != undefined && tags.max_level != undefined) {
-			levels = this.parseLevelString(tags.min_level+"-"+tags.max_level);
-		}
-		//Tag buildingpart:verticalpassage:floorrange
-		else if(tags["buildingpart:verticalpassage:floorrange"] != undefined) {
-			levels = this.parseLevelString(tags["buildingpart:verticalpassage:floorrange"]);
-		}
-		
-		return (levels == null) ? [] : levels;
-	},
-    
-	parseLevelString: function(str) {
-		var result = null;
-		
-		//Level values separated by ';'
-		var regex1 = /^-?\d+(?:\.\d+)?(?:;-?\d+(?:\.\d+)?)*$/;
-		
-		//Level values separated by ','
-		var regex2 = /^-?\d+(?:\.\d+)?(?:,-?\d+(?:\.\d+)?)*$/;
-		
-		if(regex1.test(str)) {
-			result = str.split(';');
-			for(var i=0; i < result.length; i++) {
-				result[i] = parseFloat(result[i]);
-			}
-			result.sort(iD.util.sortNumberArray);
-		}
-		else if(regex2.test(str)) {
-			result = str.split(',');
-			for(var i=0; i < result.length; i++) {
-				result[i] = parseFloat(result[i]);
-			}
-			result.sort(iD.util.sortNumberArray);
-		}
-		//Level intervals
-		else {
-			var regexResult = null;
-			var min = null;
-			var max = null;
-			
-			//Level values (only integers) in an interval, bounded with '-'
-			var regex3 = /^(-?\d+)-(-?\d+)$/;
-			
-			//Level values from start to end (example: "-3 to 2")
-			var regex4 = /^(?:\w+ )?(-?\d+) to (-?\d+)$/;
-			
-			if(regex3.test(str)) {
-				regexResult = regex3.exec(str);
-				min = parseInt(regexResult[1]);
-				max = parseInt(regexResult[2]);
-			}
-			else if(regex4.test(str)) {
-				regexResult = regex4.exec(str);
-				min = parseInt(regexResult[1]);
-				max = parseInt(regexResult[2]);
-			}
-			
-			//Add values between min and max
-			if(regexResult != null && min != null && max != null) {
-				result = [];
-				if(min > max) {
-					var tmp = min;
-					min = max;
-					max = tmp;
-				}
-				
-				//Add intermediate values
-				for(var i=min; i != max; i=i+((max-min)/Math.abs(max-min))) {
-					result.push(i);
-				}
-				result.push(max);
-			}
-		}
-		
-		return result;
 	}
 };

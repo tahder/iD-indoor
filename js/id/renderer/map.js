@@ -141,15 +141,6 @@ iD.Map = function(context) {
         }
 
         data = features.filter(data, graph);
-	
-	// Filter data by level
-	var dataFiltered = [];
-	for(var i = 0; i < data.length; i++) {
-		if(data[i].getLevels(graph).indexOf(context.level()) >= 0) {
-			dataFiltered.push(data[i]);
-		}
-	}
-	data = dataFiltered;
 
         surface
             .call(drawVertices, graph, data, filter, map.extent(), map.zoom())

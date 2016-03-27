@@ -404,15 +404,16 @@ iD.Features = function(context) {
     };
 
     features.filter = function(d, resolver) {
-        if (!_hidden.length) return d;
+        //if (!_hidden.length) return d;
 
         var result = [];
         for (var i = 0; i < d.length; i++) {
             var entity = d[i];
-            if (!features.isHidden(entity, resolver, entity.geometry(resolver))) {
+	    if ((!_hidden.length || !features.isHidden(entity, resolver, entity.geometry(resolver))) && entity.getLevels(resolver).indexOf(context.level()) >= 0) {
                 result.push(entity);
             }
         }
+
         return result;
     };
 
