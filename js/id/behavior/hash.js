@@ -10,6 +10,8 @@ iD.behavior.Hash = function(context) {
         } else if (s !== formatter(map).slice(1)) {
             map.centerZoom([args[1],
                 Math.min(lat, Math.max(-lat, args[2]))], args[0]);
+			context.storage('level', parseFloat(q.level));
+			context.updateLevelFromHash();
         }
     };
 
@@ -31,6 +33,8 @@ iD.behavior.Hash = function(context) {
                 newParams.id = selected.join(',');
             }
         }
+        
+        newParams.level = context.level();
 
         newParams.map = zoom.toFixed(2) +
                 '/' + center[0].toFixed(precision) +
@@ -68,6 +72,7 @@ iD.behavior.Hash = function(context) {
             var q = iD.util.stringQs(location.hash.substring(1));
             if (q.id) context.zoomToEntity(q.id.split(',')[0], !q.map);
             if (q.comment) context.storage('comment', q.comment);
+			if (q.level && context.storage('level') === null) context.storage('level', parseFloat(q.level));
             hashchange();
             if (q.map) hash.hadHash = true;
         }

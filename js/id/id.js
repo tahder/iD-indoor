@@ -238,7 +238,20 @@ window.iD = function () {
 		}
 		levels.sort(iD.util.sortNumberArray);
 		availableLevels = levels;
+		
+		context.updateLevelFromHash();
     }
+    context.updateLevelFromHash = function() {
+		if (context.storage('level') !== null) {
+			var storedLevel = parseFloat(context.storage('level'));
+			if(availableLevels.indexOf(storedLevel) >= 0) {
+				if(storedLevel != level) {
+					context.setLevel(storedLevel);
+				}
+				context.storage('level', null);
+			}
+		}
+	};
     context.levelUp = function() {
 	    var al = context.availableLevels();
 	    var lvlId = al.indexOf(level);

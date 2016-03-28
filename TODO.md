@@ -1,9 +1,6 @@
 List of features to implement in the future.
 
 ## Soon
-### Core
-* URL parameter for level
-
 ### Presets
 * mapillary=*
 * Small indoor objects (see below)
