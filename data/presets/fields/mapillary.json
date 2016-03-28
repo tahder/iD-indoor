@@ -1,0 +1,8 @@
+{
+    "key": "mapillary",
+    "type": "text",
+    "icon": "camera",
+    "universal": true,
+    "label": "Mapillary image",
+    "placeholder": "aMapillary_key-Example123"
+}

@@ -790,6 +790,14 @@
         "type": "typeCombo",
         "label": "Type"
     },
+    "mapillary": {
+        "key": "mapillary",
+        "type": "text",
+        "icon": "camera",
+        "universal": true,
+        "label": "Mapillary image",
+        "placeholder": "aMapillary_key-Example123"
+    },
     "maxspeed": {
         "key": "maxspeed",
         "type": "maxspeed",

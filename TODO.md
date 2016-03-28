@@ -2,7 +2,6 @@ List of features to implement in the future.
 
 ## Soon
 ### Presets
-* mapillary=*
 * Small indoor objects (see below)
 
 ### Styles
@@ -16,3 +15,4 @@ List of features to implement in the future.
 ## Later
 ### UI
 * Links to OpenLevelUp
+* Mapillary field, checking validity and linking to image

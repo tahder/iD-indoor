@@ -575,6 +575,11 @@ en:
       man_made:
         # 'man_made=*'
         label: Type
+      mapillary:
+        # 'mapillary=*'
+        label: Mapillary image
+        # mapillary field placeholder
+        placeholder: aMapillary_key-Example123
       maxspeed:
         # 'maxspeed=*'
         label: Speed Limit
