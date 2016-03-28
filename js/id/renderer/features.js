@@ -403,7 +403,7 @@ iD.Features = function(context) {
         return fn(entity, resolver, geometry);
     };
 	
-	features.isOnLevel = function(entity, resolver, geometry, level, selectedIDs) {
+	features.showOnLevel = function(entity, resolver, geometry, level, selectedIDs) {
 		var onLevel = entity.isOnLevel(level);
 		if (level != 0 && onLevel) return true;
 		if (level == 0 && entity.levels.indexOf(0) >= 0) return true;
@@ -412,8 +412,13 @@ iD.Features = function(context) {
 		if (!parents.length) return onLevel;
 		
 		for (var i = 0; i < parents.length; i++) {
-			if (features.isOnLevel(parents[i], resolver, parents[i].geometry(resolver), level, selectedIDs)) {
-				return (geometry !== 'vertex' || selectedIDs.indexOf(parents[i].id) >= 0);
+			if (selectedIDs.indexOf(parents[i].id) >= 0) {
+				return true;
+			}
+			else if (features.showOnLevel(parents[i], resolver, parents[i].geometry(resolver), level, selectedIDs)) {
+				if (geometry !== 'vertex' || onLevel) {
+					return true;
+				}
 			}
 		}
 		return false;
@@ -427,7 +432,7 @@ iD.Features = function(context) {
             var entity = d[i];
 			if (
 				(!_hidden.length || !features.isHidden(entity, resolver, entity.geometry(resolver)))
-				&& features.isOnLevel(entity, resolver, entity.geometry(resolver), context.level(), context.selectedIDs())
+				&& (context.selectedIDs().indexOf(entity.id) >= 0 || features.showOnLevel(entity, resolver, entity.geometry(resolver), context.level(), context.selectedIDs()))
 			) {
                 result.push(entity);
             }

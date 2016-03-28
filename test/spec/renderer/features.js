@@ -543,7 +543,7 @@ describe('iD.Features', function() {
         });
     });
 
-	describe("#isOnLevel", function() {
+	describe("#showOnLevel", function() {
 		it('returns true when simple object is on current level', function() {
 			var a = iD.Node({id: 'a', tags: {level: "-1"}, version: 1}),
 				b = iD.Node({id: 'b', tags: {level: "1"}}),
@@ -553,17 +553,17 @@ describe('iD.Features', function() {
 				bgeo = b.geometry(graph),
 				cgeo = c.geometry(graph);
 			
-			expect(features.isOnLevel(a, graph, ageo, 0, [])).to.be.false;
-			expect(features.isOnLevel(b, graph, bgeo, 0, [])).to.be.false;
-			expect(features.isOnLevel(c, graph, cgeo, 0, [])).to.be.true;
+			expect(features.showOnLevel(a, graph, ageo, 0, [])).to.be.false;
+			expect(features.showOnLevel(b, graph, bgeo, 0, [])).to.be.false;
+			expect(features.showOnLevel(c, graph, cgeo, 0, [])).to.be.true;
 			
-			expect(features.isOnLevel(a, graph, ageo, -1, [])).to.be.true;
-			expect(features.isOnLevel(b, graph, bgeo, -1, [])).to.be.false;
-			expect(features.isOnLevel(c, graph, cgeo, -1, [])).to.be.false;
+			expect(features.showOnLevel(a, graph, ageo, -1, [])).to.be.true;
+			expect(features.showOnLevel(b, graph, bgeo, -1, [])).to.be.false;
+			expect(features.showOnLevel(c, graph, cgeo, -1, [])).to.be.false;
 			
-			expect(features.isOnLevel(a, graph, ageo, 1, [])).to.be.false;
-			expect(features.isOnLevel(b, graph, bgeo, 1, [])).to.be.true;
-			expect(features.isOnLevel(c, graph, cgeo, 1, [])).to.be.false;
+			expect(features.showOnLevel(a, graph, ageo, 1, [])).to.be.false;
+			expect(features.showOnLevel(b, graph, bgeo, 1, [])).to.be.true;
+			expect(features.showOnLevel(c, graph, cgeo, 1, [])).to.be.false;
 		});
 		
 		it('returns true when simple object are in a relation containing level value', function() {
@@ -584,15 +584,15 @@ describe('iD.Features', function() {
 				}),
 				graph = iD.Graph([outer, inner1, inner2, inner3, r]);
 
-			expect(features.isOnLevel(outer, graph, outer.geometry(graph), 0, [])).to.be.false;
-			expect(features.isOnLevel(inner1, graph, inner1.geometry(graph), 0, [])).to.be.false;
-			expect(features.isOnLevel(inner2, graph, inner2.geometry(graph), 0, [])).to.be.false;
-			expect(features.isOnLevel(inner3, graph, inner3.geometry(graph), 0, [])).to.be.false;
+			expect(features.showOnLevel(outer, graph, outer.geometry(graph), 0, [])).to.be.false;
+			expect(features.showOnLevel(inner1, graph, inner1.geometry(graph), 0, [])).to.be.false;
+			expect(features.showOnLevel(inner2, graph, inner2.geometry(graph), 0, [])).to.be.false;
+			expect(features.showOnLevel(inner3, graph, inner3.geometry(graph), 0, [])).to.be.false;
 			
-			expect(features.isOnLevel(outer, graph, outer.geometry(graph), 1, [])).to.be.true;
-			expect(features.isOnLevel(inner1, graph, inner1.geometry(graph), 1, [])).to.be.true;
-			expect(features.isOnLevel(inner2, graph, inner2.geometry(graph), 1, [])).to.be.true;
-			expect(features.isOnLevel(inner3, graph, inner3.geometry(graph), 1, [])).to.be.true;
+			expect(features.showOnLevel(outer, graph, outer.geometry(graph), 1, [])).to.be.true;
+			expect(features.showOnLevel(inner1, graph, inner1.geometry(graph), 1, [])).to.be.true;
+			expect(features.showOnLevel(inner2, graph, inner2.geometry(graph), 1, [])).to.be.true;
+			expect(features.showOnLevel(inner3, graph, inner3.geometry(graph), 1, [])).to.be.true;
 		});
 		
 		it('returns true when nodes are part of a way', function() {
@@ -604,47 +604,47 @@ describe('iD.Features', function() {
 				w2 = iD.Way({id: 'w2', tags: {indoor: 'wall', level: '2'}, nodes: [ 'n1', 'n4' ], version: 1}),
 				graph = iD.Graph([n1, n2, n3, n4, w1, w2]);
 			
-			expect(features.isOnLevel(n1, graph, n1.geometry(graph), 0, [])).to.be.false;
-			expect(features.isOnLevel(n2, graph, n2.geometry(graph), 0, [])).to.be.false;
-			expect(features.isOnLevel(n3, graph, n3.geometry(graph), 0, [])).to.be.false;
-			expect(features.isOnLevel(n4, graph, n4.geometry(graph), 0, [])).to.be.false;
-			expect(features.isOnLevel(w1, graph, w1.geometry(graph), 0, [])).to.be.false;
-			expect(features.isOnLevel(w2, graph, w2.geometry(graph), 0, [])).to.be.false;
+			expect(features.showOnLevel(n1, graph, n1.geometry(graph), 0, [])).to.be.false;
+			expect(features.showOnLevel(n2, graph, n2.geometry(graph), 0, [])).to.be.false;
+			expect(features.showOnLevel(n3, graph, n3.geometry(graph), 0, [])).to.be.false;
+			expect(features.showOnLevel(n4, graph, n4.geometry(graph), 0, [])).to.be.false;
+			expect(features.showOnLevel(w1, graph, w1.geometry(graph), 0, [])).to.be.false;
+			expect(features.showOnLevel(w2, graph, w2.geometry(graph), 0, [])).to.be.false;
 			
-			expect(features.isOnLevel(n1, graph, n1.geometry(graph), 1, [])).to.be.false;
-			expect(features.isOnLevel(n2, graph, n2.geometry(graph), 1, [])).to.be.false;
-			expect(features.isOnLevel(n3, graph, n3.geometry(graph), 1, [])).to.be.false;
-			expect(features.isOnLevel(n4, graph, n4.geometry(graph), 1, [])).to.be.false;
-			expect(features.isOnLevel(w1, graph, w1.geometry(graph), 1, [])).to.be.true;
-			expect(features.isOnLevel(w2, graph, w2.geometry(graph), 1, [])).to.be.false;
+			expect(features.showOnLevel(n1, graph, n1.geometry(graph), 1, [])).to.be.false;
+			expect(features.showOnLevel(n2, graph, n2.geometry(graph), 1, [])).to.be.false;
+			expect(features.showOnLevel(n3, graph, n3.geometry(graph), 1, [])).to.be.false;
+			expect(features.showOnLevel(n4, graph, n4.geometry(graph), 1, [])).to.be.false;
+			expect(features.showOnLevel(w1, graph, w1.geometry(graph), 1, [])).to.be.true;
+			expect(features.showOnLevel(w2, graph, w2.geometry(graph), 1, [])).to.be.false;
 			
-			expect(features.isOnLevel(n1, graph, n1.geometry(graph), 1, ['w1'])).to.be.true;
-			expect(features.isOnLevel(n2, graph, n2.geometry(graph), 1, ['w1'])).to.be.true;
-			expect(features.isOnLevel(n3, graph, n3.geometry(graph), 1, ['w1'])).to.be.true;
-			expect(features.isOnLevel(n4, graph, n4.geometry(graph), 1, ['w1'])).to.be.false;
-			expect(features.isOnLevel(w1, graph, w1.geometry(graph), 1, ['w1'])).to.be.true;
-			expect(features.isOnLevel(w2, graph, w2.geometry(graph), 1, ['w1'])).to.be.false;
+			expect(features.showOnLevel(n1, graph, n1.geometry(graph), 1, ['w1'])).to.be.true;
+			expect(features.showOnLevel(n2, graph, n2.geometry(graph), 1, ['w1'])).to.be.true;
+			expect(features.showOnLevel(n3, graph, n3.geometry(graph), 1, ['w1'])).to.be.true;
+			expect(features.showOnLevel(n4, graph, n4.geometry(graph), 1, ['w1'])).to.be.false;
+			expect(features.showOnLevel(w1, graph, w1.geometry(graph), 1, ['w1'])).to.be.true;
+			expect(features.showOnLevel(w2, graph, w2.geometry(graph), 1, ['w1'])).to.be.false;
 			
-			expect(features.isOnLevel(n1, graph, n1.geometry(graph), 2, [])).to.be.false;
-			expect(features.isOnLevel(n2, graph, n2.geometry(graph), 2, [])).to.be.false;
-			expect(features.isOnLevel(n3, graph, n3.geometry(graph), 2, [])).to.be.false;
-			expect(features.isOnLevel(n4, graph, n4.geometry(graph), 2, [])).to.be.false;
-			expect(features.isOnLevel(w1, graph, w1.geometry(graph), 2, [])).to.be.false;
-			expect(features.isOnLevel(w2, graph, w2.geometry(graph), 2, [])).to.be.true;
+			expect(features.showOnLevel(n1, graph, n1.geometry(graph), 2, [])).to.be.false;
+			expect(features.showOnLevel(n2, graph, n2.geometry(graph), 2, [])).to.be.false;
+			expect(features.showOnLevel(n3, graph, n3.geometry(graph), 2, [])).to.be.false;
+			expect(features.showOnLevel(n4, graph, n4.geometry(graph), 2, [])).to.be.false;
+			expect(features.showOnLevel(w1, graph, w1.geometry(graph), 2, [])).to.be.false;
+			expect(features.showOnLevel(w2, graph, w2.geometry(graph), 2, [])).to.be.true;
 			
-			expect(features.isOnLevel(n1, graph, n1.geometry(graph), 2, ['w2'])).to.be.true;
-			expect(features.isOnLevel(n2, graph, n2.geometry(graph), 2, ['w2'])).to.be.false;
-			expect(features.isOnLevel(n3, graph, n3.geometry(graph), 2, ['w2'])).to.be.false;
-			expect(features.isOnLevel(n4, graph, n4.geometry(graph), 2, ['w2'])).to.be.true;
-			expect(features.isOnLevel(w1, graph, w1.geometry(graph), 2, ['w2'])).to.be.false;
-			expect(features.isOnLevel(w2, graph, w2.geometry(graph), 2, ['w2'])).to.be.true;
+			expect(features.showOnLevel(n1, graph, n1.geometry(graph), 2, ['w2'])).to.be.true;
+			expect(features.showOnLevel(n2, graph, n2.geometry(graph), 2, ['w2'])).to.be.false;
+			expect(features.showOnLevel(n3, graph, n3.geometry(graph), 2, ['w2'])).to.be.false;
+			expect(features.showOnLevel(n4, graph, n4.geometry(graph), 2, ['w2'])).to.be.true;
+			expect(features.showOnLevel(w1, graph, w1.geometry(graph), 2, ['w2'])).to.be.false;
+			expect(features.showOnLevel(w2, graph, w2.geometry(graph), 2, ['w2'])).to.be.true;
 			
-			expect(features.isOnLevel(n1, graph, n1.geometry(graph), 3, [])).to.be.false;
-			expect(features.isOnLevel(n2, graph, n2.geometry(graph), 3, [])).to.be.true;
-			expect(features.isOnLevel(n3, graph, n3.geometry(graph), 3, [])).to.be.false;
-			expect(features.isOnLevel(n4, graph, n4.geometry(graph), 3, [])).to.be.false;
-			expect(features.isOnLevel(w1, graph, w1.geometry(graph), 3, [])).to.be.false;
-			expect(features.isOnLevel(w2, graph, w2.geometry(graph), 3, [])).to.be.false;
+			expect(features.showOnLevel(n1, graph, n1.geometry(graph), 3, [])).to.be.false;
+			expect(features.showOnLevel(n2, graph, n2.geometry(graph), 3, [])).to.be.true;
+			expect(features.showOnLevel(n3, graph, n3.geometry(graph), 3, [])).to.be.false;
+			expect(features.showOnLevel(n4, graph, n4.geometry(graph), 3, [])).to.be.false;
+			expect(features.showOnLevel(w1, graph, w1.geometry(graph), 3, [])).to.be.false;
+			expect(features.showOnLevel(w2, graph, w2.geometry(graph), 3, [])).to.be.false;
 		});
 	});
 });

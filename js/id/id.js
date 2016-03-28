@@ -252,6 +252,7 @@ window.iD = function () {
 	    var al = context.availableLevels();
 	    if(al.indexOf(l) >= 0 && level != l) {
 		    level = l;
+			context.enter(iD.modes.Browse(context));
 		    context.pan([0,0]);
 		    dispatch.levelchange();
 	    }
