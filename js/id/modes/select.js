@@ -112,7 +112,7 @@ iD.modes.Select = function(context, selectedIDs) {
 
             if (datum instanceof iD.Way && !target.classed('fill')) {
                 var choice = iD.geo.chooseEdge(context.childNodes(datum), context.mouse(), context.projection),
-                    node = iD.Node({tags: {level: context.level().toString()} });
+                    node = iD.Node();//{tags: {level: context.level().toString()} });
 
                 var prev = datum.nodes[choice.index - 1],
                     next = datum.nodes[choice.index];

@@ -220,6 +220,7 @@ window.iD = function () {
     var availableLevels = [ 0 ];
     context.level = function() { return level; }
     context.availableLevels = function() { return availableLevels; }
+    context.hasLevelsDefined = function(id) { return context.graph().entities[id].levels.length > 0; }
     context.updateAvailableLevels = function() {
 		var entities = context.graph().entities;
 		var levels = d3.set([ 0 ]);

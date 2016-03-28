@@ -210,6 +210,17 @@ iD.ui.PresetList = function(context) {
         item.choose = function() {
             context.presets().choose(preset);
 
+			//Add level to object if no one already defined
+			if(!context.hasLevelsDefined(id)) {
+				var entity = context.entity(id),
+					annotation = t('operations.change_tags.annotation'),
+					tags = _.extend({}, entity.tags, { level: context.level().toString() });
+				
+				if (!_.isEqual(entity.tags, tags)) {
+					context.perform(iD.actions.ChangeTags(id, tags), annotation);
+				}
+			}
+
             context.perform(
                 iD.actions.ChangePreset(id, currentPreset, preset),
                 t('operations.change_tags.annotation'));
