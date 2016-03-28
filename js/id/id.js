@@ -250,7 +250,7 @@ window.iD = function () {
     };
     context.setLevel = function(l) {
 	    var al = context.availableLevels();
-	    if(al.indexOf(level) >= 0 && level != l) {
+	    if(al.indexOf(l) >= 0 && level != l) {
 		    level = l;
 		    context.pan([0,0]);
 		    dispatch.levelchange();

@@ -243,4 +243,28 @@ describe('iD.Entity', function () {
             expect(iD.Entity({tags: {'tiger:source': 'blah', 'tiger:foo': 'bar'}}).hasInterestingTags()).to.equal(false);
         });
     });
+	
+	describe("#isOnLevel", function() {
+		it("returns true when no level is defined and given level is 0", function() {
+			expect(iD.Entity().isOnLevel(0)).to.equal(true);
+		});
+		
+		it("returns false when no level is defined and given level is not 0", function() {
+			expect(iD.Entity().isOnLevel(1)).to.equal(false);
+		});
+		
+		it("returns true when simple level is defined in tag and level is listed", function() {
+			var a = iD.Entity({ tags: {level:"1.5"} });
+			expect(a.isOnLevel(1.5)).to.equal(true);
+			expect(a.isOnLevel(0)).to.equal(false);
+		});
+		
+		it("returns true when interval level is defined in tag and level is listed", function() {
+			var a = iD.Entity({ tags: {level:"1-3"} });
+			expect(a.isOnLevel(1)).to.equal(true);
+			expect(a.isOnLevel(2)).to.equal(true);
+			expect(a.isOnLevel(3)).to.equal(true);
+			expect(a.isOnLevel(0)).to.equal(false);
+		});
+	});
 });

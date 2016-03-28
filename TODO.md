@@ -1,6 +1,9 @@
 List of features to implement in the future.
 
 ## Soon
+### Core
+* URL parameter for level
+
 ### Presets
 * mapillary=*
 * Small indoor objects (see below)
@@ -15,4 +18,4 @@ List of features to implement in the future.
 
 ## Later
 ### UI
-* Link to OpenLevelUp
+* Links to OpenLevelUp

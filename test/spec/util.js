@@ -60,4 +60,11 @@ describe('iD.Util', function() {
                 });
         });
     });
+	
+	describe('#sortNumberArray', function() {
+		it('sorts an array of numbers', function() {
+			var a1 = [ 3, 42, -27, -10.365, 0, 0.1 ];
+			expect(a1.sort(iD.util.sortNumberArray)).to.eql([ -27, -10.365, 0, 0.1, 3, 42 ]);
+		});
+	});
 });

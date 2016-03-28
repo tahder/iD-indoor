@@ -67,7 +67,7 @@ describe("iD.presets", function() {
                 'natural/tree_row': {
                     tags: { 'natural': 'tree_row' },
                     geometry: ['line']
-                }
+                },
                 'natural/wood': {
                     tags: { 'natural': 'wood' },
                     geometry: ['point', 'area']
