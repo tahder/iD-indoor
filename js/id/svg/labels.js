@@ -16,6 +16,8 @@ iD.svg.Labels = function(projection, context) {
         ['area', 'natural'],
         ['area', 'shop'],
         ['area', 'tourism'],
+		['area', 'indoor'],
+		['area', 'buildingpart'],
         ['point', 'aeroway'],
         ['point', 'amenity'],
         ['point', 'building'],

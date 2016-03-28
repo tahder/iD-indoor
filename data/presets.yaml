@@ -186,6 +186,9 @@ en:
       building_area:
         # 'building=*'
         label: Building
+      buildingpart:
+        # 'buildingpart=*'
+        label: Type
       capacity:
         # 'capacity=*'
         label: Capacity
@@ -1867,6 +1870,10 @@ en:
         # building=warehouse
         name: Warehouse
         terms: "<translate with synonyms or related terms for 'Warehouse', separated by commas>"
+      buildingpart:
+        # 'buildingpart=*'
+        name: Indoor (buildingpart)
+        terms: "<translate with synonyms or related terms for 'Indoor (buildingpart)', separated by commas>"
       craft:
         # 'craft=*'
         name: Craft

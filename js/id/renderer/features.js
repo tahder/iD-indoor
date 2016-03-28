@@ -407,6 +407,7 @@ iD.Features = function(context) {
 		var onLevel = entity.isOnLevel(level);
 		if (level != 0 && onLevel) return true;
 		if (level == 0 && entity.levels.indexOf(0) >= 0) return true;
+		if (entity.type == 'relation' && entity.levels.length > 0) return onLevel;
 		
 		var parents = features.getParents(entity, resolver, geometry);
 		if (!parents.length) return onLevel;

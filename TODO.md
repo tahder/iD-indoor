@@ -5,7 +5,6 @@ List of features to implement in the future.
 * Small indoor objects (see below)
 
 ### Styles
-* buildingpart=*
 * Small indoor objects
 ** Emergency features (fire extinguishers)
 ** Shop-related features (price checker, checkout...)

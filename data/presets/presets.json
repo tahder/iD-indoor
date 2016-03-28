@@ -3041,6 +3041,23 @@
         "matchScore": 0.5,
         "name": "Warehouse"
     },
+    "buildingpart": {
+        "icon": "building",
+        "fields": [
+            "buildingpart",
+            "level"
+        ],
+        "geometry": [
+            "line",
+            "area"
+        ],
+        "tags": {
+            "buildingpart": "*"
+        },
+        "matchScore": 0.4,
+        "terms": [],
+        "name": "Indoor (buildingpart)"
+    },
     "craft": {
         "icon": "marker-stroked",
         "fields": [
@@ -5097,7 +5114,6 @@
             "level"
         ],
         "geometry": [
-            "point",
             "line",
             "area"
         ],

@@ -796,6 +796,9 @@
             "building_area": {
                 "label": "Building"
             },
+            "buildingpart": {
+                "label": "Type"
+            },
             "capacity": {
                 "label": "Capacity",
                 "placeholder": "50, 100, 200..."
@@ -2239,6 +2242,10 @@
             },
             "building/warehouse": {
                 "name": "Warehouse",
+                "terms": ""
+            },
+            "buildingpart": {
+                "name": "Indoor (buildingpart)",
                 "terms": ""
             },
             "craft": {

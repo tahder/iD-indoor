@@ -32,7 +32,7 @@
         "point"
     ],
     "vertex": [
-	"door",
+		"door",
         "highway/crosswalk",
         "highway/crossing",
         "railway/level_crossing",

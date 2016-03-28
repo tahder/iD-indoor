@@ -686,6 +686,9 @@
             "value": "warehouse"
         },
         {
+            "key": "buildingpart"
+        },
+        {
             "key": "craft"
         },
         {

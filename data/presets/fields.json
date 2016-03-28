@@ -253,6 +253,11 @@
         "geometry": "area",
         "label": "Building"
     },
+    "buildingpart": {
+        "key": "buildingpart",
+        "type": "combo",
+        "label": "Type"
+    },
     "capacity": {
         "key": "capacity",
         "type": "number",

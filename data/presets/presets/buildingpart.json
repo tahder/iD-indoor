@@ -1,7 +1,7 @@
 {
     "icon": "building",
     "fields": [
-        "indoor",
+        "buildingpart",
         "level"
     ],
     "geometry": [
@@ -9,9 +9,9 @@
         "area"
     ],
     "tags": {
-        "indoor": "*"
+        "buildingpart": "*"
     },
     "matchScore": 0.4,
     "terms": [],
-    "name": "Indoor"
+    "name": "Indoor (buildingpart)"
 }
