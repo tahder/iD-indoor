@@ -407,21 +407,29 @@ iD.Features = function(context) {
 		var onLevel = entity.isOnLevel(level);
 		if (level != 0 && onLevel) return true;
 		if (level == 0 && entity.levels.indexOf(0) >= 0) return true;
-		if (entity.type == 'relation' && entity.levels.length > 0) return onLevel;
 		
 		var parents = features.getParents(entity, resolver, geometry);
 		if (!parents.length) return onLevel;
 		
+		var hasParentLevelRelated = false;
+		
 		for (var i = 0; i < parents.length; i++) {
+			if (parents[i].levels.length > 0) hasParentLevelRelated = true;
+			
 			if (selectedIDs.indexOf(parents[i].id) >= 0) {
 				return true;
 			}
 			else if (features.showOnLevel(parents[i], resolver, parents[i].geometry(resolver), level, selectedIDs)) {
-				if (geometry !== 'vertex' || onLevel) {
-					return true;
+				if ((parents[i].type == 'relation' && parents[i].isLevelRelated()) || parents[i].type != 'relation') {
+					if (geometry !== 'vertex' || onLevel) {
+						return true;
+					}
 				}
 			}
 		}
+		
+		if (!hasParentLevelRelated && entity.type != 'relation' && level == 0 && onLevel) return true;
+		
 		return false;
 	};
 
