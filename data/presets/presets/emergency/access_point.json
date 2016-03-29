@@ -1,0 +1,13 @@
+{
+    "fields": [
+		"ref"
+    ],
+    "geometry": [
+        "point",
+        "vertex"
+    ],
+    "tags": {
+        "emergency": "access_point"
+    },
+    "name": "Emergency access point"
+}

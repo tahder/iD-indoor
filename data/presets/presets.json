@@ -3953,6 +3953,19 @@
         "name": "Embankment",
         "matchScore": 0.2
     },
+    "emergency/access_point": {
+        "fields": [
+            "ref"
+        ],
+        "geometry": [
+            "point",
+            "vertex"
+        ],
+        "tags": {
+            "emergency": "access_point"
+        },
+        "name": "Emergency access point"
+    },
     "emergency/ambulance_station": {
         "icon": "hospital",
         "fields": [
@@ -3973,6 +3986,41 @@
             "emergency": "ambulance_station"
         },
         "name": "Ambulance Station"
+    },
+    "emergency/defibrillator": {
+        "fields": [
+            "access"
+        ],
+        "geometry": [
+            "point",
+            "vertex"
+        ],
+        "tags": {
+            "emergency": "defibrillator"
+        },
+        "name": "Defibrillator"
+    },
+    "emergency/fire_extinguisher": {
+        "fields": [],
+        "geometry": [
+            "point",
+            "vertex"
+        ],
+        "tags": {
+            "emergency": "fire_extinguisher"
+        },
+        "name": "Fire extinguisher"
+    },
+    "emergency/fire_hose": {
+        "fields": [],
+        "geometry": [
+            "point",
+            "vertex"
+        ],
+        "tags": {
+            "emergency": "fire_hose"
+        },
+        "name": "Fire hose"
     },
     "emergency/fire_hydrant": {
         "fields": [

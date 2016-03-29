@@ -2087,11 +2087,27 @@ en:
         # embankment=yes
         name: Embankment
         terms: "<translate with synonyms or related terms for 'Embankment', separated by commas>"
+      emergency/access_point:
+        # emergency=access_point
+        name: Emergency access point
+        terms: "<translate with synonyms or related terms for 'Emergency access point', separated by commas>"
       emergency/ambulance_station:
         # emergency=ambulance_station
         name: Ambulance Station
         # 'terms: EMS,EMT,rescue'
         terms: "<translate with synonyms or related terms for 'Ambulance Station', separated by commas>"
+      emergency/defibrillator:
+        # emergency=defibrillator
+        name: Defibrillator
+        terms: "<translate with synonyms or related terms for 'Defibrillator', separated by commas>"
+      emergency/fire_extinguisher:
+        # emergency=fire_extinguisher
+        name: Fire extinguisher
+        terms: "<translate with synonyms or related terms for 'Fire extinguisher', separated by commas>"
+      emergency/fire_hose:
+        # emergency=fire_hose
+        name: Fire hose
+        terms: "<translate with synonyms or related terms for 'Fire hose', separated by commas>"
       emergency/fire_hydrant:
         # emergency=fire_hydrant
         name: Fire Hydrant

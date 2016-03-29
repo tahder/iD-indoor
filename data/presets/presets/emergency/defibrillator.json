@@ -1,0 +1,13 @@
+{
+    "fields": [
+        "access"
+    ],
+    "geometry": [
+        "point",
+        "vertex"
+    ],
+    "tags": {
+        "emergency": "defibrillator"
+    },
+    "name": "Defibrillator"
+}

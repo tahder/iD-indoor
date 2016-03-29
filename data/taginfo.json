@@ -884,7 +884,23 @@
         },
         {
             "key": "emergency",
+            "value": "access_point"
+        },
+        {
+            "key": "emergency",
             "value": "ambulance_station"
+        },
+        {
+            "key": "emergency",
+            "value": "defibrillator"
+        },
+        {
+            "key": "emergency",
+            "value": "fire_extinguisher"
+        },
+        {
+            "key": "emergency",
+            "value": "fire_hose"
         },
         {
             "key": "emergency",

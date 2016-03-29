@@ -1,0 +1,12 @@
+{
+    "fields": [
+    ],
+    "geometry": [
+        "point",
+        "vertex"
+    ],
+    "tags": {
+        "emergency": "fire_extinguisher"
+    },
+    "name": "Fire extinguisher"
+}

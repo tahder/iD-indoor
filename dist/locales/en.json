@@ -2444,9 +2444,25 @@
                 "name": "Embankment",
                 "terms": ""
             },
+            "emergency/access_point": {
+                "name": "Emergency access point",
+                "terms": ""
+            },
             "emergency/ambulance_station": {
                 "name": "Ambulance Station",
                 "terms": "EMS,EMT,rescue"
+            },
+            "emergency/defibrillator": {
+                "name": "Defibrillator",
+                "terms": ""
+            },
+            "emergency/fire_extinguisher": {
+                "name": "Fire extinguisher",
+                "terms": ""
+            },
+            "emergency/fire_hose": {
+                "name": "Fire hose",
+                "terms": ""
             },
             "emergency/fire_hydrant": {
                 "name": "Fire Hydrant",
