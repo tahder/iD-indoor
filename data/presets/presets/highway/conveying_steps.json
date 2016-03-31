@@ -1,0 +1,23 @@
+{
+    "fields": [
+		"conveying",
+        "surface",
+        "lit",
+        "width",
+        "incline_steps"
+    ],
+    "icon": "highway-steps",
+    "geometry": [
+        "line"
+    ],
+    "tags": {
+        "highway": "steps",
+        "conveying": "*"
+    },
+    "terms": [
+        "conveying",
+        "stairs",
+        "steps"
+    ],
+    "name": "Conveying steps"
+}

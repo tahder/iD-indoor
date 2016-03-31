@@ -1,0 +1,10 @@
+{
+    "geometry": "line",
+    "name": "Shop features",
+    "icon": "shop",
+    "members": [
+        "barrier/checkout",
+        "barrier/self_checkout",
+        "barrier/shelf"
+    ]
+}

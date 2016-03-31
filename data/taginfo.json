@@ -16,6 +16,9 @@
             "key": "addr:housenumber"
         },
         {
+            "key": "advertising"
+        },
+        {
             "key": "aerialway"
         },
         {
@@ -105,8 +108,16 @@
             "value": "bank"
         },
         {
+            "key": "room",
+            "value": "office"
+        },
+        {
             "key": "amenity",
             "value": "bar"
+        },
+        {
+            "key": "indoor",
+            "value": "room"
         },
         {
             "key": "amenity",
@@ -133,12 +144,20 @@
             "value": "biergarten"
         },
         {
+            "key": "indoor",
+            "value": "room"
+        },
+        {
             "key": "amenity",
             "value": "boat_rental"
         },
         {
             "key": "amenity",
             "value": "bureau_de_change"
+        },
+        {
+            "key": "room",
+            "value": "office"
         },
         {
             "key": "amenity",
@@ -149,8 +168,16 @@
             "value": "cafe"
         },
         {
+            "key": "room",
+            "value": "cafe"
+        },
+        {
             "key": "amenity",
             "value": "car_rental"
+        },
+        {
+            "key": "room",
+            "value": "shop"
         },
         {
             "key": "amenity",
@@ -175,6 +202,10 @@
         {
             "key": "amenity",
             "value": "cinema"
+        },
+        {
+            "key": "indoor",
+            "value": "room"
         },
         {
             "key": "amenity",
@@ -225,6 +256,10 @@
             "value": "fast_food"
         },
         {
+            "key": "room",
+            "value": "restaurant"
+        },
+        {
             "key": "amenity",
             "value": "ferry_terminal"
         },
@@ -265,6 +300,10 @@
             "value": "library"
         },
         {
+            "key": "room",
+            "value": "library"
+        },
+        {
             "key": "amenity",
             "value": "marketplace"
         },
@@ -291,6 +330,10 @@
         {
             "key": "amenity",
             "value": "pharmacy"
+        },
+        {
+            "key": "room",
+            "value": "shop"
         },
         {
             "key": "amenity",
@@ -325,8 +368,16 @@
             "value": "post_office"
         },
         {
+            "key": "room",
+            "value": "office"
+        },
+        {
             "key": "amenity",
             "value": "pub"
+        },
+        {
+            "key": "indoor",
+            "value": "room"
         },
         {
             "key": "amenity",
@@ -349,6 +400,10 @@
             "value": "restaurant"
         },
         {
+            "key": "room",
+            "value": "restaurant"
+        },
+        {
             "key": "amenity",
             "value": "sanitary_dump_station"
         },
@@ -359,6 +414,10 @@
         {
             "key": "amenity",
             "value": "shelter"
+        },
+        {
+            "key": "amenity",
+            "value": "showcase"
         },
         {
             "key": "amenity",
@@ -398,6 +457,14 @@
         },
         {
             "key": "amenity",
+            "value": "ticket_validator"
+        },
+        {
+            "key": "amenity",
+            "value": "toilets"
+        },
+        {
+            "key": "room",
             "value": "toilets"
         },
         {
@@ -407,6 +474,10 @@
         {
             "key": "amenity",
             "value": "university"
+        },
+        {
+            "key": "amenity",
+            "value": "vending_machine"
         },
         {
             "key": "vending",
@@ -443,10 +514,6 @@
         {
             "key": "vending",
             "value": "sweets"
-        },
-        {
-            "key": "amenity",
-            "value": "vending_machine"
         },
         {
             "key": "amenity",
@@ -488,6 +555,10 @@
         },
         {
             "key": "barrier",
+            "value": "checkout"
+        },
+        {
+            "key": "barrier",
             "value": "city_wall"
         },
         {
@@ -525,6 +596,14 @@
         {
             "key": "barrier",
             "value": "retaining_wall"
+        },
+        {
+            "key": "barrier",
+            "value": "self_checkout"
+        },
+        {
+            "key": "barrier",
+            "value": "shelf"
         },
         {
             "key": "barrier",
@@ -876,6 +955,10 @@
             "value": "winery"
         },
         {
+            "key": "department",
+            "value": "store_section"
+        },
+        {
             "key": "door"
         },
         {
@@ -973,6 +1056,9 @@
             "value": "bus_stop"
         },
         {
+            "key": "conveying"
+        },
+        {
             "key": "highway",
             "value": "corridor"
         },
@@ -987,6 +1073,10 @@
         {
             "key": "highway",
             "value": "cycleway"
+        },
+        {
+            "key": "highway",
+            "value": "elevator"
         },
         {
             "key": "highway",
@@ -1177,6 +1267,13 @@
         {
             "key": "indoor",
             "value": "wall"
+        },
+        {
+            "key": "information"
+        },
+        {
+            "key": "information",
+            "value": "price_checker"
         },
         {
             "key": "junction",
@@ -1871,6 +1968,454 @@
         },
         {
             "key": "shop"
+        },
+        {
+            "key": "shop",
+            "value": "alcohol"
+        },
+        {
+            "key": "shop",
+            "value": "anime"
+        },
+        {
+            "key": "shop",
+            "value": "antiques"
+        },
+        {
+            "key": "shop",
+            "value": "art"
+        },
+        {
+            "key": "shop",
+            "value": "baby_goods"
+        },
+        {
+            "key": "shop",
+            "value": "bag"
+        },
+        {
+            "key": "shop",
+            "value": "bakery"
+        },
+        {
+            "key": "shop",
+            "value": "bathroom_furnishing"
+        },
+        {
+            "key": "shop",
+            "value": "beauty"
+        },
+        {
+            "key": "shop",
+            "value": "bed"
+        },
+        {
+            "key": "shop",
+            "value": "beverages"
+        },
+        {
+            "key": "shop",
+            "value": "bicycle"
+        },
+        {
+            "key": "shop",
+            "value": "bookmaker"
+        },
+        {
+            "key": "shop",
+            "value": "books"
+        },
+        {
+            "key": "shop",
+            "value": "boutique"
+        },
+        {
+            "key": "shop",
+            "value": "butcher"
+        },
+        {
+            "key": "shop",
+            "value": "candles"
+        },
+        {
+            "key": "shop",
+            "value": "car"
+        },
+        {
+            "key": "shop",
+            "value": "car_parts"
+        },
+        {
+            "key": "shop",
+            "value": "car_repair"
+        },
+        {
+            "key": "shop",
+            "value": "carpet"
+        },
+        {
+            "key": "shop",
+            "value": "cheese"
+        },
+        {
+            "key": "shop",
+            "value": "chemist"
+        },
+        {
+            "key": "shop",
+            "value": "chocolate"
+        },
+        {
+            "key": "shop",
+            "value": "clothes"
+        },
+        {
+            "key": "shop",
+            "value": "coffee"
+        },
+        {
+            "key": "shop",
+            "value": "computer"
+        },
+        {
+            "key": "shop",
+            "value": "confectionery"
+        },
+        {
+            "key": "shop",
+            "value": "convenience"
+        },
+        {
+            "key": "shop",
+            "value": "copyshop"
+        },
+        {
+            "key": "shop",
+            "value": "cosmetics"
+        },
+        {
+            "key": "shop",
+            "value": "craft"
+        },
+        {
+            "key": "shop",
+            "value": "curtain"
+        },
+        {
+            "key": "shop",
+            "value": "dairy"
+        },
+        {
+            "key": "shop",
+            "value": "deli"
+        },
+        {
+            "key": "shop",
+            "value": "department_store"
+        },
+        {
+            "key": "shop",
+            "value": "doityourself"
+        },
+        {
+            "key": "shop",
+            "value": "dry_cleaning"
+        },
+        {
+            "key": "shop",
+            "value": "electronics"
+        },
+        {
+            "key": "shop",
+            "value": "erotic"
+        },
+        {
+            "key": "shop",
+            "value": "fabric"
+        },
+        {
+            "key": "shop",
+            "value": "farm"
+        },
+        {
+            "key": "shop",
+            "value": "fashion"
+        },
+        {
+            "key": "shop",
+            "value": "fishmonger"
+        },
+        {
+            "key": "shop",
+            "value": "florist"
+        },
+        {
+            "key": "shop",
+            "value": "frame"
+        },
+        {
+            "key": "shop",
+            "value": "funeral_directors"
+        },
+        {
+            "key": "shop",
+            "value": "furnace"
+        },
+        {
+            "key": "shop",
+            "value": "furniture"
+        },
+        {
+            "key": "shop",
+            "value": "garden_centre"
+        },
+        {
+            "key": "shop",
+            "value": "gift"
+        },
+        {
+            "key": "shop",
+            "value": "greengrocer"
+        },
+        {
+            "key": "shop",
+            "value": "hairdresser"
+        },
+        {
+            "key": "shop",
+            "value": "hardware"
+        },
+        {
+            "key": "shop",
+            "value": "hearing_aids"
+        },
+        {
+            "key": "shop",
+            "value": "herbalist"
+        },
+        {
+            "key": "shop",
+            "value": "hifi"
+        },
+        {
+            "key": "shop",
+            "value": "houseware"
+        },
+        {
+            "key": "shop",
+            "value": "interior_decoration"
+        },
+        {
+            "key": "shop",
+            "value": "jewelry"
+        },
+        {
+            "key": "shop",
+            "value": "kiosk"
+        },
+        {
+            "key": "shop",
+            "value": "kitchen"
+        },
+        {
+            "key": "shop",
+            "value": "laundry"
+        },
+        {
+            "key": "shop",
+            "value": "leather"
+        },
+        {
+            "key": "shop",
+            "value": "locksmith"
+        },
+        {
+            "key": "shop",
+            "value": "lottery"
+        },
+        {
+            "key": "shop",
+            "value": "mall"
+        },
+        {
+            "key": "shop",
+            "value": "massage"
+        },
+        {
+            "key": "shop",
+            "value": "medical_supply"
+        },
+        {
+            "key": "shop",
+            "value": "mobile_phone"
+        },
+        {
+            "key": "shop",
+            "value": "money_lender"
+        },
+        {
+            "key": "shop",
+            "value": "motorcycle"
+        },
+        {
+            "key": "shop",
+            "value": "music"
+        },
+        {
+            "key": "shop",
+            "value": "musical_instrument"
+        },
+        {
+            "key": "shop",
+            "value": "newsagent"
+        },
+        {
+            "key": "shop",
+            "value": "nutrition_supplements"
+        },
+        {
+            "key": "shop",
+            "value": "optician"
+        },
+        {
+            "key": "organic",
+            "value": "only"
+        },
+        {
+            "key": "shop",
+            "value": "outdoor"
+        },
+        {
+            "key": "shop",
+            "value": "paint"
+        },
+        {
+            "key": "shop",
+            "value": "pawnbroker"
+        },
+        {
+            "key": "shop",
+            "value": "pet"
+        },
+        {
+            "key": "shop",
+            "value": "photo"
+        },
+        {
+            "key": "shop",
+            "value": "pyrotechnics"
+        },
+        {
+            "key": "shop",
+            "value": "radiotechnics"
+        },
+        {
+            "key": "shop",
+            "value": "religion"
+        },
+        {
+            "key": "shop",
+            "value": "scuba_diving"
+        },
+        {
+            "key": "shop",
+            "value": "seafood"
+        },
+        {
+            "key": "shop",
+            "value": "second_hand"
+        },
+        {
+            "key": "shop",
+            "value": "shoes"
+        },
+        {
+            "key": "shop",
+            "value": "sports"
+        },
+        {
+            "key": "shop",
+            "value": "stationery"
+        },
+        {
+            "key": "shop",
+            "value": "storage_rental"
+        },
+        {
+            "key": "shop",
+            "value": "supermarket"
+        },
+        {
+            "key": "shop",
+            "value": "tailor"
+        },
+        {
+            "key": "shop",
+            "value": "tattoo"
+        },
+        {
+            "key": "shop",
+            "value": "tea"
+        },
+        {
+            "key": "shop",
+            "value": "ticket"
+        },
+        {
+            "key": "shop",
+            "value": "tobacco"
+        },
+        {
+            "key": "shop",
+            "value": "toys"
+        },
+        {
+            "key": "shop",
+            "value": "travel_agency"
+        },
+        {
+            "key": "shop",
+            "value": "tyres"
+        },
+        {
+            "key": "shop",
+            "value": "vacant"
+        },
+        {
+            "key": "shop",
+            "value": "vacuum_cleaner"
+        },
+        {
+            "key": "shop",
+            "value": "variety_store"
+        },
+        {
+            "key": "shop",
+            "value": "video"
+        },
+        {
+            "key": "shop",
+            "value": "video_games"
+        },
+        {
+            "key": "shop",
+            "value": "water_sports"
+        },
+        {
+            "key": "shop",
+            "value": "weapons"
+        },
+        {
+            "key": "shop",
+            "value": "window_blind"
+        },
+        {
+            "key": "shop",
+            "value": "wine"
+        },
+        {
+            "key": "room",
+            "value": "shop"
         },
         {
             "key": "shop",

@@ -1,0 +1,10 @@
+{
+    "key": "display_type",
+    "type": "radio",
+    "options": [
+        "led",
+        "lcd",
+        "plasma"
+    ],
+    "label": "Display type"
+}

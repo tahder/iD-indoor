@@ -8,8 +8,7 @@
         "drive_through"
     ],
     "geometry": [
-        "point",
-        "area"
+        "point"
     ],
     "tags": {
         "amenity": "pharmacy"

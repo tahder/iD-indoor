@@ -1,0 +1,26 @@
+{
+	"icon": "star",
+    "geometry": [
+        "point",
+        "vertex",
+        "line"
+    ],
+    "tags": {
+        "advertising": "*"
+    },
+    "fields": [
+        "advertising",
+        "ref",
+        "luminous",
+        "animated",
+        "display_type",
+        "cardinal_direction",
+        "faces",
+        "lit",
+        "height",
+        "width",
+        "operator",
+        "support"
+    ],
+    "name": "Advertising"
+}

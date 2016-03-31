@@ -1,0 +1,24 @@
+{
+    "geometry": "area",
+    "name": "Shops",
+    "icon": "shop",
+    "members": [
+        "shop_area/convenience",
+        "shop_area/supermarket",
+        "shop_area/mall",
+        "shop_area/department_store",
+        "shop_area/clothes",
+        "shop_area/bakery",
+        "shop_area/kiosk",
+        "shop_area/doityourself",
+        "shop_area/butcher",
+        "shop_area/furniture",
+        "shop_area/shoes",
+        "shop_area/alcohol",
+        "shop_area/beauty",
+        "shop_area/books",
+        "shop_area/mobile_phone",
+        "shop_area/jewelry",
+        "shop_area"
+    ]
+}

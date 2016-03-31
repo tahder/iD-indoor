@@ -1,0 +1,22 @@
+{
+    "icon": "bicycle",
+    "fields": [
+        "operator",
+        "address",
+        "opening_hours"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "bike",
+        "repair"
+    ],
+    "tags": {
+        "indoor": "room",
+        "room": "shop",
+        "shop": "bicycle"
+    },
+    "name": "Bicycle Shop"
+}

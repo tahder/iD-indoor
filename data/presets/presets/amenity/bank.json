@@ -4,13 +4,11 @@
         "atm",
         "operator",
         "address",
-        "building_area",
         "opening_hours",
         "drive_through"
     ],
     "geometry": [
-        "point",
-        "area"
+        "point"
     ],
     "terms": [
         "credit union",

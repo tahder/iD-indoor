@@ -4,7 +4,6 @@
         "cuisine",
         "operator",
         "address",
-        "building_area",
         "opening_hours",
         "takeaway",
         "delivery",
@@ -12,8 +11,7 @@
         "smoking"
     ],
     "geometry": [
-        "point",
-        "area"
+        "point"
     ],
     "tags": {
         "amenity": "fast_food"

@@ -1,0 +1,21 @@
+{
+    "icon": "post",
+    "fields": [
+        "operator",
+        "address",
+        "opening_hours"
+    ],
+    "geometry": [
+        "area"
+    ],
+    "terms": [
+        "letter",
+        "mail"
+    ],
+    "tags": {
+        "amenity": "post_office",
+        "indoor": "room",
+        "room": "office"
+    },
+    "name": "Post Office"
+}

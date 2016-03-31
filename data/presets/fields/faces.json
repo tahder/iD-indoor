@@ -1,0 +1,6 @@
+{
+    "key": "faces",
+    "type": "number",
+    "label": "Amount of front faces",
+    "placeholder": "1, 2, 3..."
+}

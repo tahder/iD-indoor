@@ -11,8 +11,7 @@
     ],
     "geometry": [
         "point",
-        "vertex",
-        "area"
+        "vertex"
     ],
     "terms": [
         "bathroom",

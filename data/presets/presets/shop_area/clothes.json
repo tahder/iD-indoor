@@ -1,0 +1,18 @@
+{
+    "icon": "clothing-store",
+    "fields": [
+        "operator",
+        "address",
+        "opening_hours"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "tags": {
+        "indoor": "room",
+        "room": "shop",
+        "shop": "clothes"
+    },
+    "name": "Clothing Store"
+}

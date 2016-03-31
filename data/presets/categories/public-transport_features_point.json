@@ -1,0 +1,10 @@
+{
+    "geometry": "point",
+    "name": "Public transport features",
+    "icon": "rail",
+    "members": [
+		"amenity/ticket_validator",
+		"information",
+        "amenity/showcase"
+    ]
+}

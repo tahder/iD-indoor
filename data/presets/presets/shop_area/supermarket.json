@@ -1,0 +1,23 @@
+{
+    "icon": "grocery",
+    "fields": [
+        "operator",
+        "address",
+        "opening_hours"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "grocery",
+        "store",
+        "shop"
+    ],
+    "tags": {
+        "indoor": "room",
+        "room": "shop",
+        "shop": "supermarket"
+    },
+    "name": "Supermarket"
+}

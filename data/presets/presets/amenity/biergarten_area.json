@@ -1,0 +1,21 @@
+{
+    "icon": "beer",
+    "fields": [
+        "address",
+        "opening_hours",
+        "smoking"
+    ],
+    "geometry": [
+        "area"
+    ],
+    "tags": {
+        "amenity": "biergarten",
+        "indoor": "room"
+    },
+    "terms": [
+        "beer",
+        "bier",
+        "booze"
+    ],
+    "name": "Beer Garden"
+}

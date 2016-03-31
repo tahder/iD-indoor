@@ -1,6 +1,10 @@
 {
     "fields": [
-        "backrest"
+        "backrest",
+        "armrest",
+        "seats",
+        "cardinal_direction",
+        "material"
     ],
     "geometry": [
         "point",

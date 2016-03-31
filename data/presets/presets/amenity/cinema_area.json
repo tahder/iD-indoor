@@ -1,0 +1,25 @@
+{
+    "icon": "cinema",
+    "fields": [
+        "address",
+        "opening_hours"
+    ],
+    "geometry": [
+        "area"
+    ],
+    "terms": [
+        "drive-in",
+        "film",
+        "flick",
+        "movie",
+        "theater",
+        "picture",
+        "show",
+        "screen"
+    ],
+    "tags": {
+        "amenity": "cinema",
+        "indoor": "room"
+    },
+    "name": "Cinema"
+}

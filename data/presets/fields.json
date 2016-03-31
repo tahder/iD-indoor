@@ -124,6 +124,11 @@
         "type": "number",
         "label": "Admin Level"
     },
+    "advertising": {
+        "key": "advertising",
+        "type": "typeCombo",
+        "label": "Type"
+    },
     "aerialway": {
         "key": "aerialway",
         "type": "typeCombo",
@@ -191,10 +196,20 @@
         "type": "typeCombo",
         "label": "Type"
     },
+    "animated": {
+        "key": "animated",
+        "type": "check",
+        "label": "Animated"
+    },
     "area/highway": {
         "key": "area:highway",
         "type": "typeCombo",
         "label": "Type"
+    },
+    "armrest": {
+        "key": "armrest",
+        "type": "check",
+        "label": "Armrest"
     },
     "artist": {
         "key": "artist_name",
@@ -315,6 +330,17 @@
         "type": "combo",
         "label": "Contents"
     },
+    "conveying": {
+        "key": "conveying",
+        "type": "radio",
+        "options": [
+            "yes",
+            "forward",
+            "backward",
+            "reversible"
+        ],
+        "label": "Conveying direction"
+    },
     "country": {
         "key": "country",
         "type": "combo",
@@ -429,6 +455,26 @@
             "5"
         ]
     },
+    "dispense": {
+        "key": "dispense",
+        "type": "combo",
+        "label": "Type of Goods"
+    },
+    "display": {
+        "key": "display",
+        "type": "typeCombo",
+        "label": "Display type"
+    },
+    "display_type": {
+        "key": "display_type",
+        "type": "radio",
+        "options": [
+            "led",
+            "lcd",
+            "plasma"
+        ],
+        "label": "Display type"
+    },
     "dock": {
         "key": "dock",
         "type": "combo",
@@ -479,6 +525,12 @@
         "key": "except",
         "type": "combo",
         "label": "Exceptions"
+    },
+    "faces": {
+        "key": "faces",
+        "type": "number",
+        "label": "Amount of front faces",
+        "placeholder": "1, 2, 3..."
     },
     "fax": {
         "key": "fax",
@@ -671,6 +723,11 @@
         "type": "typeCombo",
         "label": "Type"
     },
+    "information_type": {
+        "key": "information:type",
+        "type": "combo",
+        "label": "Information context"
+    },
     "internet_access": {
         "key": "internet_access",
         "type": "combo",
@@ -790,6 +847,11 @@
         "type": "combo",
         "label": "Location"
     },
+    "luminous": {
+        "key": "luminous",
+        "type": "check",
+        "label": "Luminous (emitting light)"
+    },
     "man_made": {
         "key": "man_made",
         "type": "typeCombo",
@@ -802,6 +864,11 @@
         "universal": true,
         "label": "Mapillary image",
         "placeholder": "aMapillary_key-Example123"
+    },
+    "material": {
+        "key": "material",
+        "type": "combo",
+        "label": "Material"
     },
     "maxspeed": {
         "key": "maxspeed",
@@ -1159,6 +1226,12 @@
         "type": "check",
         "label": "Seasonal"
     },
+    "seats": {
+        "key": "seats",
+        "type": "number",
+        "label": "Amount of seats",
+        "placeholder": "1, 2, 3..."
+    },
     "service": {
         "key": "service",
         "type": "combo",
@@ -1366,6 +1439,11 @@
         "key": "supervised",
         "type": "check",
         "label": "Supervised"
+    },
+    "support": {
+        "key": "support",
+        "type": "combo",
+        "label": "Support"
     },
     "surface": {
         "key": "surface",

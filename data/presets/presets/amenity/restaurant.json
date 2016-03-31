@@ -3,7 +3,6 @@
     "fields": [
         "cuisine",
         "address",
-        "building_area",
         "opening_hours",
         "capacity",
         "takeaway",
@@ -11,8 +10,7 @@
         "smoking"
     ],
     "geometry": [
-        "point",
-        "area"
+        "point"
     ],
     "terms": [
         "bar",

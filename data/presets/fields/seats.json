@@ -1,0 +1,6 @@
+{
+    "key": "seats",
+    "type": "number",
+    "label": "Amount of seats",
+    "placeholder": "1, 2, 3..."
+}

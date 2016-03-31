@@ -3,11 +3,10 @@
     "name": "Path Features",
     "icon": "category-path",
     "members": [
-        "highway/pedestrian",
         "highway/footway",
+        "highway/steps",
+        "highway/conveying_steps",
         "highway/cycleway",
-        "highway/bridleway",
-        "highway/path",
-        "highway/steps"
+        "highway/pedestrian"
     ]
 }

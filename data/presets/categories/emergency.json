@@ -1,0 +1,13 @@
+{
+    "geometry": "point",
+    "name": "Emergency Features",
+    "icon": "fire-station",
+    "members": [
+        "emergency/fire_extinguisher",
+        "emergency/defibrillator",
+        "emergency/fire_hose",
+        "emergency/fire_hydrant",
+        "emergency/phone",
+        "emergency/access_point"
+    ]
+}

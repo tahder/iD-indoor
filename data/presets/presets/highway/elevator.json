@@ -1,0 +1,19 @@
+{
+    "fields": [
+        "access",
+        "capacity",
+        "wheelchair",
+        "operator",
+        "level"
+    ],
+    "geometry": [
+        "area", "vertex"
+    ],
+    "terms": [
+        "elevator", "lift"
+    ],
+    "tags": {
+        "highway": "elevator"
+    },
+    "name": "Elevator"
+}

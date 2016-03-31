@@ -1,0 +1,11 @@
+{
+	"icon": "shop",
+    "geometry": [
+        "line",
+        "area"
+    ],
+    "tags": {
+        "barrier": "shelf"
+    },
+    "name": "Shelf"
+}

@@ -1,0 +1,11 @@
+{
+    "key": "conveying",
+    "type": "radio",
+    "options": [
+        "yes",
+        "forward",
+        "backward",
+        "reversible"
+    ],
+    "label": "Conveying direction"
+}

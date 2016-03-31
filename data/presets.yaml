@@ -3,14 +3,20 @@ en:
     categories:
       category-building:
         name: Building Features
+      category-emergency:
+        name: Emergency Features
       category-golf:
         name: Golf Features
-      category-indoor:
-        name: Indoor Features
       category-landuse:
         name: Land Use Features
+      category-office:
+        name: Office Features
       category-path:
         name: Path Features
+      category-public-transport_features_point:
+        name: Public transport features
+      category-public-transport_features_vertex:
+        name: Public transport features
       category-rail:
         name: Rail Features
       category-restriction:
@@ -19,6 +25,18 @@ en:
         name: Road Features
       category-route:
         name: Route Features
+      category-shop:
+        name: Shop Features
+      category-shop_area:
+        name: Shops
+      category-shop_features_area:
+        name: Shop features
+      category-shop_features_line:
+        name: Shop features
+      category-shop_features_point:
+        name: Shop features
+      category-shop_features_vertex:
+        name: Shop features
       category-water-area:
         name: Water Features
       category-water-line:
@@ -100,6 +118,9 @@ en:
       admin_level:
         # 'admin_level=*'
         label: Admin Level
+      advertising:
+        # 'advertising=*'
+        label: Type
       aerialway:
         # 'aerialway=*'
         label: Type
@@ -150,9 +171,15 @@ en:
       amenity:
         # 'amenity=*'
         label: Type
+      animated:
+        # 'animated=*'
+        label: Animated
       area/highway:
         # 'area:highway=*'
         label: Type
+      armrest:
+        # 'armrest=*'
+        label: Armrest
       artist:
         # 'artist_name=*'
         label: Artist
@@ -247,6 +274,9 @@ en:
       content:
         # 'content=*'
         label: Contents
+      conveying:
+        # 'conveying=*'
+        label: Conveying direction
       country:
         # 'country=*'
         label: Country
@@ -317,6 +347,15 @@ en:
       diaper:
         # 'diaper=*'
         label: Diaper Changing Available
+      dispense:
+        # 'dispense=*'
+        label: Type of Goods
+      display:
+        # 'display=*'
+        label: Display type
+      display_type:
+        # 'display_type=*'
+        label: Display type
       dock:
         # 'dock=*'
         label: Type
@@ -352,6 +391,11 @@ en:
       except:
         # 'except=*'
         label: Exceptions
+      faces:
+        # 'faces=*'
+        label: Amount of front faces
+        # faces field placeholder
+        placeholder: '1, 2, 3...'
       fax:
         # 'fax=*'
         label: Fax
@@ -479,6 +523,9 @@ en:
       information:
         # 'information=*'
         label: Type
+      information_type:
+        # 'information:type=*'
+        label: Information context
       internet_access:
         # 'internet_access=*'
         label: Internet Access
@@ -575,6 +622,9 @@ en:
       location:
         # 'location=*'
         label: Location
+      luminous:
+        # 'luminous=*'
+        label: Luminous (emitting light)
       man_made:
         # 'man_made=*'
         label: Type
@@ -583,6 +633,9 @@ en:
         label: Mapillary image
         # mapillary field placeholder
         placeholder: aMapillary_key-Example123
+      material:
+        # 'material=*'
+        label: Material
       maxspeed:
         # 'maxspeed=*'
         label: Speed Limit
@@ -865,6 +918,11 @@ en:
       seasonal:
         # 'seasonal=*'
         label: Seasonal
+      seats:
+        # 'seats=*'
+        label: Amount of seats
+        # seats field placeholder
+        placeholder: '1, 2, 3...'
       service:
         # 'service=*'
         label: Type
@@ -997,6 +1055,9 @@ en:
       supervised:
         # 'supervised=*'
         label: Supervised
+      support:
+        # 'support=*'
+        label: Support
       surface:
         # 'surface=*'
         label: Surface
@@ -1110,6 +1171,10 @@ en:
         # 'addr:housenumber=*'
         name: Address
         terms: "<translate with synonyms or related terms for 'Address', separated by commas>"
+      advertising:
+        # 'advertising=*'
+        name: Advertising
+        terms: "<translate with synonyms or related terms for 'Advertising', separated by commas>"
       aerialway:
         # 'aerialway=*'
         name: Aerialway
@@ -1213,8 +1278,18 @@ en:
         name: Bank
         # 'terms: credit union,check,deposit,fund,investment,repository,reserve,safe,savings,stock,treasury,trust,vault'
         terms: "<translate with synonyms or related terms for 'Bank', separated by commas>"
+      amenity/bank_area:
+        # 'amenity=bank, indoor=room, room=office'
+        name: Bank
+        # 'terms: credit union,check,deposit,fund,investment,repository,reserve,safe,savings,stock,treasury,trust,vault'
+        terms: "<translate with synonyms or related terms for 'Bank', separated by commas>"
       amenity/bar:
         # amenity=bar
+        name: Bar
+        # 'terms: dive,beer,bier,booze'
+        terms: "<translate with synonyms or related terms for 'Bar', separated by commas>"
+      amenity/bar_area:
+        # 'amenity=bar, indoor=room'
         name: Bar
         # 'terms: dive,beer,bier,booze'
         terms: "<translate with synonyms or related terms for 'Bar', separated by commas>"
@@ -1248,12 +1323,22 @@ en:
         name: Beer Garden
         # 'terms: beer,bier,booze'
         terms: "<translate with synonyms or related terms for 'Beer Garden', separated by commas>"
+      amenity/biergarten_area:
+        # 'amenity=biergarten, indoor=room'
+        name: Beer Garden
+        # 'terms: beer,bier,booze'
+        terms: "<translate with synonyms or related terms for 'Beer Garden', separated by commas>"
       amenity/boat_rental:
         # amenity=boat_rental
         name: Boat Rental
         terms: "<translate with synonyms or related terms for 'Boat Rental', separated by commas>"
       amenity/bureau_de_change:
         # amenity=bureau_de_change
+        name: Currency Exchange
+        # 'terms: bureau de change,money changer'
+        terms: "<translate with synonyms or related terms for 'Currency Exchange', separated by commas>"
+      amenity/bureau_de_change_area:
+        # 'amenity=bureau_de_change, indoor=room, room=office'
         name: Currency Exchange
         # 'terms: bureau de change,money changer'
         terms: "<translate with synonyms or related terms for 'Currency Exchange', separated by commas>"
@@ -1266,8 +1351,17 @@ en:
         name: Cafe
         # 'terms: bistro,coffee,tea'
         terms: "<translate with synonyms or related terms for 'Cafe', separated by commas>"
+      amenity/cafe_area:
+        # 'amenity=cafe, indoor=room, room=cafe'
+        name: Cafe
+        # 'terms: bistro,coffee,tea'
+        terms: "<translate with synonyms or related terms for 'Cafe', separated by commas>"
       amenity/car_rental:
         # amenity=car_rental
+        name: Car Rental
+        terms: "<translate with synonyms or related terms for 'Car Rental', separated by commas>"
+      amenity/car_rental_area:
+        # 'amenity=car_rental, indoor=room, room=shop'
         name: Car Rental
         terms: "<translate with synonyms or related terms for 'Car Rental', separated by commas>"
       amenity/car_sharing:
@@ -1295,6 +1389,11 @@ en:
         terms: "<translate with synonyms or related terms for 'Nursery/Childcare', separated by commas>"
       amenity/cinema:
         # amenity=cinema
+        name: Cinema
+        # 'terms: drive-in,film,flick,movie,theater,picture,show,screen'
+        terms: "<translate with synonyms or related terms for 'Cinema', separated by commas>"
+      amenity/cinema_area:
+        # 'amenity=cinema, indoor=room'
         name: Cinema
         # 'terms: drive-in,film,flick,movie,theater,picture,show,screen'
         terms: "<translate with synonyms or related terms for 'Cinema', separated by commas>"
@@ -1354,6 +1453,11 @@ en:
         name: Fast Food
         # 'terms: restaurant'
         terms: "<translate with synonyms or related terms for 'Fast Food', separated by commas>"
+      amenity/fast_food_area:
+        # 'amenity=fast_food, indoor=room, room=restaurant'
+        name: Fast Food
+        # 'terms: restaurant'
+        terms: "<translate with synonyms or related terms for 'Fast Food', separated by commas>"
       amenity/ferry_terminal:
         # amenity=ferry_terminal
         name: Ferry Terminal
@@ -1399,6 +1503,11 @@ en:
         name: Library
         # 'terms: book'
         terms: "<translate with synonyms or related terms for 'Library', separated by commas>"
+      amenity/library_area:
+        # 'amenity=library, indoor=room, room=library'
+        name: Library
+        # 'terms: book'
+        terms: "<translate with synonyms or related terms for 'Library', separated by commas>"
       amenity/marketplace:
         # amenity=marketplace
         name: Marketplace
@@ -1426,6 +1535,11 @@ en:
         terms: "<translate with synonyms or related terms for 'Parking Space', separated by commas>"
       amenity/pharmacy:
         # amenity=pharmacy
+        name: Pharmacy
+        # 'terms: drug,medicine'
+        terms: "<translate with synonyms or related terms for 'Pharmacy', separated by commas>"
+      amenity/pharmacy_area:
+        # 'amenity=pharmacy, indoor=room, room=shop'
         name: Pharmacy
         # 'terms: drug,medicine'
         terms: "<translate with synonyms or related terms for 'Pharmacy', separated by commas>"
@@ -1469,8 +1583,18 @@ en:
         name: Post Office
         # 'terms: letter,mail'
         terms: "<translate with synonyms or related terms for 'Post Office', separated by commas>"
+      amenity/post_office_area:
+        # 'amenity=post_office, indoor=room, room=office'
+        name: Post Office
+        # 'terms: letter,mail'
+        terms: "<translate with synonyms or related terms for 'Post Office', separated by commas>"
       amenity/pub:
         # amenity=pub
+        name: Pub
+        # 'terms: dive,beer,bier,booze'
+        terms: "<translate with synonyms or related terms for 'Pub', separated by commas>"
+      amenity/pub_area:
+        # 'amenity=pub, indoor=room'
         name: Pub
         # 'terms: dive,beer,bier,booze'
         terms: "<translate with synonyms or related terms for 'Pub', separated by commas>"
@@ -1498,6 +1622,11 @@ en:
         name: Restaurant
         # 'terms: bar,breakfast,cafe,café,canteen,coffee,dine,dining,dinner,drive-in,eat,grill,lunch,table'
         terms: "<translate with synonyms or related terms for 'Restaurant', separated by commas>"
+      amenity/restaurant_area:
+        # 'amenity=restaurant, indoor=room, room=restaurant'
+        name: Restaurant
+        # 'terms: bar,breakfast,cafe,café,canteen,coffee,dine,dining,dinner,drive-in,eat,grill,lunch,table'
+        terms: "<translate with synonyms or related terms for 'Restaurant', separated by commas>"
       amenity/sanitary_dump_station:
         # amenity=sanitary_dump_station
         name: RV Toilet Disposal
@@ -1513,6 +1642,11 @@ en:
         name: Shelter
         # 'terms: lean-to,gazebo,picnic'
         terms: "<translate with synonyms or related terms for 'Shelter', separated by commas>"
+      amenity/showcase:
+        # amenity=showcase
+        name: Showcase
+        # 'terms: newspaper*'
+        terms: "<translate with synonyms or related terms for 'Showcase', separated by commas>"
       amenity/social_facility:
         # amenity=social_facility
         name: Social Facility
@@ -1555,8 +1689,18 @@ en:
         name: Theater
         # 'terms: theatre,performance,play,musical'
         terms: "<translate with synonyms or related terms for 'Theater', separated by commas>"
+      amenity/ticket_validator:
+        # amenity=ticket_validator
+        name: Ticket validator
+        # 'terms: ticket,validator,stamping,machine'
+        terms: "<translate with synonyms or related terms for 'Ticket validator', separated by commas>"
       amenity/toilets:
         # amenity=toilets
+        name: Toilets
+        # 'terms: bathroom,restroom,outhouse,privy,head,lavatory,latrine,water closet,WC,W.C.'
+        terms: "<translate with synonyms or related terms for 'Toilets', separated by commas>"
+      amenity/toilets_area:
+        # 'amenity=toilets, indoor=room, room=toilets'
         name: Toilets
         # 'terms: bathroom,restroom,outhouse,privy,head,lavatory,latrine,water closet,WC,W.C.'
         terms: "<translate with synonyms or related terms for 'Toilets', separated by commas>"
@@ -1570,6 +1714,10 @@ en:
         name: University Grounds
         # 'terms: college'
         terms: "<translate with synonyms or related terms for 'University Grounds', separated by commas>"
+      amenity/vending_machine:
+        # amenity=vending_machine
+        name: Vending Machine
+        terms: "<translate with synonyms or related terms for 'Vending Machine', separated by commas>"
       amenity/vending_machine/cigarettes:
         # 'amenity=vending_machine, vending=cigarettes'
         name: Cigarette Vending Machine
@@ -1615,10 +1763,6 @@ en:
         name: Snack Vending Machine
         # 'terms: candy,gum,chip,pretzel,cookie,cracker'
         terms: "<translate with synonyms or related terms for 'Snack Vending Machine', separated by commas>"
-      amenity/vending_machine/vending_machine:
-        # amenity=vending_machine
-        name: Vending Machine
-        terms: "<translate with synonyms or related terms for 'Vending Machine', separated by commas>"
       amenity/veterinary:
         # amenity=veterinary
         name: Veterinary
@@ -1662,6 +1806,10 @@ en:
         # barrier=cattle_grid
         name: Cattle Grid
         terms: "<translate with synonyms or related terms for 'Cattle Grid', separated by commas>"
+      barrier/checkout:
+        # barrier=checkout
+        name: Checkout
+        terms: "<translate with synonyms or related terms for 'Checkout', separated by commas>"
       barrier/city_wall:
         # barrier=city_wall
         name: City Wall
@@ -1702,6 +1850,14 @@ en:
         # barrier=retaining_wall
         name: Retaining Wall
         terms: "<translate with synonyms or related terms for 'Retaining Wall', separated by commas>"
+      barrier/self_checkout:
+        # barrier=self_checkout
+        name: Self checkout
+        terms: "<translate with synonyms or related terms for 'Self checkout', separated by commas>"
+      barrier/shelf:
+        # barrier=shelf
+        name: Shelf
+        terms: "<translate with synonyms or related terms for 'Shelf', separated by commas>"
       barrier/stile:
         # barrier=stile
         name: Stile
@@ -1872,8 +2028,8 @@ en:
         terms: "<translate with synonyms or related terms for 'Warehouse', separated by commas>"
       buildingpart:
         # 'buildingpart=*'
-        name: Indoor (buildingpart)
-        terms: "<translate with synonyms or related terms for 'Indoor (buildingpart)', separated by commas>"
+        name: Indoor
+        terms: "<translate with synonyms or related terms for 'Indoor', separated by commas>"
       craft:
         # 'craft=*'
         name: Craft
@@ -2079,6 +2235,10 @@ en:
         # craft=winery
         name: Winery
         terms: "<translate with synonyms or related terms for 'Winery', separated by commas>"
+      department/store_section:
+        # department=store_section
+        name: Store section
+        terms: "<translate with synonyms or related terms for 'Store section', separated by commas>"
       door:
         # 'door=*'
         name: Door
@@ -2184,6 +2344,11 @@ en:
         # highway=bus_stop
         name: Bus Stop
         terms: "<translate with synonyms or related terms for 'Bus Stop', separated by commas>"
+      highway/conveying_steps:
+        # 'highway=steps, conveying=*'
+        name: Conveying steps
+        # 'terms: conveying,stairs,steps'
+        terms: "<translate with synonyms or related terms for 'Conveying steps', separated by commas>"
       highway/corridor:
         # highway=corridor
         name: Indoor Corridor
@@ -2203,6 +2368,11 @@ en:
         name: Cycle Path
         # 'terms: bike'
         terms: "<translate with synonyms or related terms for 'Cycle Path', separated by commas>"
+      highway/elevator:
+        # highway=elevator
+        name: Elevator
+        # 'terms: elevator,lift'
+        terms: "<translate with synonyms or related terms for 'Elevator', separated by commas>"
       highway/footway:
         # highway=footway
         name: Foot Path
@@ -2411,6 +2581,15 @@ en:
         # indoor=wall
         name: Wall
         terms: "<translate with synonyms or related terms for 'Wall', separated by commas>"
+      information:
+        # 'information=*'
+        name: Information
+        terms: "<translate with synonyms or related terms for 'Information', separated by commas>"
+      information/price_checker:
+        # information=price_checker
+        name: Price checker
+        # 'terms: Price'
+        terms: "<translate with synonyms or related terms for 'Price checker', separated by commas>"
       junction:
         # junction=yes
         name: Junction
@@ -3659,6 +3838,495 @@ en:
         terms: "<translate with synonyms or related terms for 'Window Blind Store', separated by commas>"
       shop/wine:
         # shop=wine
+        name: Wine Shop
+        terms: "<translate with synonyms or related terms for 'Wine Shop', separated by commas>"
+      shop_area:
+        # 'shop=*, indoor=room, room=shop'
+        name: Shop
+        terms: "<translate with synonyms or related terms for 'Shop', separated by commas>"
+      shop_area/alcohol:
+        # 'indoor=room, room=shop, shop=alcohol'
+        name: Liquor Store
+        # 'terms: alcohol,beer,booze,wine'
+        terms: "<translate with synonyms or related terms for 'Liquor Store', separated by commas>"
+      shop_area/anime:
+        # 'indoor=room, room=shop, shop=anime'
+        name: Anime Shop
+        terms: "<translate with synonyms or related terms for 'Anime Shop', separated by commas>"
+      shop_area/antiques:
+        # 'indoor=room, room=shop, shop=antiques'
+        name: Antiques Shop
+        terms: "<translate with synonyms or related terms for 'Antiques Shop', separated by commas>"
+      shop_area/art:
+        # 'indoor=room, room=shop, shop=art'
+        name: Art Store
+        # 'terms: art*,exhibit*,gallery'
+        terms: "<translate with synonyms or related terms for 'Art Store', separated by commas>"
+      shop_area/baby_goods:
+        # 'indoor=room, room=shop, shop=baby_goods'
+        name: Baby Goods Store
+        terms: "<translate with synonyms or related terms for 'Baby Goods Store', separated by commas>"
+      shop_area/bag:
+        # 'indoor=room, room=shop, shop=bag'
+        name: Bag/Luggage Store
+        # 'terms: handbag,purse'
+        terms: "<translate with synonyms or related terms for 'Bag/Luggage Store', separated by commas>"
+      shop_area/bakery:
+        # 'indoor=room, room=shop, shop=bakery'
+        name: Bakery
+        terms: "<translate with synonyms or related terms for 'Bakery', separated by commas>"
+      shop_area/bathroom_furnishing:
+        # 'indoor=room, room=shop, shop=bathroom_furnishing'
+        name: Bathroom Furnishing Store
+        terms: "<translate with synonyms or related terms for 'Bathroom Furnishing Store', separated by commas>"
+      shop_area/beauty:
+        # 'indoor=room, room=shop, shop=beauty'
+        name: Beauty Shop
+        # 'terms: nail spa,spa,salon,tanning'
+        terms: "<translate with synonyms or related terms for 'Beauty Shop', separated by commas>"
+      shop_area/bed:
+        # 'indoor=room, room=shop, shop=bed'
+        name: Bedding/Mattress Store
+        terms: "<translate with synonyms or related terms for 'Bedding/Mattress Store', separated by commas>"
+      shop_area/beverages:
+        # 'indoor=room, room=shop, shop=beverages'
+        name: Beverage Store
+        terms: "<translate with synonyms or related terms for 'Beverage Store', separated by commas>"
+      shop_area/bicycle:
+        # 'indoor=room, room=shop, shop=bicycle'
+        name: Bicycle Shop
+        # 'terms: bike,repair'
+        terms: "<translate with synonyms or related terms for 'Bicycle Shop', separated by commas>"
+      shop_area/bookmaker:
+        # 'indoor=room, room=shop, shop=bookmaker'
+        name: Bookmaker
+        terms: "<translate with synonyms or related terms for 'Bookmaker', separated by commas>"
+      shop_area/books:
+        # 'indoor=room, room=shop, shop=books'
+        name: Book Store
+        terms: "<translate with synonyms or related terms for 'Book Store', separated by commas>"
+      shop_area/boutique:
+        # 'indoor=room, room=shop, shop=boutique'
+        name: Boutique
+        terms: "<translate with synonyms or related terms for 'Boutique', separated by commas>"
+      shop_area/butcher:
+        # 'indoor=room, room=shop, shop=butcher'
+        name: Butcher
+        # 'terms: meat'
+        terms: "<translate with synonyms or related terms for 'Butcher', separated by commas>"
+      shop_area/candles:
+        # 'indoor=room, room=shop, shop=candles'
+        name: Candle Shop
+        terms: "<translate with synonyms or related terms for 'Candle Shop', separated by commas>"
+      shop_area/car:
+        # 'indoor=room, room=shop, shop=car'
+        name: Car Dealership
+        # 'terms: auto'
+        terms: "<translate with synonyms or related terms for 'Car Dealership', separated by commas>"
+      shop_area/car_parts:
+        # 'indoor=room, room=shop, shop=car_parts'
+        name: Car Parts Store
+        # 'terms: auto'
+        terms: "<translate with synonyms or related terms for 'Car Parts Store', separated by commas>"
+      shop_area/car_repair:
+        # 'indoor=room, room=shop, shop=car_repair'
+        name: Car Repair Shop
+        # 'terms: auto'
+        terms: "<translate with synonyms or related terms for 'Car Repair Shop', separated by commas>"
+      shop_area/carpet:
+        # 'indoor=room, room=shop, shop=carpet'
+        name: Carpet Store
+        # 'terms: rug'
+        terms: "<translate with synonyms or related terms for 'Carpet Store', separated by commas>"
+      shop_area/cheese:
+        # 'indoor=room, room=shop, shop=cheese'
+        name: Cheese Store
+        terms: "<translate with synonyms or related terms for 'Cheese Store', separated by commas>"
+      shop_area/chemist:
+        # 'indoor=room, room=shop, shop=chemist'
+        name: Chemist
+        terms: "<translate with synonyms or related terms for 'Chemist', separated by commas>"
+      shop_area/chocolate:
+        # 'indoor=room, room=shop, shop=chocolate'
+        name: Chocolate Store
+        terms: "<translate with synonyms or related terms for 'Chocolate Store', separated by commas>"
+      shop_area/clothes:
+        # 'indoor=room, room=shop, shop=clothes'
+        name: Clothing Store
+        terms: "<translate with synonyms or related terms for 'Clothing Store', separated by commas>"
+      shop_area/coffee:
+        # 'indoor=room, room=shop, shop=coffee'
+        name: Coffee Store
+        terms: "<translate with synonyms or related terms for 'Coffee Store', separated by commas>"
+      shop_area/computer:
+        # 'indoor=room, room=shop, shop=computer'
+        name: Computer Store
+        terms: "<translate with synonyms or related terms for 'Computer Store', separated by commas>"
+      shop_area/confectionery:
+        # 'indoor=room, room=shop, shop=confectionery'
+        name: Candy Store
+        terms: "<translate with synonyms or related terms for 'Candy Store', separated by commas>"
+      shop_area/convenience:
+        # 'indoor=room, room=shop, shop=convenience'
+        name: Convenience Store
+        terms: "<translate with synonyms or related terms for 'Convenience Store', separated by commas>"
+      shop_area/copyshop:
+        # 'indoor=room, room=shop, shop=copyshop'
+        name: Copy Store
+        terms: "<translate with synonyms or related terms for 'Copy Store', separated by commas>"
+      shop_area/cosmetics:
+        # 'indoor=room, room=shop, shop=cosmetics'
+        name: Cosmetics Store
+        terms: "<translate with synonyms or related terms for 'Cosmetics Store', separated by commas>"
+      shop_area/craft:
+        # 'indoor=room, room=shop, shop=craft'
+        name: Arts and Crafts Store
+        # 'terms: art*,paint*,frame'
+        terms: "<translate with synonyms or related terms for 'Arts and Crafts Store', separated by commas>"
+      shop_area/curtain:
+        # 'indoor=room, room=shop, shop=curtain'
+        name: Curtain Store
+        # 'terms: drape*,window'
+        terms: "<translate with synonyms or related terms for 'Curtain Store', separated by commas>"
+      shop_area/dairy:
+        # 'indoor=room, room=shop, shop=dairy'
+        name: Dairy Store
+        # 'terms: milk,egg,cheese'
+        terms: "<translate with synonyms or related terms for 'Dairy Store', separated by commas>"
+      shop_area/deli:
+        # 'indoor=room, room=shop, shop=deli'
+        name: Deli
+        # 'terms: lunch,meat,sandwich'
+        terms: "<translate with synonyms or related terms for 'Deli', separated by commas>"
+      shop_area/department_store:
+        # 'indoor=room, room=shop, shop=department_store'
+        name: Department Store
+        terms: "<translate with synonyms or related terms for 'Department Store', separated by commas>"
+      shop_area/doityourself:
+        # 'indoor=room, room=shop, shop=doityourself'
+        name: DIY Store
+        terms: "<translate with synonyms or related terms for 'DIY Store', separated by commas>"
+      shop_area/dry_cleaning:
+        # 'indoor=room, room=shop, shop=dry_cleaning'
+        name: Dry Cleaner
+        terms: "<translate with synonyms or related terms for 'Dry Cleaner', separated by commas>"
+      shop_area/electronics:
+        # 'indoor=room, room=shop, shop=electronics'
+        name: Electronics Store
+        # 'terms: appliance,audio,computer,tv'
+        terms: "<translate with synonyms or related terms for 'Electronics Store', separated by commas>"
+      shop_area/erotic:
+        # 'indoor=room, room=shop, shop=erotic'
+        name: Erotic Store
+        # 'terms: sex,porn'
+        terms: "<translate with synonyms or related terms for 'Erotic Store', separated by commas>"
+      shop_area/fabric:
+        # 'indoor=room, room=shop, shop=fabric'
+        name: Fabric Store
+        # 'terms: sew'
+        terms: "<translate with synonyms or related terms for 'Fabric Store', separated by commas>"
+      shop_area/farm:
+        # 'indoor=room, room=shop, shop=farm'
+        name: Produce Stand
+        # 'terms: farm shop,farm stand'
+        terms: "<translate with synonyms or related terms for 'Produce Stand', separated by commas>"
+      shop_area/fashion:
+        # 'indoor=room, room=shop, shop=fashion'
+        name: Fashion Store
+        terms: "<translate with synonyms or related terms for 'Fashion Store', separated by commas>"
+      shop_area/fishmonger:
+        # 'indoor=room, room=shop, shop=fishmonger'
+        name: Fishmonger
+        terms: "<translate with synonyms or related terms for 'Fishmonger', separated by commas>"
+      shop_area/florist:
+        # 'indoor=room, room=shop, shop=florist'
+        name: Florist
+        # 'terms: flower'
+        terms: "<translate with synonyms or related terms for 'Florist', separated by commas>"
+      shop_area/frame:
+        # 'indoor=room, room=shop, shop=frame'
+        name: Framing Shop
+        # 'terms: art*,paint*,photo*,frame'
+        terms: "<translate with synonyms or related terms for 'Framing Shop', separated by commas>"
+      shop_area/funeral_directors:
+        # 'indoor=room, room=shop, shop=funeral_directors'
+        name: Funeral Home
+        # 'terms: undertaker,memorial home'
+        terms: "<translate with synonyms or related terms for 'Funeral Home', separated by commas>"
+      shop_area/furnace:
+        # 'indoor=room, room=shop, shop=furnace'
+        name: Furnace Store
+        # 'terms: oven,stove'
+        terms: "<translate with synonyms or related terms for 'Furnace Store', separated by commas>"
+      shop_area/furniture:
+        # 'indoor=room, room=shop, shop=furniture'
+        name: Furniture Store
+        # 'terms: chair,sofa,table'
+        terms: "<translate with synonyms or related terms for 'Furniture Store', separated by commas>"
+      shop_area/garden_centre:
+        # 'indoor=room, room=shop, shop=garden_centre'
+        name: Garden Center
+        # 'terms: landscape,mulch,shrub,tree'
+        terms: "<translate with synonyms or related terms for 'Garden Center', separated by commas>"
+      shop_area/gift:
+        # 'indoor=room, room=shop, shop=gift'
+        name: Gift Shop
+        terms: "<translate with synonyms or related terms for 'Gift Shop', separated by commas>"
+      shop_area/greengrocer:
+        # 'indoor=room, room=shop, shop=greengrocer'
+        name: Greengrocer
+        # 'terms: fruit,vegetable'
+        terms: "<translate with synonyms or related terms for 'Greengrocer', separated by commas>"
+      shop_area/hairdresser:
+        # 'indoor=room, room=shop, shop=hairdresser'
+        name: Hairdresser
+        terms: "<translate with synonyms or related terms for 'Hairdresser', separated by commas>"
+      shop_area/hardware:
+        # 'indoor=room, room=shop, shop=hardware'
+        name: Hardware Store
+        terms: "<translate with synonyms or related terms for 'Hardware Store', separated by commas>"
+      shop_area/hearing_aids:
+        # 'indoor=room, room=shop, shop=hearing_aids'
+        name: Hearing Aids Store
+        terms: "<translate with synonyms or related terms for 'Hearing Aids Store', separated by commas>"
+      shop_area/herbalist:
+        # 'indoor=room, room=shop, shop=herbalist'
+        name: Herbalist
+        terms: "<translate with synonyms or related terms for 'Herbalist', separated by commas>"
+      shop_area/hifi:
+        # 'indoor=room, room=shop, shop=hifi'
+        name: Hifi Store
+        # 'terms: stereo,video'
+        terms: "<translate with synonyms or related terms for 'Hifi Store', separated by commas>"
+      shop_area/houseware:
+        # 'indoor=room, room=shop, shop=houseware'
+        name: Houseware Store
+        # 'terms: home,household'
+        terms: "<translate with synonyms or related terms for 'Houseware Store', separated by commas>"
+      shop_area/interior_decoration:
+        # 'indoor=room, room=shop, shop=interior_decoration'
+        name: Interior Decoration Store
+        terms: "<translate with synonyms or related terms for 'Interior Decoration Store', separated by commas>"
+      shop_area/jewelry:
+        # 'indoor=room, room=shop, shop=jewelry'
+        name: Jeweler
+        # 'terms: diamond,gem,ring'
+        terms: "<translate with synonyms or related terms for 'Jeweler', separated by commas>"
+      shop_area/kiosk:
+        # 'indoor=room, room=shop, shop=kiosk'
+        name: News Kiosk
+        terms: "<translate with synonyms or related terms for 'News Kiosk', separated by commas>"
+      shop_area/kitchen:
+        # 'indoor=room, room=shop, shop=kitchen'
+        name: Kitchen Design Store
+        terms: "<translate with synonyms or related terms for 'Kitchen Design Store', separated by commas>"
+      shop_area/laundry:
+        # 'indoor=room, room=shop, shop=laundry'
+        name: Laundry
+        terms: "<translate with synonyms or related terms for 'Laundry', separated by commas>"
+      shop_area/leather:
+        # 'indoor=room, room=shop, shop=leather'
+        name: Leather Store
+        terms: "<translate with synonyms or related terms for 'Leather Store', separated by commas>"
+      shop_area/locksmith:
+        # 'indoor=room, room=shop, shop=locksmith'
+        name: Locksmith
+        # 'terms: key,lockpick'
+        terms: "<translate with synonyms or related terms for 'Locksmith', separated by commas>"
+      shop_area/lottery:
+        # 'indoor=room, room=shop, shop=lottery'
+        name: Lottery Shop
+        terms: "<translate with synonyms or related terms for 'Lottery Shop', separated by commas>"
+      shop_area/mall:
+        # 'indoor=room, room=shop, shop=mall'
+        name: Mall
+        terms: "<translate with synonyms or related terms for 'Mall', separated by commas>"
+      shop_area/massage:
+        # 'indoor=room, room=shop, shop=massage'
+        name: Massage Shop
+        terms: "<translate with synonyms or related terms for 'Massage Shop', separated by commas>"
+      shop_area/medical_supply:
+        # 'indoor=room, room=shop, shop=medical_supply'
+        name: Medical Supply Store
+        terms: "<translate with synonyms or related terms for 'Medical Supply Store', separated by commas>"
+      shop_area/mobile_phone:
+        # 'indoor=room, room=shop, shop=mobile_phone'
+        name: Mobile Phone Store
+        terms: "<translate with synonyms or related terms for 'Mobile Phone Store', separated by commas>"
+      shop_area/money_lender:
+        # 'indoor=room, room=shop, shop=money_lender'
+        name: Money Lender
+        terms: "<translate with synonyms or related terms for 'Money Lender', separated by commas>"
+      shop_area/motorcycle:
+        # 'indoor=room, room=shop, shop=motorcycle'
+        name: Motorcycle Dealership
+        terms: "<translate with synonyms or related terms for 'Motorcycle Dealership', separated by commas>"
+      shop_area/music:
+        # 'indoor=room, room=shop, shop=music'
+        name: Music Store
+        # 'terms: CD,vinyl'
+        terms: "<translate with synonyms or related terms for 'Music Store', separated by commas>"
+      shop_area/musical_instrument:
+        # 'indoor=room, room=shop, shop=musical_instrument'
+        name: Musical Instrument Store
+        terms: "<translate with synonyms or related terms for 'Musical Instrument Store', separated by commas>"
+      shop_area/newsagent:
+        # 'indoor=room, room=shop, shop=newsagent'
+        name: Newspaper/Magazine Shop
+        terms: "<translate with synonyms or related terms for 'Newspaper/Magazine Shop', separated by commas>"
+      shop_area/nutrition_supplements:
+        # 'indoor=room, room=shop, shop=nutrition_supplements'
+        name: Nutrition Supplements Store
+        terms: "<translate with synonyms or related terms for 'Nutrition Supplements Store', separated by commas>"
+      shop_area/optician:
+        # 'indoor=room, room=shop, shop=optician'
+        name: Optician
+        # 'terms: eye,glasses'
+        terms: "<translate with synonyms or related terms for 'Optician', separated by commas>"
+      shop_area/organic:
+        # 'indoor=room, room=shop, shop=supermarket, organic=only'
+        name: Organic Goods Store
+        terms: "<translate with synonyms or related terms for 'Organic Goods Store', separated by commas>"
+      shop_area/outdoor:
+        # 'indoor=room, room=shop, shop=outdoor'
+        name: Outdoors Store
+        # 'terms: camping,climbing,hiking'
+        terms: "<translate with synonyms or related terms for 'Outdoors Store', separated by commas>"
+      shop_area/paint:
+        # 'indoor=room, room=shop, shop=paint'
+        name: Paint Store
+        terms: "<translate with synonyms or related terms for 'Paint Store', separated by commas>"
+      shop_area/pawnbroker:
+        # 'indoor=room, room=shop, shop=pawnbroker'
+        name: Pawn Shop
+        terms: "<translate with synonyms or related terms for 'Pawn Shop', separated by commas>"
+      shop_area/pet:
+        # 'indoor=room, room=shop, shop=pet'
+        name: Pet Store
+        # 'terms: cat,dog,fish'
+        terms: "<translate with synonyms or related terms for 'Pet Store', separated by commas>"
+      shop_area/photo:
+        # 'indoor=room, room=shop, shop=photo'
+        name: Photography Store
+        # 'terms: camera,film'
+        terms: "<translate with synonyms or related terms for 'Photography Store', separated by commas>"
+      shop_area/pyrotechnics:
+        # 'indoor=room, room=shop, shop=pyrotechnics'
+        name: Fireworks Store
+        terms: "<translate with synonyms or related terms for 'Fireworks Store', separated by commas>"
+      shop_area/radiotechnics:
+        # 'indoor=room, room=shop, shop=radiotechnics'
+        name: Radio/Electronic Component Store
+        terms: "<translate with synonyms or related terms for 'Radio/Electronic Component Store', separated by commas>"
+      shop_area/religion:
+        # 'indoor=room, room=shop, shop=religion'
+        name: Religious Store
+        terms: "<translate with synonyms or related terms for 'Religious Store', separated by commas>"
+      shop_area/scuba_diving:
+        # 'indoor=room, room=shop, shop=scuba_diving'
+        name: Scuba Diving Shop
+        terms: "<translate with synonyms or related terms for 'Scuba Diving Shop', separated by commas>"
+      shop_area/seafood:
+        # 'indoor=room, room=shop, shop=seafood'
+        name: Seafood Shop
+        # 'terms: fishmonger'
+        terms: "<translate with synonyms or related terms for 'Seafood Shop', separated by commas>"
+      shop_area/second_hand:
+        # 'indoor=room, room=shop, shop=second_hand'
+        name: Consignment/Thrift Store
+        # 'terms: secondhand,second hand,resale,thrift,used'
+        terms: "<translate with synonyms or related terms for 'Consignment/Thrift Store', separated by commas>"
+      shop_area/shoes:
+        # 'indoor=room, room=shop, shop=shoes'
+        name: Shoe Store
+        terms: "<translate with synonyms or related terms for 'Shoe Store', separated by commas>"
+      shop_area/sports:
+        # 'indoor=room, room=shop, shop=sports'
+        name: Sporting Goods Store
+        terms: "<translate with synonyms or related terms for 'Sporting Goods Store', separated by commas>"
+      shop_area/stationery:
+        # 'indoor=room, room=shop, shop=stationery'
+        name: Stationery Store
+        # 'terms: card,paper'
+        terms: "<translate with synonyms or related terms for 'Stationery Store', separated by commas>"
+      shop_area/storage_rental:
+        # 'indoor=room, room=shop, shop=storage_rental'
+        name: Storage Rental
+        terms: "<translate with synonyms or related terms for 'Storage Rental', separated by commas>"
+      shop_area/supermarket:
+        # 'indoor=room, room=shop, shop=supermarket'
+        name: Supermarket
+        # 'terms: grocery,store,shop'
+        terms: "<translate with synonyms or related terms for 'Supermarket', separated by commas>"
+      shop_area/tailor:
+        # 'indoor=room, room=shop, shop=tailor'
+        name: Tailor
+        # 'terms: clothes,suit'
+        terms: "<translate with synonyms or related terms for 'Tailor', separated by commas>"
+      shop_area/tattoo:
+        # 'indoor=room, room=shop, shop=tattoo'
+        name: Tattoo Parlor
+        terms: "<translate with synonyms or related terms for 'Tattoo Parlor', separated by commas>"
+      shop_area/tea:
+        # 'indoor=room, room=shop, shop=tea'
+        name: Tea Store
+        terms: "<translate with synonyms or related terms for 'Tea Store', separated by commas>"
+      shop_area/ticket:
+        # 'indoor=room, room=shop, shop=ticket'
+        name: Ticket Seller
+        terms: "<translate with synonyms or related terms for 'Ticket Seller', separated by commas>"
+      shop_area/tobacco:
+        # 'indoor=room, room=shop, shop=tobacco'
+        name: Tobacco Shop
+        terms: "<translate with synonyms or related terms for 'Tobacco Shop', separated by commas>"
+      shop_area/toys:
+        # 'indoor=room, room=shop, shop=toys'
+        name: Toy Store
+        terms: "<translate with synonyms or related terms for 'Toy Store', separated by commas>"
+      shop_area/travel_agency:
+        # 'indoor=room, room=shop, shop=travel_agency'
+        name: Travel Agency
+        terms: "<translate with synonyms or related terms for 'Travel Agency', separated by commas>"
+      shop_area/tyres:
+        # 'indoor=room, room=shop, shop=tyres'
+        name: Tire Store
+        terms: "<translate with synonyms or related terms for 'Tire Store', separated by commas>"
+      shop_area/vacant:
+        # 'indoor=room, room=shop, shop=vacant'
+        name: Vacant Shop
+        terms: "<translate with synonyms or related terms for 'Vacant Shop', separated by commas>"
+      shop_area/vacuum_cleaner:
+        # 'indoor=room, room=shop, shop=vacuum_cleaner'
+        name: Vacuum Cleaner Store
+        terms: "<translate with synonyms or related terms for 'Vacuum Cleaner Store', separated by commas>"
+      shop_area/variety_store:
+        # 'indoor=room, room=shop, shop=variety_store'
+        name: Variety Store
+        terms: "<translate with synonyms or related terms for 'Variety Store', separated by commas>"
+      shop_area/video:
+        # 'indoor=room, room=shop, shop=video'
+        name: Video Store
+        # 'terms: DVD'
+        terms: "<translate with synonyms or related terms for 'Video Store', separated by commas>"
+      shop_area/video_games:
+        # 'indoor=room, room=shop, shop=video_games'
+        name: Video Game Store
+        terms: "<translate with synonyms or related terms for 'Video Game Store', separated by commas>"
+      shop_area/water_sports:
+        # 'indoor=room, room=shop, shop=water_sports'
+        name: Watersport/Swim Shop
+        terms: "<translate with synonyms or related terms for 'Watersport/Swim Shop', separated by commas>"
+      shop_area/weapons:
+        # 'indoor=room, room=shop, shop=weapons'
+        name: Weapon Shop
+        # 'terms: ammo,gun,knife,knives'
+        terms: "<translate with synonyms or related terms for 'Weapon Shop', separated by commas>"
+      shop_area/window_blind:
+        # 'indoor=room, room=shop, shop=window_blind'
+        name: Window Blind Store
+        terms: "<translate with synonyms or related terms for 'Window Blind Store', separated by commas>"
+      shop_area/wine:
+        # 'indoor=room, room=shop, shop=wine'
         name: Wine Shop
         terms: "<translate with synonyms or related terms for 'Wine Shop', separated by commas>"
       tourism:
