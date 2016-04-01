@@ -1,4 +1,10 @@
-# Contributing to iD
+# Contributing to iD-indoor
+
+iD-indoor is a fork from original iD editor. If you want to contribute to the simple indoor editor, you can report issues in this repository.
+
+The following concerns the main iD editor, you can follow this for contributing to the core functionnalities of iD.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
 
 Thinking of contributing to iD? High five! Here are some basics for our habits
 so that you can write code that fits in perfectly.

@@ -1,6 +1,9 @@
 List of features to implement in the future.
 
 ## Soon
+### Presets
+* public_transport=waiting_area
+
 ### Styles
 * Vertical passages (stairs, elevators, conveying stairs)
 

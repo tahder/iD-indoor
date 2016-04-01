@@ -3,12 +3,14 @@ can support plugin development.
 
 ## URL parameters
 
-iD supports several URL parameters. When constructing a URL to a standalone instance
+iD-indoor supports several URL parameters. When constructing a URL to a standalone instance
 of iD (e.g. `http://openstreetmap.us/iD/release/`), the following parameters are available
 in the hash portion of the URL:
 
 * `map` - A slash separated zoom level, longitude, and latitude. Example:
   `map=20.00/-77.02271/38.90085`.
+* `level` - A decimal level value, indicating which floor must be shown when map loads.
+  Example: `level=3` or `level=-2.5`
 * `id` - The character 'n', 'w', or 'r', followed by the OSM ID of a node,
    way or relation, respectively. Selects the specified entity, and, unless
    a `map` parameter is also provided, centers the map on it.
