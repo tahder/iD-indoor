@@ -73,6 +73,7 @@ iD.behavior.Hash = function(context) {
             if (q.id) context.zoomToEntity(q.id.split(',')[0], !q.map);
             if (q.comment) context.storage('comment', q.comment);
 			if (q.level && context.storage('level') === null) context.storage('level', parseFloat(q.level));
+			if (q.id && context.storage('id-level') === null) context.storage('id-level', q.id.split(',')[0]);
             hashchange();
             if (q.map) hash.hadHash = true;
         }

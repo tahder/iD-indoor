@@ -247,6 +247,12 @@ window.iD = function () {
 			if(availableLevels.indexOf(storedLevel) >= 0) {
 				if(storedLevel != level) {
 					context.setLevel(storedLevel);
+					
+					//Restore selection if needed
+					if (context.storage('id-level') !== null) {
+						context.zoomToEntity(context.storage('id-level'), true);
+						context.storage('id-level', null);
+					}
 				}
 				context.storage('level', null);
 			}
