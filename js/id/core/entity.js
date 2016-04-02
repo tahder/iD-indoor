@@ -206,7 +206,7 @@ iD.Entity.prototype = {
     },
 
     isUsed: function(resolver) {
-        return _.without(Object.keys(this.tags), 'area').length > 0 ||
+        return _.without(Object.keys(this.tags), 'area', 'level').length > 0 ||
             resolver.parentRelations(this).length > 0;
     },
 

@@ -1904,6 +1904,10 @@
             "value": "stop_position"
         },
         {
+            "key": "public_transport",
+            "value": "waiting_area"
+        },
+        {
             "key": "railway"
         },
         {

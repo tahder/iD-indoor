@@ -1,0 +1,12 @@
+{
+    "fields": [
+        "operator"
+    ],
+    "geometry": [
+        "area"
+    ],
+    "tags": {
+        "public_transport": "waiting_area"
+    },
+    "name": "Waiting area"
+}

@@ -1,20 +1,13 @@
-List of features to implement in the future.
+List of features to implement in the future, ordered by priority.
 
-## Soon
-### Presets
-* public_transport=waiting_area
-
-### Styles
+## Styles
+* Icons for custom presets
 * Vertical passages (stairs, elevators, conveying stairs)
 
-## Later
-### Styles
-* Icons for custom presets
-
-### UI
-* Links to OpenLevelUp
+## UI
 * Add currently shown Mapillary image key to currently selected feature
+* Links to OpenLevelUp
 
-### Fields
-* Color selector
+## Fields
 * Mapillary field, checking validity and linking to image
+* Color selector

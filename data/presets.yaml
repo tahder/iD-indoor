@@ -13,6 +13,8 @@ en:
         name: Office Features
       category-path:
         name: Path Features
+      category-public-transport_features_area:
+        name: Public transport features
       category-public-transport_features_point:
         name: Public transport features
       category-public-transport_features_vertex:
@@ -3278,6 +3280,10 @@ en:
         # public_transport=stop_position
         name: Stop Position
         terms: "<translate with synonyms or related terms for 'Stop Position', separated by commas>"
+      public_transport/waiting_area:
+        # public_transport=waiting_area
+        name: Waiting area
+        terms: "<translate with synonyms or related terms for 'Waiting area', separated by commas>"
       railway:
         # 'railway=*'
         name: Railway

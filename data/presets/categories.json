@@ -83,6 +83,14 @@
             "highway/pedestrian"
         ]
     },
+    "category-public-transport_features_area": {
+        "geometry": "area",
+        "name": "Public transport features",
+        "icon": "rail",
+        "members": [
+            "public_transport/waiting_area"
+        ]
+    },
     "category-public-transport_features_point": {
         "geometry": "point",
         "name": "Public transport features",

@@ -5,6 +5,7 @@
         "highway/elevator",
         "category-shop_area",
         "category-shop_features_area",
+        "category-public-transport_features_area",
         "amenity/cafe_area",
         "amenity/restaurant_area",
         "area"

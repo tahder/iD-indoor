@@ -1,0 +1,8 @@
+{
+    "geometry": "area",
+    "name": "Public transport features",
+    "icon": "rail",
+    "members": [
+		"public_transport/waiting_area"
+    ]
+}

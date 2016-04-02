@@ -630,6 +630,9 @@
             "category-path": {
                 "name": "Path Features"
             },
+            "category-public-transport_features_area": {
+                "name": "Public transport features"
+            },
             "category-public-transport_features_point": {
                 "name": "Public transport features"
             },
@@ -3554,6 +3557,10 @@
             },
             "public_transport/stop_position": {
                 "name": "Stop Position",
+                "terms": ""
+            },
+            "public_transport/waiting_area": {
+                "name": "Waiting area",
                 "terms": ""
             },
             "railway": {

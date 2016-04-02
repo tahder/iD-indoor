@@ -8191,6 +8191,18 @@
         },
         "name": "Stop Position"
     },
+    "public_transport/waiting_area": {
+        "fields": [
+            "operator"
+        ],
+        "geometry": [
+            "area"
+        ],
+        "tags": {
+            "public_transport": "waiting_area"
+        },
+        "name": "Waiting area"
+    },
     "railway": {
         "fields": [
             "railway"
