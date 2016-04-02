@@ -515,7 +515,8 @@
         "title": "Traffic Sign Overlay (Mapillary)"
     },
     "mapillary": {
-        "view_on_mapillary": "View this image on Mapillary"
+        "view_on_mapillary": "View this image on Mapillary",
+        "define_for_selection": "Define as image for selected features"
     },
     "help": {
         "title": "Help",

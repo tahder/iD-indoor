@@ -34,7 +34,7 @@ iD.svg.MapillaryImages = function(projection, context, dispatch) {
                 .classed('selected', function(d) { return d.key === thumb.key; });
         }
 
-        mapillary.showThumbnail(image.key, position);
+        mapillary.showThumbnail(image.key, position, context);
     }
 
     function hideThumbnail() {
