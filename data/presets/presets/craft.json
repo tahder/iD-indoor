@@ -4,12 +4,10 @@
         "craft",
         "operator",
         "address",
-        "building_area",
         "opening_hours"
     ],
     "geometry": [
-        "point",
-        "area"
+        "point", "area"
     ],
     "tags": {
         "craft": "*"

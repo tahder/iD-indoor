@@ -1,0 +1,21 @@
+{
+    "icon": "slaughterhouse",
+    "fields": [
+        "operator",
+        "address",
+        "opening_hours"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "meat"
+    ],
+    "tags": {
+        "indoor": "room",
+        "room": "shop",
+        "shop": "butcher"
+    },
+    "name": "Butcher"
+}

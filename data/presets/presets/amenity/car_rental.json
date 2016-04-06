@@ -4,8 +4,7 @@
         "operator"
     ],
     "geometry": [
-        "point",
-        "area"
+        "point"
     ],
     "tags": {
         "amenity": "car_rental"

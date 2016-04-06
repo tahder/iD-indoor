@@ -1,0 +1,15 @@
+{
+    "geometry": "area",
+    "name": "Office Features",
+    "icon": "commercial",
+    "members": [
+        "office/administrative",
+        "office/company",
+        "office/estate_agent",
+        "office/government",
+        "office/insurance",
+        "office/lawyer",
+        "office/travel_agent",
+        "office"
+    ]
+}

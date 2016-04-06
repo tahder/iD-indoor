@@ -1,0 +1,16 @@
+{
+    "icon": "star",
+    "fields": [
+        "level"
+    ],
+    "geometry": [
+        "point",
+        "vertex"
+    ],
+    "tags": {
+        "information": "price_checker"
+    },
+    "matchScore": 0.4,
+    "terms": ["Price"],
+    "name": "Price checker"
+}

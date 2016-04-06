@@ -1,0 +1,21 @@
+{
+    "icon": "shop",
+    "fields": [
+        "operator",
+        "address",
+        "opening_hours"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "fishmonger"
+    ],
+    "tags": {
+        "indoor": "room",
+        "room": "shop",
+        "shop": "seafood"
+    },
+    "name": "Seafood Shop"
+}

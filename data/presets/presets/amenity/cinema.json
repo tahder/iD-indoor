@@ -2,12 +2,10 @@
     "icon": "cinema",
     "fields": [
         "address",
-        "building_area",
         "opening_hours"
     ],
     "geometry": [
-        "point",
-        "area"
+        "point"
     ],
     "terms": [
         "drive-in",

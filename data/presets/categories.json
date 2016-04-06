@@ -12,6 +12,19 @@
             "building"
         ]
     },
+    "category-emergency": {
+        "geometry": "point",
+        "name": "Emergency Features",
+        "icon": "fire-station",
+        "members": [
+            "emergency/fire_extinguisher",
+            "emergency/defibrillator",
+            "emergency/fire_hose",
+            "emergency/fire_hydrant",
+            "emergency/phone",
+            "emergency/access_point"
+        ]
+    },
     "category-golf": {
         "geometry": "area",
         "name": "Golf Features",
@@ -24,16 +37,6 @@
             "golf/bunker",
             "golf/tee",
             "golf/water_hazard"
-        ]
-    },
-    "category-indoor": {
-        "geometry": "area",
-        "name": "Indoor Features",
-        "icon": "building",
-        "members": [
-            "indoor/room",
-            "indoor/corridor",
-            "indoor"
         ]
     },
     "category-landuse": {
@@ -53,17 +56,58 @@
             "landuse/military"
         ]
     },
+    "category-office": {
+        "geometry": "area",
+        "name": "Office Features",
+        "icon": "commercial",
+        "members": [
+            "office/administrative",
+            "office/company",
+            "office/estate_agent",
+            "office/government",
+            "office/insurance",
+            "office/lawyer",
+            "office/travel_agent",
+            "office"
+        ]
+    },
     "category-path": {
         "geometry": "line",
         "name": "Path Features",
         "icon": "category-path",
         "members": [
-            "highway/pedestrian",
             "highway/footway",
+            "highway/steps",
+            "highway/conveying_steps",
             "highway/cycleway",
-            "highway/bridleway",
-            "highway/path",
-            "highway/steps"
+            "highway/pedestrian"
+        ]
+    },
+    "category-public-transport_features_area": {
+        "geometry": "area",
+        "name": "Public transport features",
+        "icon": "rail",
+        "members": [
+            "public_transport/waiting_area"
+        ]
+    },
+    "category-public-transport_features_point": {
+        "geometry": "point",
+        "name": "Public transport features",
+        "icon": "rail",
+        "members": [
+            "amenity/ticket_validator",
+            "information",
+            "amenity/showcase"
+        ]
+    },
+    "category-public-transport_features_vertex": {
+        "geometry": "vertex",
+        "name": "Public transport features",
+        "icon": "rail",
+        "members": [
+            "amenity/ticket_validator",
+            "amenity/showcase"
         ]
     },
     "category-rail": {
@@ -134,6 +178,95 @@
             "type/route/detour",
             "type/route_master",
             "type/route"
+        ]
+    },
+    "category-shop": {
+        "geometry": "point",
+        "name": "Shop Features",
+        "icon": "shop",
+        "members": [
+            "shop/convenience",
+            "shop/supermarket",
+            "shop/mall",
+            "shop/department_store",
+            "shop/clothes",
+            "shop/bakery",
+            "shop/kiosk",
+            "shop/doityourself",
+            "shop/butcher",
+            "shop/furniture",
+            "shop/shoes",
+            "shop/alcohol",
+            "shop/beauty",
+            "shop/books",
+            "shop/mobile_phone",
+            "shop/jewelry",
+            "shop"
+        ]
+    },
+    "category-shop_area": {
+        "geometry": "area",
+        "name": "Shops",
+        "icon": "shop",
+        "members": [
+            "shop_area/convenience",
+            "shop_area/supermarket",
+            "shop_area/mall",
+            "shop_area/department_store",
+            "shop_area/clothes",
+            "shop_area/bakery",
+            "shop_area/kiosk",
+            "shop_area/doityourself",
+            "shop_area/butcher",
+            "shop_area/furniture",
+            "shop_area/shoes",
+            "shop_area/alcohol",
+            "shop_area/beauty",
+            "shop_area/books",
+            "shop_area/mobile_phone",
+            "shop_area/jewelry",
+            "shop_area"
+        ]
+    },
+    "category-shop_features_area": {
+        "geometry": "area",
+        "name": "Shop features",
+        "icon": "shop",
+        "members": [
+            "department/store_section",
+            "barrier/checkout",
+            "barrier/self_checkout",
+            "barrier/shelf"
+        ]
+    },
+    "category-shop_features_line": {
+        "geometry": "line",
+        "name": "Shop features",
+        "icon": "shop",
+        "members": [
+            "barrier/checkout",
+            "barrier/self_checkout",
+            "barrier/shelf"
+        ]
+    },
+    "category-shop_features_point": {
+        "geometry": "line",
+        "name": "Shop features",
+        "icon": "shop",
+        "members": [
+            "barrier/checkout",
+            "barrier/self_checkout",
+            "information/price_checker"
+        ]
+    },
+    "category-shop_features_vertex": {
+        "geometry": "line",
+        "name": "Shop features",
+        "icon": "shop",
+        "members": [
+            "barrier/checkout",
+            "barrier/self_checkout",
+            "information/price_checker"
         ]
     },
     "category-water-area": {

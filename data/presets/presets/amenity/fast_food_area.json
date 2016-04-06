@@ -1,0 +1,25 @@
+{
+    "icon": "fast-food",
+    "fields": [
+        "cuisine",
+        "operator",
+        "address",
+        "opening_hours",
+        "takeaway",
+        "delivery",
+        "drive_through",
+        "smoking"
+    ],
+    "geometry": [
+        "point"
+    ],
+    "tags": {
+        "amenity": "fast_food",
+        "indoor": "room",
+        "room": "restaurant"
+    },
+    "terms": [
+        "restaurant"
+    ],
+    "name": "Fast Food"
+}

@@ -1,10 +1,11 @@
 {
-    "icon": "square",
+	"icon": "square",
     "fields": [
         "level"
     ],
     "geometry": [
-        "line"
+        "line",
+        "area"
     ],
     "tags": {
         "indoor": "wall"

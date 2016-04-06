@@ -1,5 +1,5 @@
 {
-    "icon": "triangle-stroked",
+	"icon": "square-stroked",
     "fields": [
         "level",
         "ref"

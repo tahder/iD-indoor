@@ -1,0 +1,18 @@
+{
+    "icon": "star",
+    "fields": [
+        "dispense",
+        "operator"
+    ],
+    "geometry": [
+        "point",
+        "vertex"
+    ],
+    "tags": {
+        "amenity": "showcase"
+    },
+    "terms": [
+		"newspaper*"
+    ],
+    "name": "Showcase"
+}

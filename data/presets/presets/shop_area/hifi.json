@@ -1,0 +1,22 @@
+{
+    "icon": "shop",
+    "fields": [
+        "operator",
+        "address",
+        "opening_hours"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "stereo",
+        "video"
+    ],
+    "tags": {
+        "indoor": "room",
+        "room": "shop",
+        "shop": "hifi"
+    },
+    "name": "Hifi Store"
+}

@@ -192,7 +192,7 @@ iD.services.mapillary = function() {
         return iD.services.mapillary.sign_defs[country][type];
     };
 
-    mapillary.showThumbnail = function(imageKey, position) {
+    mapillary.showThumbnail = function(imageKey, position, context) {
         if (!imageKey) return;
 
         var positionClass = {
@@ -207,8 +207,14 @@ iD.services.mapillary = function() {
         var enter = thumbnail.enter().append('div')
             .attr('class', 'mapillary-image ar');
 
-        enter.append('div')
-            .attr('class', 'fillD mapillary-img-key');
+		enter.append('button')
+			.attr('class', 'add')
+			.attr('title', t('mapillary.define_for_selection'))
+			.on('click', function () {
+				mapillary.setImageForSelection(context);
+			})
+			.append('div')
+			.call(iD.svg.Icon('#icon-plus'));
 
         enter.append('button')
             .on('click', function () {
@@ -229,9 +235,6 @@ iD.services.mapillary = function() {
         // Update
         thumbnail.selectAll('img')
             .attr('src', urlThumb + imageKey + '/thumb-320.jpg');
-
-        thumbnail.selectAll('.mapillary-img-key')
-            .text(imageKey);
 
         var link = thumbnail.selectAll('a')
             .attr('href', urlImage + imageKey);
@@ -281,6 +284,15 @@ iD.services.mapillary = function() {
 
         return mapillary;
     };
+	
+	mapillary.setImageForSelection = function(context) {
+		var selection = context.selectedIDs();
+		for(var i=0; i < selection.length; i++) {
+			var newTags = _.clone(context.entity(selection[i]).tags);
+			newTags.mapillary = iD.services.mapillary.thumb.key;
+			context.perform(iD.actions.ChangeTags(selection[i], newTags), t('operations.change_tags.annotation'));
+		}
+	};
 
 
     if (!iD.services.mapillary.cache) {

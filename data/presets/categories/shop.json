@@ -1,0 +1,24 @@
+{
+    "geometry": "point",
+    "name": "Shop Features",
+    "icon": "shop",
+    "members": [
+        "shop/convenience",
+        "shop/supermarket",
+        "shop/mall",
+        "shop/department_store",
+        "shop/clothes",
+        "shop/bakery",
+        "shop/kiosk",
+        "shop/doityourself",
+        "shop/butcher",
+        "shop/furniture",
+        "shop/shoes",
+        "shop/alcohol",
+        "shop/beauty",
+        "shop/books",
+        "shop/mobile_phone",
+        "shop/jewelry",
+        "shop"
+    ]
+}

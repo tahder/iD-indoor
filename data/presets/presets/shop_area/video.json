@@ -1,0 +1,21 @@
+{
+    "icon": "shop",
+    "fields": [
+        "operator",
+        "address",
+        "opening_hours"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "DVD"
+    ],
+    "tags": {
+        "indoor": "room",
+        "room": "shop",
+        "shop": "video"
+    },
+    "name": "Video Store"
+}

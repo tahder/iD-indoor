@@ -1,0 +1,23 @@
+{
+    "icon": "bar",
+    "fields": [
+        "operator",
+        "address",
+        "opening_hours",
+        "smoking"
+    ],
+    "geometry": [
+        "area"
+    ],
+    "terms": [
+        "dive",
+        "beer",
+        "bier",
+        "booze"
+    ],
+    "tags": {
+        "amenity": "bar",
+        "indoor": "room"
+    },
+    "name": "Bar"
+}

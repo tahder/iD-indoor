@@ -1,3 +1,15 @@
+## What is iD-indoor ?
+
+iD-indoor is a fork from original iD editor, augmented with [indoor mapping](http://wiki.openstreetmap.org/wiki/Indoor_Mapping) functionnalities.
+
+## What is different between iD and iD-indoor
+
+In the end, only a few things, but things that matters when doing indoor mapping:
+* A level selector allows to filter which floor should be shown on map
+* The tag presets contains indoor-related features (rooms, doors, corridors...) and small objects (fire extinguishers, public transport ticket validators, shop shelfs...)
+* Dedicated map style for the previous objects
+* And other functionnalities that makes editing easier.
+
 ## How is "iD" pronounced?
 
 Two syllables: "eye dee".

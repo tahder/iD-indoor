@@ -1,0 +1,13 @@
+{
+	"icon": "bank",
+    "geometry": [
+		"point",
+		"vertex",
+        "line",
+        "area"
+    ],
+    "tags": {
+        "barrier": "checkout"
+    },
+    "name": "Checkout"
+}

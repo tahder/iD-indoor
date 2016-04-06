@@ -2,13 +2,11 @@
     "icon": "library",
     "fields": [
         "operator",
-        "building_area",
         "address",
         "opening_hours"
     ],
     "geometry": [
-        "point",
-        "area"
+        "point"
     ],
     "terms": [
         "book"

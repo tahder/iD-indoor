@@ -1,18 +1,12 @@
-List of features to implement in the future.
+List of features to implement in the future, ordered by priority.
 
-## Soon
-### Presets
-* Small indoor objects (see below)
-** Shop-related features (price checker, checkout...)
-** Public transport features (ticket validators)
-** Information features
-
-### Styles
-* Icons for small indoor objects
-* Icons for indoor/buildingpart
+## Styles
+* Icons for custom presets
 * Vertical passages (stairs, elevators, conveying stairs)
 
-## Later
-### UI
+## UI
 * Links to OpenLevelUp
+
+## Fields
 * Mapillary field, checking validity and linking to image
+* Color selector

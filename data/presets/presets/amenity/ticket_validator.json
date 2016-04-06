@@ -1,0 +1,21 @@
+{
+    "icon": "rail",
+    "fields": [
+        "operator",
+        "network"
+    ],
+    "geometry": [
+        "point",
+        "vertex"
+    ],
+    "terms": [
+        "ticket",
+        "validator",
+        "stamping",
+        "machine"
+    ],
+    "tags": {
+        "amenity": "ticket_validator"
+    },
+    "name": "Ticket validator"
+}

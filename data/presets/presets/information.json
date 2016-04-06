@@ -1,0 +1,21 @@
+{
+	"icon": "circle",
+    "fields": [
+        "information",
+        "information_type",
+        "support",
+        "display",
+        "operator",
+        "width",
+        "height"
+    ],
+    "geometry": [
+        "point",
+        "vertex",
+        "line"
+    ],
+    "tags": {
+        "information": "*"
+    },
+    "name": "Information"
+}

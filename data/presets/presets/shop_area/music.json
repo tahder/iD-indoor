@@ -1,0 +1,22 @@
+{
+    "icon": "music",
+    "fields": [
+        "operator",
+        "address",
+        "opening_hours"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "CD",
+        "vinyl"
+    ],
+    "tags": {
+        "indoor": "room",
+        "room": "shop",
+        "shop": "music"
+    },
+    "name": "Music Store"
+}

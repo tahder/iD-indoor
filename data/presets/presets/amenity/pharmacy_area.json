@@ -1,0 +1,22 @@
+{
+    "icon": "pharmacy",
+    "fields": [
+        "operator",
+        "address",
+        "opening_hours",
+        "drive_through"
+    ],
+    "geometry": [
+        "area"
+    ],
+    "tags": {
+        "amenity": "pharmacy",
+        "indoor": "room",
+        "room": "shop"
+    },
+    "terms": [
+        "drug",
+        "medicine"
+    ],
+    "name": "Pharmacy"
+}

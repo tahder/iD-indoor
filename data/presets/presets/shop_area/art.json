@@ -1,0 +1,24 @@
+{
+    "icon": "shop",
+    "fields": [
+        "artwork_type",
+        "operator",
+        "address",
+        "opening_hours"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "art*",
+        "exhibit*",
+        "gallery"
+    ],
+    "tags": {
+        "indoor": "room",
+        "room": "shop",
+        "shop": "art"
+    },
+    "name": "Art Store"
+}

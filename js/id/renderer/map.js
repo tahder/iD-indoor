@@ -403,7 +403,7 @@ iD.Map = function(context) {
         if (!isFinite(extent.area())) return;
 
         var zoom = map.trimmedExtentZoom(extent);
-        zoomLimits = zoomLimits || [context.minEditableZoom(), 20];
+        zoomLimits = zoomLimits || [context.minEditableZoom(), 23];
         map.centerZoom(extent.center(), Math.min(Math.max(zoom, zoomLimits[0]), zoomLimits[1]));
     };
 

@@ -1,0 +1,15 @@
+{
+	"icon": "square-stroked",
+	"fields": [
+		"vending",
+		"name"
+	],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "tags": {
+        "department": "store_section"
+    },
+    "name": "Store section"
+}
