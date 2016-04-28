@@ -40,6 +40,8 @@ iD.ui.Commit = function(context) {
             .property('value', context.storage('comment') || '')
             .on('input.save', enableDisableSaveButton)
             .on('change.save', enableDisableSaveButton)
+            .on('input.save', detectForClippy)
+            .on('change.save', detectForClippy)
             .on('blur.save', function() {
                 context.storage('comment', this.value);
             });
@@ -47,6 +49,24 @@ iD.ui.Commit = function(context) {
         function enableDisableSaveButton() {
             d3.selectAll('.save-section .save-button')
                 .attr('disabled', (this.value.length ? null : true));
+        }
+
+        function detectForClippy() {
+            var googleWarning = clippyArea
+               .html('')
+               .selectAll('a')
+               .data(this.value.match(/google/i) ? [true] : []);
+
+            googleWarning.exit().remove();
+
+            googleWarning.enter()
+               .append('a')
+               .attr('target', '_blank')
+               .attr('tabindex', -1)
+               .call(iD.svg.Icon('#icon-alert', 'inline'))
+               .attr('href', t('commit.google_warning_link'))
+               .append('span')
+               .text(t('commit.google_warning'));
         }
 
         commentField.node().select();
@@ -65,19 +85,23 @@ iD.ui.Commit = function(context) {
                 }
             }
 
-            commentField.call(d3.combobox().data(comments));
+            commentField.call(d3.combobox().caseSensitive(true).data(comments));
         });
+
+        var clippyArea = commentSection.append('div')
+            .attr('class', 'clippy-area');
+
 
         var changeSetInfo = commentSection.append('div')
             .attr('class', 'changeset-info');
 
         changeSetInfo.append('a')
-          .attr('target', '_blank')
-          .attr('tabindex', -1)
-          .call(iD.svg.Icon('#icon-out-link', 'inline'))
-          .attr('href', t('commit.about_changeset_comments_link'))
-          .append('span')
-          .text(t('commit.about_changeset_comments'));
+            .attr('target', '_blank')
+            .attr('tabindex', -1)
+            .call(iD.svg.Icon('#icon-out-link', 'inline'))
+            .attr('href', t('commit.about_changeset_comments_link'))
+            .append('span')
+            .text(t('commit.about_changeset_comments'));
 
         // Warnings
         var warnings = body.selectAll('div.warning-section')
@@ -151,6 +175,14 @@ iD.ui.Commit = function(context) {
         var buttonSection = saveSection.append('div')
             .attr('class','buttons fillL cf');
 
+        var cancelButton = buttonSection.append('button')
+            .attr('class', 'secondary-action col5 button cancel-button')
+            .on('click.cancel', function() { dispatch.cancel(); });
+
+        cancelButton.append('span')
+            .attr('class', 'label')
+            .text(t('commit.cancel'));
+
         var saveButton = buttonSection.append('button')
             .attr('class', 'action col5 button save-button')
             .attr('disabled', function() {
@@ -166,14 +198,6 @@ iD.ui.Commit = function(context) {
         saveButton.append('span')
             .attr('class', 'label')
             .text(t('commit.save'));
-
-        var cancelButton = buttonSection.append('button')
-            .attr('class', 'action col5 button cancel-button')
-            .on('click.cancel', function() { dispatch.cancel(); });
-
-        cancelButton.append('span')
-            .attr('class', 'label')
-            .text(t('commit.cancel'));
 
 
         // Changes
@@ -226,9 +250,6 @@ iD.ui.Commit = function(context) {
             .transition()
             .style('opacity', 1);
 
-        li.style('opacity', 0)
-            .transition()
-            .style('opacity', 1);
 
         function mouseover(d) {
             if (d.entity) {
@@ -251,6 +272,11 @@ iD.ui.Commit = function(context) {
                         .suppressMenu(true));
             }
         }
+
+        // Call the enableDisableSaveButton and detectForClippy methods
+        // off the bat, in case a changeset comment is recovered from
+        // localStorage
+        commentField.trigger('input');
     }
 
     return d3.rebind(commit, dispatch, 'on');

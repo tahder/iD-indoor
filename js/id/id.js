@@ -107,7 +107,7 @@ window.iD = function () {
     };
 
     context.save = function() {
-        if (inIntro || (mode && mode.id === 'save')) return;
+        if (inIntro || (mode && mode.id === 'save') || d3.select('.modal').size()) return;
         history.save();
         if (history.hasChanges()) return t('save.unsaved_changes');
     };
@@ -278,7 +278,21 @@ window.iD = function () {
 	    }
     };
 
-    
+
+    /* Debug */
+    var debugTile = false, debugCollision = false;
+    context.debugTile = function(_) {
+        if (!arguments.length) return debugTile;
+        debugTile = _;
+        return context;
+    };
+    context.debugCollision = function(_) {
+        if (!arguments.length) return debugCollision;
+        debugCollision = _;
+        return context;
+    };
+
+
     /* Presets */
     var presets;
     context.presets = function(_) {
@@ -427,7 +441,7 @@ window.iD = function () {
 };
 
 
-iD.version = '1.9.2';
+iD.version = '1.9.3';
 
 (function() {
     var detected = {};

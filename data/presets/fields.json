@@ -1421,14 +1421,10 @@
             }
         }
     },
-    "studio_type": {
-        "key": "type",
+    "studio": {
+        "key": "studio",
         "type": "combo",
-        "label": "Type",
-        "options": [
-            "audio",
-            "video"
-        ]
+        "label": "Type"
     },
     "substation": {
         "key": "substation",
