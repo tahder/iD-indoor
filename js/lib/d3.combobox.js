@@ -15,7 +15,7 @@ d3.combobox = function(isSmall) {
         }));
     };
 
-    var combobox = function(input) {
+    var combobox = function(input, attachTo) {
         var idx = -1,
             container = d3.select(document.body)
                 .selectAll('div.combobox')
@@ -155,6 +155,7 @@ d3.combobox = function(isSmall) {
         }
 
         function nav(dir) {
+            if (!suggestions.length) return;
             idx = Math.max(Math.min(idx + dir, suggestions.length - 1), 0);
             input.property('value', suggestions[idx].value);
             render();
@@ -224,7 +225,8 @@ d3.combobox = function(isSmall) {
             options.exit()
                 .remove();
 
-            var rect = input.node().getBoundingClientRect();
+            var node = attachTo ? attachTo.node() : input.node(),
+                rect = node.getBoundingClientRect();
 
             container.style({
                 'left': rect.left + 'px',
