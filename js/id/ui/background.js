@@ -8,19 +8,19 @@ iD.ui.Background = function(context) {
             ['bottom', [0, 0.5]]],
         opacityDefault = (context.storage('background-opacity') !== null) ?
             (+context.storage('background-opacity')) : 1.0,
-        customTemplate = context.storage('background-custom-template') || '';
+        customTemplate = context.storage('background-custom-template') || '',
+        previous;
 
     // Can be 0 from <1.3.0 use or due to issue #1923.
     if (opacityDefault === 0) opacityDefault = 1.0;
 
+
     function background(selection) {
 
         function sortSources(a, b) {
-            return a.best() ? -1
-                : b.best() ? 1
-                : a.id === 'none' ? 1
-                : b.id === 'none' ? -1
-                : d3.ascending(a, b);
+            return a.best() && !b.best() ? -1
+                : b.best() && !a.best() ? 1
+                : d3.descending(a.area(), b.area()) || d3.ascending(a.name(), b.name()) || 0;
         }
 
         function setOpacity(d) {
@@ -39,6 +39,29 @@ iD.ui.Background = function(context) {
             context.storage('background-opacity', d);
         }
 
+        function setTooltips(selection) {
+            selection.each(function(d) {
+                var item = d3.select(this);
+                if (d === previous) {
+                    item.call(bootstrap.tooltip()
+                        .html(true)
+                        .title(function() {
+                            var tip = '<div>' + t('background.switch') + '</div>';
+                            return iD.ui.tooltipHtml(tip, iD.ui.cmd('⌘B'));
+                        })
+                        .placement('top')
+                    );
+                } else if (d.description) {
+                    item.call(bootstrap.tooltip()
+                        .title(d.description)
+                        .placement('top')
+                    );
+                } else {
+                    item.call(bootstrap.tooltip().destroy);
+                }
+            });
+        }
+
         function selectLayer() {
             function active(d) {
                 return context.background().showsLayer(d);
@@ -46,14 +69,18 @@ iD.ui.Background = function(context) {
 
             content.selectAll('.layer, .custom_layer')
                 .classed('active', active)
+                .classed('switch', function(d) { return d === previous; })
+                .call(setTooltips)
                 .selectAll('input')
                 .property('checked', active);
         }
 
         function clickSetSource(d) {
+            previous = context.background().baseLayerSource();
             d3.event.preventDefault();
             context.background().baseLayerSource(d);
             selectLayer();
+            document.activeElement.blur();
         }
 
         function editCustom() {
@@ -79,6 +106,7 @@ iD.ui.Background = function(context) {
             d3.event.preventDefault();
             context.background().toggleOverlayLayer(d);
             selectLayer();
+            document.activeElement.blur();
         }
 
         function drawList(layerList, type, change, filter) {
@@ -87,19 +115,12 @@ iD.ui.Background = function(context) {
                 .filter(filter);
 
             var layerLinks = layerList.selectAll('li.layer')
-                .data(sources, function(d) { return d.name(); })
-                .sort(sortSources);
+                .data(sources, function(d) { return d.name(); });
 
             var enter = layerLinks.enter()
                 .insert('li', '.custom_layer')
                 .attr('class', 'layer')
                 .classed('best', function(d) { return d.best(); });
-
-            // only set tooltips for layers with tooltips
-            enter.filter(function(d) { return d.description; })
-                .call(bootstrap.tooltip()
-                    .title(function(d) { return d.description; })
-                    .placement('top'));
 
             enter.filter(function(d) { return d.best(); })
                 .append('div')
@@ -120,10 +141,13 @@ iD.ui.Background = function(context) {
             label.append('span')
                 .text(function(d) { return d.name(); });
 
+
             layerLinks.exit()
                 .remove();
 
-            layerList.style('display', layerList.selectAll('li.layer').data().length > 0 ? 'block' : 'none');
+            layerList.selectAll('li.layer')
+                .sort(sortSources)
+                .style('display', layerList.selectAll('li.layer').data().length > 0 ? 'block' : 'none');
         }
 
         function update() {
@@ -204,6 +228,10 @@ iD.ui.Background = function(context) {
         function dragOffset() {
             var origin = [d3.event.clientX, d3.event.clientY];
 
+            context.container()
+                .append('div')
+                .attr('class', 'nudge-surface');
+
             d3.select(window)
                 .on('mousemove.offset', function() {
                     var latest = [d3.event.clientX, d3.event.clientY];
@@ -216,6 +244,9 @@ iD.ui.Background = function(context) {
                     nudge(d);
                 })
                 .on('mouseup.offset', function() {
+                    d3.selectAll('.nudge-surface')
+                        .remove();
+
                     d3.select(window)
                         .on('mousemove.offset', null)
                         .on('mouseup.offset', null);
@@ -232,6 +263,12 @@ iD.ui.Background = function(context) {
             if (d3.event) d3.event.preventDefault();
             tooltip.hide(button);
             setVisible(!button.classed('active'));
+        }
+
+        function quickSwitch() {
+            if (previous) {
+                clickSetSource(previous);
+            }
         }
 
         function setVisible(show) {
@@ -440,6 +477,7 @@ iD.ui.Background = function(context) {
 
         var keybinding = d3.keybinding('background')
             .on(key, toggle)
+            .on(iD.ui.cmd('⌘B'), quickSwitch)
             .on('F', hide)
             .on('H', hide);
 

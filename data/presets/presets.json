@@ -2676,6 +2676,7 @@
         "name": "Road Surface"
     },
     "barrier": {
+        "icon": "roadblock",
         "geometry": [
             "point",
             "vertex",
@@ -2691,6 +2692,7 @@
         "name": "Barrier"
     },
     "barrier/block": {
+        "icon": "roadblock",
         "fields": [
             "access"
         ],
@@ -2704,6 +2706,7 @@
         "name": "Block"
     },
     "barrier/bollard": {
+        "icon": "roadblock",
         "fields": [
             "access"
         ],
@@ -2718,6 +2721,7 @@
         "name": "Bollard"
     },
     "barrier/cattle_grid": {
+        "icon": "prison",
         "geometry": [
             "vertex"
         ],
@@ -2740,6 +2744,7 @@
         "name": "Checkout"
     },
     "barrier/city_wall": {
+        "icon": "prison",
         "geometry": [
             "line",
             "area"
@@ -2750,6 +2755,7 @@
         "name": "City Wall"
     },
     "barrier/cycle_barrier": {
+        "icon": "roadblock",
         "fields": [
             "access"
         ],
@@ -2762,6 +2768,7 @@
         "name": "Cycle Barrier"
     },
     "barrier/ditch": {
+        "icon": "roadblock",
         "geometry": [
             "line",
             "area"
@@ -2769,7 +2776,7 @@
         "tags": {
             "barrier": "ditch"
         },
-        "name": "Ditch"
+        "name": "Trench"
     },
     "barrier/entrance": {
         "icon": "entrance",
@@ -2783,6 +2790,7 @@
         "searchable": false
     },
     "barrier/fence": {
+        "icon": "prison",
         "geometry": [
             "line"
         ],
@@ -2792,6 +2800,7 @@
         "name": "Fence"
     },
     "barrier/gate": {
+        "icon": "prison",
         "fields": [
             "access"
         ],
@@ -2816,6 +2825,7 @@
         "name": "Hedge"
     },
     "barrier/kissing_gate": {
+        "icon": "prison",
         "fields": [
             "access"
         ],
@@ -2828,6 +2838,7 @@
         "name": "Kissing Gate"
     },
     "barrier/lift_gate": {
+        "icon": "roadblock",
         "fields": [
             "access"
         ],
@@ -2875,6 +2886,7 @@
         "name": "Shelf"
     },
     "barrier/stile": {
+        "icon": "roadblock",
         "fields": [
             "access"
         ],
@@ -2888,6 +2900,7 @@
         "name": "Stile"
     },
     "barrier/toll_booth": {
+        "icon": "roadblock",
         "fields": [
             "access"
         ],
@@ -2900,6 +2913,7 @@
         "name": "Toll Booth"
     },
     "barrier/wall": {
+        "icon": "prison",
         "geometry": [
             "line",
             "area"
@@ -13350,6 +13364,21 @@
             "ref",
             "operator",
             "network"
+        ]
+    },
+    "type/route/horse": {
+        "geometry": [
+            "relation"
+        ],
+        "tags": {
+            "type": "route",
+            "route": "horse"
+        },
+        "name": "Riding Route",
+        "icon": "route-horse",
+        "fields": [
+            "ref",
+            "operator"
         ]
     },
     "type/route/pipeline": {

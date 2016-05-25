@@ -3030,6 +3030,10 @@
         },
         {
             "key": "route",
+            "value": "horse"
+        },
+        {
+            "key": "route",
             "value": "pipeline"
         },
         {

@@ -1,6 +1,8 @@
 en:
   presets:
     categories:
+      category-barrier:
+        name: Barrier Features
       category-building:
         name: Building Features
       category-emergency:
@@ -1789,8 +1791,8 @@ en:
         terms: "<translate with synonyms or related terms for 'Cycle Barrier', separated by commas>"
       barrier/ditch:
         # barrier=ditch
-        name: Ditch
-        terms: "<translate with synonyms or related terms for 'Ditch', separated by commas>"
+        name: Trench
+        terms: "<translate with synonyms or related terms for 'Trench', separated by commas>"
       barrier/entrance:
         # barrier=entrance
         name: Entrance
@@ -4473,6 +4475,10 @@ en:
         # 'type=route, route=hiking'
         name: Hiking Route
         terms: "<translate with synonyms or related terms for 'Hiking Route', separated by commas>"
+      type/route/horse:
+        # 'type=route, route=horse'
+        name: Riding Route
+        terms: "<translate with synonyms or related terms for 'Riding Route', separated by commas>"
       type/route/pipeline:
         # 'type=route, route=pipeline'
         name: Pipeline Route

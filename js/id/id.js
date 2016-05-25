@@ -2,7 +2,7 @@ window.iD = function () {
     window.locale.en = iD.data.en;
     window.locale.current('en');
 
-    var dispatch = d3.dispatch('enter', 'exit', 'levelchange'),
+    var dispatch = d3.dispatch('enter', 'exit', 'change', 'levelchange'),
         context = {};
 
     // https://github.com/openstreetmap/iD/issues/772
@@ -284,11 +284,13 @@ window.iD = function () {
     context.debugTile = function(_) {
         if (!arguments.length) return debugTile;
         debugTile = _;
+        dispatch.change();
         return context;
     };
     context.debugCollision = function(_) {
         if (!arguments.length) return debugCollision;
         debugCollision = _;
+        dispatch.change();
         return context;
     };
 
@@ -441,7 +443,7 @@ window.iD = function () {
 };
 
 
-iD.version = '1.9.4';
+iD.version = '1.9.5';
 
 (function() {
     var detected = {};

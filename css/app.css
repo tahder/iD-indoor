@@ -461,7 +461,9 @@ button.save.has-count .count {
     display: block;
     position: absolute;
     top: 5px;
-    background: rgba(255, 255, 255, .5);
+    background: #fff;
+    border-color: #fff;
+    opacity: 0.5;
     color: #333;
     padding: 10px;
     height: 30px;
@@ -482,7 +484,9 @@ button.save.has-count .count::before {
     bottom: 0;
     border-top:    6px solid transparent;
     border-bottom: 6px solid transparent;
-    border-right:  6px solid rgba(255,255,255,.5);
+    border-right-width: 6px;
+    border-right-style: solid;
+    border-right-color: inherit;
 }
 
 /* Icons */
@@ -1916,7 +1920,8 @@ input.lvl-value:hover {
     background-color: #ececec;
 }
 
-.layer-list li.active {
+.layer-list li.active,
+.layer-list li.switch {
     background: #E8EBFF;
 }
 
@@ -2077,6 +2082,17 @@ input.lvl-value:hover {
 
 .nudge-container button.nudge-reset {
     right: -10px;
+}
+
+.nudge-surface {
+   position: absolute;
+   z-index: 5000;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: transparent;
+   cursor: move;
 }
 
 .background-control .nudge.right::after {
@@ -2279,6 +2295,64 @@ input.lvl-value:hover {
     border-radius: 4px;
 }
 
+
+/* Tiles
+------------------------------------------------------- */
+
+img.tile {
+    position:absolute;
+    transform-origin:0 0;
+    -ms-transform-origin:0 0;
+    -webkit-transform-origin:0 0;
+    -moz-transform-origin:0 0;
+    -o-transform-origin:0 0;
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    opacity: 0;
+
+    -webkit-transition: opacity 200ms linear;
+    transition: opacity 200ms linear;
+    -moz-transition: opacity 200ms linear;
+}
+
+.tile-label-debug {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    position: absolute;
+    text-align: center;
+    width: 128px;
+    border-radius: 3px;
+    z-index: 2;
+
+    transform-origin:0 0;
+    -ms-transform-origin:0 0;
+    -webkit-transform-origin:0 0;
+    -moz-transform-origin:0 0;
+    -o-transform-origin:0 0;
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+img.tile-debug {
+    border: 1px solid red;
+}
+
+img.tile-loaded {
+    opacity: 1;
+}
+
+img.tile-removing {
+    opacity: 0;
+}
+
+
 /* Map
 ------------------------------------------------------- */
 
@@ -2295,6 +2369,7 @@ input.lvl-value:hover {
     -webkit-transform-origin:0 0;
     -moz-transform-origin:0 0;
     -o-transform-origin:0 0;
+
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -2330,6 +2405,7 @@ input.lvl-value:hover {
     -webkit-transform-origin:0 0;
     -moz-transform-origin:0 0;
     -o-transform-origin:0 0;
+
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -2459,6 +2535,10 @@ input.lvl-value:hover {
     max-height: 30px;
     float: left;
     clear: left;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #info-block {
@@ -2469,6 +2549,10 @@ input.lvl-value:hover {
 #scale {
     height: 30px;
     width: 100%;
+}
+
+#scale:hover {
+    cursor: pointer;
 }
 
 #scale text {

@@ -7,6 +7,7 @@
         "type/route/bicycle",
         "type/route/foot",
         "type/route/hiking",
+        "type/route/horse",
         "type/route/bus",
         "type/route/train",
         "type/route/tram",

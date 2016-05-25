@@ -149,7 +149,9 @@ d3.combobox = function(isSmall) {
 
         function change() {
             fetch(value(), function() {
-                autocomplete();
+                if (input.property('selectionEnd') === input.property('value').length) {
+                    autocomplete();
+                }
                 render();
             });
         }

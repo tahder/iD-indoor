@@ -183,7 +183,7 @@ function generateTranslate(fields, presets) {
     _.forEach(translate.presets, function(preset, id) {
         var p = presets[id];
         if (!_.isEmpty(p.tags))
-            preset['name#'] = _.pairs(p.tags).map(function(pair) { return pair[0] + '=' + pair[1]; }).join(', ');
+            preset['name#'] = _.toPairs(p.tags).map(function(pair) { return pair[0] + '=' + pair[1]; }).join(', ');
         if (p.terms && p.terms.length)
             preset['terms#'] = 'terms: ' + p.terms.join();
         preset.terms = "<translate with synonyms or related terms for '" + preset.name + "', separated by commas>";
@@ -295,7 +295,8 @@ fs.writeFileSync('data/data.js', 'iD.data = ' + JSON.stringify({
     locales: r('locales.json'),
     en: read('dist/locales/en.json'),
     suggestions: r('name-suggestions.json'),
-    addressFormats: r('address-formats.json')
+    addressFormats: r('address-formats.json'),
+    phoneFormats: r('phone-formats.json')
 }) + ';');
 
 fs.writeFileSync('dist/presets.js', 'iD.data.presets = ' + JSON.stringify({

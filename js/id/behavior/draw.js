@@ -8,11 +8,19 @@ iD.behavior.Draw = function(context) {
         tail = iD.behavior.Tail(),
         edit = iD.behavior.Edit(context),
         closeTolerance = 4,
-        tolerance = 12;
+        tolerance = 12,
+        mouseLeave = false,
+        lastMouse = null,
+        cached = iD.behavior.Draw;
 
     function datum() {
         if (d3.event.altKey) return {};
-        else return d3.event.target.__data__ || {};
+
+        if (d3.event.type === 'keydown') {
+            return (lastMouse && lastMouse.target.__data__) || {};
+        } else {
+            return d3.event.target.__data__ || {};
+        }
     }
 
     function mousedown() {
@@ -58,15 +66,34 @@ iD.behavior.Draw = function(context) {
     }
 
     function mousemove() {
+        lastMouse = d3.event;
         event.move(datum());
+    }
+
+    function mouseenter() {
+        mouseLeave = false;
+    }
+
+    function mouseleave() {
+        mouseLeave = true;
     }
 
     function click() {
         var d = datum();
         if (d.type === 'way') {
-            var choice = iD.geo.chooseEdge(context.childNodes(d), context.mouse(), context.projection),
-                edge = [d.nodes[choice.index - 1], d.nodes[choice.index]];
-            event.clickWay(choice.loc, edge);
+            var dims = context.map().dimensions(),
+                mouse = context.mouse(),
+                pad = 5,
+                trySnap = mouse[0] > pad && mouse[0] < dims[0] - pad &&
+                    mouse[1] > pad && mouse[1] < dims[1] - pad;
+
+            if (trySnap) {
+                var choice = iD.geo.chooseEdge(context.childNodes(d), context.mouse(), context.projection),
+                    edge = [d.nodes[choice.index - 1], d.nodes[choice.index]];
+                event.clickWay(choice.loc, edge);
+            } else {
+                event.click(context.map().mouseCoordinates());
+            }
 
         } else if (d.type === 'node') {
             event.clickNode(d);
@@ -74,6 +101,30 @@ iD.behavior.Draw = function(context) {
         } else {
             event.click(context.map().mouseCoordinates());
         }
+    }
+
+    function space() {
+        var currSpace = context.mouse();
+        if (cached.disableSpace && cached.lastSpace) {
+            var dist = iD.geo.euclideanDistance(cached.lastSpace, currSpace);
+            if (dist > tolerance) {
+                cached.disableSpace = false;
+            }
+        }
+
+        if (cached.disableSpace || mouseLeave || !lastMouse) return;
+
+        // user must move mouse or release space bar to allow another click
+        cached.lastSpace = currSpace;
+        cached.disableSpace = true;
+
+        d3.select(window).on('keyup.space-block', function() {
+            cached.disableSpace = false;
+            d3.select(window).on('keyup.space-block', null);
+        });
+
+        d3.event.preventDefault();
+        click();
     }
 
     function backspace() {
@@ -95,7 +146,7 @@ iD.behavior.Draw = function(context) {
         context.install(hover);
         context.install(edit);
 
-        if (!context.inIntro() && !iD.behavior.Draw.usedTails[tail.text()]) {
+        if (!context.inIntro() && !cached.usedTails[tail.text()]) {
             context.install(tail);
         }
 
@@ -103,9 +154,13 @@ iD.behavior.Draw = function(context) {
             .on('⌫', backspace)
             .on('⌦', del)
             .on('⎋', ret)
-            .on('↩', ret);
+            .on('↩', ret)
+            .on('space', space)
+            .on('⌥space', space);
 
         selection
+            .on('mouseenter.draw', mouseenter)
+            .on('mouseleave.draw', mouseleave)
             .on('mousedown.draw', mousedown)
             .on('mousemove.draw', mousemove);
 
@@ -120,17 +175,20 @@ iD.behavior.Draw = function(context) {
         context.uninstall(hover);
         context.uninstall(edit);
 
-        if (!context.inIntro() && !iD.behavior.Draw.usedTails[tail.text()]) {
+        if (!context.inIntro() && !cached.usedTails[tail.text()]) {
             context.uninstall(tail);
-            iD.behavior.Draw.usedTails[tail.text()] = true;
+            cached.usedTails[tail.text()] = true;
         }
 
         selection
+            .on('mouseenter.draw', null)
+            .on('mouseleave.draw', null)
             .on('mousedown.draw', null)
             .on('mousemove.draw', null);
 
         d3.select(window)
             .on('mouseup.draw', null);
+            // note: keyup.space-block, click.draw-block should remain
 
         d3.select(document)
             .call(keybinding.off);
@@ -145,3 +203,5 @@ iD.behavior.Draw = function(context) {
 };
 
 iD.behavior.Draw.usedTails = {};
+iD.behavior.Draw.disableSpace = false;
+iD.behavior.Draw.lastSpace = null;

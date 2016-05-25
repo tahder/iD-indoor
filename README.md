@@ -20,6 +20,7 @@
 
 ## Prerequisites
 * [Node.js](http://nodejs.org/) version 0.10.0 or newer
+* [PhantomJS](http://phantomjs.org/) version 2 or newer (for running tests)
 * Command line development tools (`make`, `git`, and a compiler) for your platform
   * Ubuntu:
     * `sudo apt-get install build-essential git`

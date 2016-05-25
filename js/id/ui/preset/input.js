@@ -2,18 +2,21 @@ iD.ui.preset.text =
 iD.ui.preset.number =
 iD.ui.preset.tel =
 iD.ui.preset.email =
-iD.ui.preset.url = function(field) {
+iD.ui.preset.url = function(field, context) {
 
     var dispatch = d3.dispatch('change'),
-        input;
+        input,
+        entity;
 
     function i(selection) {
+        var fieldId = 'preset-input-' + field.id;
+
         input = selection.selectAll('input')
             .data([0]);
 
         input.enter().append('input')
             .attr('type', field.type)
-            .attr('id', 'preset-input-' + field.id)
+            .attr('id', fieldId)
             .attr('placeholder', field.placeholder() || t('inspector.unknown'));
 
         input
@@ -21,7 +24,15 @@ iD.ui.preset.url = function(field) {
             .on('blur', change())
             .on('change', change());
 
-        if (field.type === 'number') {
+        if (field.type === 'tel') {
+            var center = entity.extent(context.graph()).center();
+            iD.services.nominatim().countryCode(center, function (err, countryCode) {
+                if (err || !iD.data.phoneFormats[countryCode]) return;
+                selection.selectAll('#' + fieldId)
+                    .attr('placeholder', iD.data.phoneFormats[countryCode]);
+            });
+
+        } else if (field.type === 'number') {
             input.attr('type', 'text');
 
             var spinControl = selection.selectAll('.spin-control')
@@ -58,12 +69,19 @@ iD.ui.preset.url = function(field) {
         };
     }
 
+    i.entity = function(_) {
+        if (!arguments.length) return entity;
+        entity = _;
+        return i;
+    };
+
     i.tags = function(tags) {
         input.value(tags[field.key] || '');
     };
 
     i.focus = function() {
-        input.node().focus();
+        var node = input.node();
+        if (node) node.focus();
     };
 
     return d3.rebind(i, dispatch, 'on');
