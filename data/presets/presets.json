@@ -2386,7 +2386,9 @@
     "amenity/vending_machine": {
         "fields": [
             "vending",
-            "operator"
+            "operator",
+            "payment_multi",
+            "currency_multi"
         ],
         "geometry": [
             "point"
@@ -2581,22 +2583,6 @@
             "vending": "sweets"
         },
         "name": "Snack Vending Machine"
-    },
-    "amenity/vending_machine/vending_machine": {
-        "fields": [
-            "vending",
-            "operator",
-            "payment_multi",
-            "currency_multi"
-        ],
-        "geometry": [
-            "point"
-        ],
-        "terms": [],
-        "tags": {
-            "amenity": "vending_machine"
-        },
-        "name": "Vending Machine"
     },
     "amenity/veterinary": {
         "icon": "dog-park",
@@ -9798,13 +9784,8 @@
         "fields": [
             "operator",
             "address",
-<<<<<<< HEAD
-            "opening_hours"
-=======
-            "building_area",
             "opening_hours",
             "currency_multi"
->>>>>>> f84a8b9d20c0d4296ed95156088865679ee1c86b
         ],
         "geometry": [
             "point",
