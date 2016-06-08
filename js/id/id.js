@@ -443,7 +443,7 @@ window.iD = function () {
 };
 
 
-iD.version = '1.9.5';
+iD.version = '1.9.6';
 
 (function() {
     var detected = {};

@@ -520,7 +520,8 @@
             "point"
         ],
         "terms": [
-            "bbq"
+            "bbq",
+            "grill"
         ],
         "tags": {
             "amenity": "bbq"

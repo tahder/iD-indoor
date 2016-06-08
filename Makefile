@@ -67,6 +67,7 @@ dist/iD.js: \
 	js/id/services/mapillary.js \
 	js/id/services/nominatim.js \
 	js/id/services/taginfo.js \
+	js/id/services/wikidata.js \
 	js/id/services/wikipedia.js \
 	js/id/util.js \
 	js/id/util/session_mutex.js \
@@ -315,7 +316,7 @@ D3_FILES = \
 
 d3:
 	node_modules/.bin/smash $(D3_FILES) > js/lib/d3.v3.js
-	@echo 'd3 rebuilt. Please reapply 7e2485d, 4da529f, and 223974d'
+	@echo 'd3 rebuilt. Please reapply 7e2485d, 4da529f, 223974d and 71a3d3e'
 
 lodash:
 	node_modules/.bin/lodash --development --output js/lib/lodash.js include="includes,toPairs,assign,bind,chunk,clone,compact,debounce,difference,each,every,extend,filter,find,first,forEach,forOwn,groupBy,indexOf,intersection,isEmpty,isEqual,isFunction,keys,last,map,omit,reject,some,throttle,union,uniq,values,without,flatten,value,chain,cloneDeep,merge,pick,reduce" exports="global,node"
