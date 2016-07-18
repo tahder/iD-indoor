@@ -7,7 +7,10 @@
 * It's intentionally simple. It lets you do the most basic tasks while
   not breaking other people's data.
 * It's focused on [indoor mapping](http://wiki.openstreetmap.org/wiki/Indoor_Mapping), making contributions easier.
-* It supports modern browsers. Data is rendered with [d3.js](http://d3js.org/).
+* It supports all popular modern desktop browsers: Chrome, Firefox, Safari,
+  Opera, Edge, and IE11.
+* iD is not yet designed for mobile browsers, but this is something we hope to add!
+* Data is rendered with [d3.js](http://d3js.org/).
 
 ## Live instance
 
@@ -19,12 +22,12 @@
 * If you see a bug not related to indoor features, you can report it in the [iD issue tracker](https://github.com/openstreetmap/iD/issues).
 
 ## Prerequisites
-* [Node.js](http://nodejs.org/) version 0.10.0 or newer
-* [PhantomJS](http://phantomjs.org/) version 2 or newer (for running tests)
+
+* [Node.js](http://nodejs.org/) version 4 or newer
 * Command line development tools (`make`, `git`, and a compiler) for your platform
   * Ubuntu:
     * `sudo apt-get install build-essential git`
-  * Mac OS X:
+  * macOS:
     * Install [Xcode](https://developer.apple.com/xcode/) and run `xcode-select --install` from a command line
   * Windows (Cygwin):
     * Install [Git for Windows](https://git-scm.com/downloads)

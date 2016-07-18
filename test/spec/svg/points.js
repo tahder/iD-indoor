@@ -1,4 +1,4 @@
-describe("iD.svg.Points", function () {
+describe('iD.svg.Points', function () {
     var surface,
         projection = Object,
         context;
@@ -6,11 +6,11 @@ describe("iD.svg.Points", function () {
     beforeEach(function () {
         context = iD().presets(iD.data.presets);
         surface = d3.select(document.createElementNS('http://www.w3.org/2000/svg', 'svg'))
-            .call(iD.svg.Layers(context));
+            .call(iD.svg.Layers(projection, context));
     });
 
-    it("adds tag classes", function () {
-        var point = iD.Node({tags: {amenity: "cafe"}, loc: [0, 0]}),
+    it('adds tag classes', function () {
+        var point = iD.Node({tags: {amenity: 'cafe'}, loc: [0, 0]}),
             graph = iD.Graph([point]);
 
         surface.call(iD.svg.Points(projection, context), graph, [point]);

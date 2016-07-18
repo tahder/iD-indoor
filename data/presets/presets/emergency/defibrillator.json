@@ -1,12 +1,14 @@
 {
     "fields": [
-        "access"
+        "access",
+        "opening_hours",
+        "phone"
     ],
     "geometry": [
         "point",
         "vertex"
     ],
-    "tags": {
+   "tags": {
         "emergency": "defibrillator"
     },
     "name": "Defibrillator"

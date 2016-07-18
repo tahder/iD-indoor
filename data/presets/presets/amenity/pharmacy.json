@@ -14,8 +14,9 @@
         "amenity": "pharmacy"
     },
     "terms": [
-        "drug",
-        "medicine"
+        "drug*",
+        "med*",
+        "prescription"
     ],
     "name": "Pharmacy"
 }

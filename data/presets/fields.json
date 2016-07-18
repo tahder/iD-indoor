@@ -1,4 +1,27 @@
 {
+    "access_simple": {
+        "key": "access",
+        "type": "combo",
+        "label": "Allowed Access",
+        "placeholder": "yes",
+        "options": [
+            "permissive",
+            "private",
+            "customers",
+            "no"
+        ]
+    },
+    "access_toilets": {
+        "key": "access",
+        "type": "combo",
+        "label": "Access",
+        "options": [
+            "yes",
+            "permissive",
+            "private",
+            "customers"
+        ]
+    },
     "access": {
         "keys": [
             "access",
@@ -52,29 +75,6 @@
                 }
             }
         }
-    },
-    "access_simple": {
-        "key": "access",
-        "type": "combo",
-        "label": "Allowed Access",
-        "placeholder": "yes",
-        "options": [
-            "permissive",
-            "private",
-            "customers",
-            "no"
-        ]
-    },
-    "access_toilets": {
-        "key": "access",
-        "type": "combo",
-        "label": "Access",
-        "options": [
-            "yes",
-            "permissive",
-            "private",
-            "customers"
-        ]
     },
     "address": {
         "type": "address",
@@ -261,16 +261,16 @@
         "type": "text",
         "label": "Brand"
     },
-    "building": {
-        "key": "building",
-        "type": "combo",
-        "label": "Building"
-    },
     "building_area": {
         "key": "building",
         "type": "combo",
         "default": "yes",
         "geometry": "area",
+        "label": "Building"
+    },
+    "building": {
+        "key": "building",
+        "type": "combo",
         "label": "Building"
     },
     "buildingpart": {
@@ -470,11 +470,6 @@
         "type": "combo",
         "label": "Type of Goods"
     },
-    "display": {
-        "key": "display",
-        "type": "typeCombo",
-        "label": "Display type"
-    },
     "display_type": {
         "key": "display_type",
         "type": "radio",
@@ -483,6 +478,11 @@
             "lcd",
             "plasma"
         ],
+        "label": "Display type"
+    },
+    "display": {
+        "key": "display",
+        "type": "typeCombo",
         "label": "Display type"
     },
     "dock": {
@@ -572,15 +572,15 @@
         "label": "Fix Me",
         "universal": true
     },
-    "fuel": {
-        "key": "fuel",
-        "type": "combo",
-        "label": "Fuel"
-    },
     "fuel_multi": {
         "key": "fuel:",
         "type": "multiCombo",
         "label": "Fuel Types"
+    },
+    "fuel": {
+        "key": "fuel",
+        "type": "combo",
+        "label": "Fuel"
     },
     "gauge": {
         "key": "gauge",
@@ -667,11 +667,6 @@
         "type": "text",
         "label": "ICAO"
     },
-    "incline": {
-        "key": "incline",
-        "type": "combo",
-        "label": "Incline"
-    },
     "incline_steps": {
         "key": "incline",
         "type": "combo",
@@ -683,20 +678,25 @@
             }
         }
     },
+    "incline": {
+        "key": "incline",
+        "type": "combo",
+        "label": "Incline"
+    },
     "indoor": {
         "key": "indoor",
         "type": "combo",
-        "label": "Type"
-    },
-    "information": {
-        "key": "information",
-        "type": "typeCombo",
         "label": "Type"
     },
     "information_type": {
         "key": "information:type",
         "type": "combo",
         "label": "Information context"
+    },
+    "information": {
+        "key": "information",
+        "type": "typeCombo",
+        "label": "Type"
     },
     "internet_access": {
         "key": "internet_access",
@@ -711,6 +711,16 @@
                 "terminal": "Terminal"
             }
         }
+    },
+    "internet_access/fee": {
+        "key": "internet_access:fee",
+        "type": "check",
+        "label": "Internet Access Fee"
+    },
+    "kerb": {
+        "key": "kerb",
+        "type": "combo",
+        "label": "Curb Ramp"
     },
     "lamp_type": {
         "key": "lamp_type",
@@ -733,6 +743,19 @@
         "type": "combo",
         "label": "Layer"
     },
+    "leaf_cycle_singular": {
+        "key": "leaf_cycle",
+        "type": "combo",
+        "label": "Leaf Cycle",
+        "strings": {
+            "options": {
+                "evergreen": "Evergreen",
+                "deciduous": "Deciduous",
+                "semi_evergreen": "Semi-Evergreen",
+                "semi_deciduous": "Semi-Deciduous"
+            }
+        }
+    },
     "leaf_cycle": {
         "key": "leaf_cycle",
         "type": "combo",
@@ -747,16 +770,15 @@
             }
         }
     },
-    "leaf_cycle_singular": {
-        "key": "leaf_cycle",
+    "leaf_type_singular": {
+        "key": "leaf_type",
         "type": "combo",
-        "label": "Leaf Cycle",
+        "label": "Leaf Type",
         "strings": {
             "options": {
-                "evergreen": "Evergreen",
-                "deciduous": "Deciduous",
-                "semi_evergreen": "Semi-Evergreen",
-                "semi_deciduous": "Semi-Deciduous"
+                "broadleaved": "Broadleaved",
+                "needleleaved": "Needleleaved",
+                "leafless": "Leafless"
             }
         }
     },
@@ -769,18 +791,6 @@
                 "broadleaved": "Broadleaved",
                 "needleleaved": "Needleleaved",
                 "mixed": "Mixed",
-                "leafless": "Leafless"
-            }
-        }
-    },
-    "leaf_type_singular": {
-        "key": "leaf_type",
-        "type": "combo",
-        "label": "Leaf Type",
-        "strings": {
-            "options": {
-                "broadleaved": "Broadleaved",
-                "needleleaved": "Needleleaved",
                 "leafless": "Leafless"
             }
         }
@@ -941,18 +951,6 @@
         "type": "typeCombo",
         "label": "Type"
     },
-    "oneway": {
-        "key": "oneway",
-        "type": "check",
-        "label": "One Way",
-        "strings": {
-            "options": {
-                "undefined": "Assumed to be No",
-                "yes": "Yes",
-                "no": "No"
-            }
-        }
-    },
     "oneway_yes": {
         "key": "oneway",
         "type": "check",
@@ -960,6 +958,18 @@
         "strings": {
             "options": {
                 "undefined": "Assumed to be Yes",
+                "yes": "Yes",
+                "no": "No"
+            }
+        }
+    },
+    "oneway": {
+        "key": "oneway",
+        "type": "check",
+        "label": "One Way",
+        "strings": {
+            "options": {
+                "undefined": "Assumed to be No",
                 "yes": "Yes",
                 "no": "No"
             }
@@ -980,6 +990,17 @@
         "type": "number",
         "label": "Par",
         "placeholder": "3, 4, 5..."
+    },
+    "parallel_direction": {
+        "key": "direction",
+        "type": "combo",
+        "label": "Direction",
+        "strings": {
+            "options": {
+                "forward": "Forward",
+                "backward": "Backward"
+            }
+        }
     },
     "park_ride": {
         "key": "park_ride",
@@ -1075,15 +1096,15 @@
         "type": "text",
         "label": "Population"
     },
-    "power": {
-        "key": "power",
-        "type": "typeCombo",
-        "label": "Type"
-    },
     "power_supply": {
         "key": "power_supply",
         "type": "check",
         "label": "Power Supply"
+    },
+    "power": {
+        "key": "power",
+        "type": "typeCombo",
+        "label": "Type"
     },
     "railway": {
         "key": "railway",
@@ -1129,13 +1150,18 @@
         "type": "combo",
         "label": "Type"
     },
-    "route": {
-        "key": "route",
-        "type": "combo",
-        "label": "Type"
+    "rooms": {
+        "key": "rooms",
+        "type": "number",
+        "label": "Rooms"
     },
     "route_master": {
         "key": "route_master",
+        "type": "combo",
+        "label": "Type"
+    },
+    "route": {
+        "key": "route",
         "type": "combo",
         "label": "Type"
     },
@@ -1170,6 +1196,19 @@
         "type": "number",
         "label": "Amount of seats",
         "placeholder": "1, 2, 3..."
+    },
+    "service_rail": {
+        "key": "service",
+        "type": "combo",
+        "label": "Service Type",
+        "strings": {
+            "options": {
+                "spur": "Spur",
+                "yard": "Yard",
+                "siding": "Siding",
+                "crossover": "Crossover"
+            }
+        }
     },
     "service": {
         "key": "service",
@@ -1207,28 +1246,15 @@
             }
         }
     },
-    "service_rail": {
-        "key": "service",
+    "shelter_type": {
+        "key": "shelter_type",
         "type": "combo",
-        "label": "Service Type",
-        "strings": {
-            "options": {
-                "spur": "Spur",
-                "yard": "Yard",
-                "siding": "Siding",
-                "crossover": "Crossover"
-            }
-        }
+        "label": "Type"
     },
     "shelter": {
         "key": "shelter",
         "type": "check",
         "label": "Shelter"
-    },
-    "shelter_type": {
-        "key": "shelter_type",
-        "type": "combo",
-        "label": "Type"
     },
     "shop": {
         "key": "shop",
@@ -1239,11 +1265,6 @@
         "key": "site",
         "type": "combo",
         "label": "Type"
-    },
-    "sloped_curb": {
-        "key": "sloped_curb",
-        "type": "combo",
-        "label": "Sloped Curb"
     },
     "smoking": {
         "key": "smoking",
@@ -1308,11 +1329,6 @@
         "universal": true,
         "label": "Source"
     },
-    "sport": {
-        "key": "sport",
-        "type": "combo",
-        "label": "Sport"
-    },
     "sport_ice": {
         "key": "sport",
         "type": "combo",
@@ -1338,6 +1354,27 @@
             "motocross",
             "running"
         ]
+    },
+    "sport": {
+        "key": "sport",
+        "type": "combo",
+        "label": "Sport"
+    },
+    "stars": {
+        "key": "stars",
+        "type": "number",
+        "label": "Stars"
+    },
+    "stop": {
+        "key": "stop",
+        "type": "combo",
+        "label": "Stop Type",
+        "strings": {
+            "options": {
+                "all": "All Ways",
+                "minor": "Minor Road"
+            }
+        }
     },
     "structure": {
         "type": "radio",
@@ -1478,15 +1515,15 @@
         "type": "combo",
         "label": "Type of Goods"
     },
-    "water": {
-        "key": "water",
-        "type": "combo",
-        "label": "Type"
-    },
     "water_point": {
         "key": "water_point",
         "type": "check",
         "label": "Water Point"
+    },
+    "water": {
+        "key": "water",
+        "type": "combo",
+        "label": "Type"
     },
     "waterway": {
         "key": "waterway",

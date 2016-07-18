@@ -1,33 +1,33 @@
 describe('iD.Way', function() {
     if (iD.debug) {
-        it("freezes nodes", function () {
+        it('freezes nodes', function () {
             expect(Object.isFrozen(iD.Way().nodes)).to.be.true;
         });
     }
 
-    it("returns a way", function () {
+    it('returns a way', function () {
         expect(iD.Way()).to.be.an.instanceOf(iD.Way);
-        expect(iD.Way().type).to.equal("way");
+        expect(iD.Way().type).to.equal('way');
     });
 
-    it("defaults nodes to an empty array", function () {
+    it('defaults nodes to an empty array', function () {
         expect(iD.Way().nodes).to.eql([]);
     });
 
-    it("sets nodes as specified", function () {
-        expect(iD.Way({nodes: ["n-1"]}).nodes).to.eql(["n-1"]);
+    it('sets nodes as specified', function () {
+        expect(iD.Way({nodes: ['n-1']}).nodes).to.eql(['n-1']);
     });
 
-    it("defaults tags to an empty object", function () {
+    it('defaults tags to an empty object', function () {
         expect(iD.Way().tags).to.eql({});
     });
 
-    it("sets tags as specified", function () {
+    it('sets tags as specified', function () {
         expect(iD.Way({tags: {foo: 'bar'}}).tags).to.eql({foo: 'bar'});
     });
 
-    describe("#copy", function () {
-        it("returns a new Way", function () {
+    describe('#copy', function () {
+        it('returns a new Way', function () {
             var w = iD.Way({id: 'w'}),
                 result = w.copy(null, {});
 
@@ -35,7 +35,7 @@ describe('iD.Way', function() {
             expect(result).not.to.equal(w);
         });
 
-        it("adds the new Way to input object", function () {
+        it('adds the new Way to input object', function () {
             var w = iD.Way({id: 'w'}),
                 copies = {},
                 result = w.copy(null, copies);
@@ -43,7 +43,7 @@ describe('iD.Way', function() {
             expect(copies.w).to.equal(result);
         });
 
-        it("returns an existing copy in input object", function () {
+        it('returns an existing copy in input object', function () {
             var w = iD.Way({id: 'w'}),
                 copies = {},
                 result1 = w.copy(null, copies),
@@ -52,7 +52,7 @@ describe('iD.Way', function() {
             expect(result1).to.equal(result2);
         });
 
-        it("deep copies nodes", function () {
+        it('deep copies nodes', function () {
             var a = iD.Node({id: 'a'}),
                 b = iD.Node({id: 'b'}),
                 w = iD.Way({id: 'w', nodes: ['a', 'b']}),
@@ -68,7 +68,7 @@ describe('iD.Way', function() {
             expect(result.nodes).to.deep.eql([copies.a.id, copies.b.id]);
         });
 
-        it("creates only one copy of shared nodes", function () {
+        it('creates only one copy of shared nodes', function () {
             var a = iD.Node({id: 'a'}),
                 w = iD.Way({id: 'w', nodes: ['a', 'a']}),
                 graph = iD.Graph([a, w]),
@@ -79,45 +79,45 @@ describe('iD.Way', function() {
         });
     });
 
-    describe("#first", function () {
-        it("returns the first node", function () {
+    describe('#first', function () {
+        it('returns the first node', function () {
             expect(iD.Way({nodes: ['a', 'b', 'c']}).first()).to.equal('a');
         });
     });
 
-    describe("#last", function () {
-        it("returns the last node", function () {
+    describe('#last', function () {
+        it('returns the last node', function () {
             expect(iD.Way({nodes: ['a', 'b', 'c']}).last()).to.equal('c');
         });
     });
 
-    describe("#contains", function () {
-        it("returns true if the way contains the given node", function () {
+    describe('#contains', function () {
+        it('returns true if the way contains the given node', function () {
             expect(iD.Way({nodes: ['a', 'b', 'c']}).contains('b')).to.be.true;
         });
 
-        it("returns false if the way does not contain the given node", function () {
+        it('returns false if the way does not contain the given node', function () {
             expect(iD.Way({nodes: ['a', 'b', 'c']}).contains('d')).to.be.false;
         });
     });
 
-    describe("#affix", function () {
-        it("returns 'prefix' if the way starts with the given node", function () {
+    describe('#affix', function () {
+        it('returns \'prefix\' if the way starts with the given node', function () {
             expect(iD.Way({nodes: ['a', 'b', 'c']}).affix('a')).to.equal('prefix');
         });
 
-        it("returns 'suffix' if the way ends with the given node", function () {
+        it('returns \'suffix\' if the way ends with the given node', function () {
             expect(iD.Way({nodes: ['a', 'b', 'c']}).affix('c')).to.equal('suffix');
         });
 
-        it("returns falsy if the way does not start or end with the given node", function () {
+        it('returns falsy if the way does not start or end with the given node', function () {
             expect(iD.Way({nodes: ['a', 'b', 'c']}).affix('b')).not.to.be.ok;
             expect(iD.Way({nodes: []}).affix('b')).not.to.be.ok;
         });
     });
 
-    describe("#extent", function () {
-        it("returns the minimal extent containing all member nodes", function () {
+    describe('#extent', function () {
+        it('returns the minimal extent containing all member nodes', function () {
             var node1 = iD.Node({loc: [0, 0]}),
                 node2 = iD.Node({loc: [5, 10]}),
                 way   = iD.Way({nodes: [node1.id, node2.id]}),
@@ -269,27 +269,44 @@ describe('iD.Way', function() {
         });
 
         it('returns false when the way has tag oneway=no', function() {
-            expect(iD.Way({tags: { oneway: 'no' }}).isOneWay()).to.be.false;
-            expect(iD.Way({tags: { oneway: '0' }}).isOneWay()).to.be.false;
+            expect(iD.Way({tags: { oneway: 'no' }}).isOneWay(), 'oneway no').to.be.false;
+            expect(iD.Way({tags: { oneway: '0' }}).isOneWay(), 'oneway 0').to.be.false;
         });
 
         it('returns true when the way has tag oneway=yes', function() {
-            expect(iD.Way({tags: { oneway: 'yes' }}).isOneWay()).to.be.true;
-            expect(iD.Way({tags: { oneway: '1' }}).isOneWay()).to.be.true;
-            expect(iD.Way({tags: { oneway: '-1' }}).isOneWay()).to.be.true;
+            expect(iD.Way({tags: { oneway: 'yes' }}).isOneWay(), 'oneway yes').to.be.true;
+            expect(iD.Way({tags: { oneway: '1' }}).isOneWay(), 'oneway 1').to.be.true;
+            expect(iD.Way({tags: { oneway: '-1' }}).isOneWay(), 'oneway -1').to.be.true;
         });
 
         it('returns true when the way has implied oneway tag (waterway=river, waterway=stream, etc)', function() {
-            expect(iD.Way({tags: { waterway: 'river' }}).isOneWay()).to.be.true;
-            expect(iD.Way({tags: { waterway: 'stream' }}).isOneWay()).to.be.true;
-            expect(iD.Way({tags: { highway: 'motorway' }}).isOneWay()).to.be.true;
-            expect(iD.Way({tags: { highway: 'motorway_link' }}).isOneWay()).to.be.true;
-            expect(iD.Way({tags: { junction: 'roundabout' }}).isOneWay()).to.be.true;
+            expect(iD.Way({tags: { waterway: 'river' }}).isOneWay(), 'river').to.be.true;
+            expect(iD.Way({tags: { waterway: 'stream' }}).isOneWay(), 'stream').to.be.true;
+            expect(iD.Way({tags: { highway: 'motorway' }}).isOneWay(), 'motorway').to.be.true;
+            expect(iD.Way({tags: { highway: 'motorway_link' }}).isOneWay(), 'motorway_link').to.be.true;
+            expect(iD.Way({tags: { junction: 'roundabout' }}).isOneWay(), 'roundabout').to.be.true;
+        });
+
+        it('returns false when the way does not have implied oneway tag', function() {
+            expect(iD.Way({tags: { highway: 'trunk' }}).isOneWay(), 'trunk').to.be.false;
+            expect(iD.Way({tags: { highway: 'trunk_link' }}).isOneWay(), 'trunk_link').to.be.false;
+            expect(iD.Way({tags: { highway: 'primary' }}).isOneWay(), 'primary').to.be.false;
+            expect(iD.Way({tags: { highway: 'primary_link' }}).isOneWay(), 'primary_link').to.be.false;
+            expect(iD.Way({tags: { highway: 'secondary' }}).isOneWay(), 'secondary').to.be.false;
+            expect(iD.Way({tags: { highway: 'secondary_link' }}).isOneWay(), 'secondary_link').to.be.false;
+            expect(iD.Way({tags: { highway: 'tertiary' }}).isOneWay(), 'tertiary').to.be.false;
+            expect(iD.Way({tags: { highway: 'tertiary_link' }}).isOneWay(), 'tertiary_link').to.be.false;
+            expect(iD.Way({tags: { highway: 'unclassified' }}).isOneWay(), 'unclassified').to.be.false;
+            expect(iD.Way({tags: { highway: 'residential' }}).isOneWay(), 'residential').to.be.false;
+            expect(iD.Way({tags: { highway: 'living_street' }}).isOneWay(), 'living_street').to.be.false;
+            expect(iD.Way({tags: { highway: 'service' }}).isOneWay(), 'service').to.be.false;
+            expect(iD.Way({tags: { highway: 'track' }}).isOneWay(), 'track').to.be.false;
+            expect(iD.Way({tags: { highway: 'path' }}).isOneWay(), 'path').to.be.false;
         });
 
         it('returns false when oneway=no overrides implied oneway tag', function() {
-            expect(iD.Way({tags: { junction: 'roundabout', oneway: 'no' }}).isOneWay()).to.be.false;
-            expect(iD.Way({tags: { highway: 'motorway', oneway: 'no' }}).isOneWay()).to.be.false;
+            expect(iD.Way({tags: { junction: 'roundabout', oneway: 'no' }}).isOneWay(), 'roundabout').to.be.false;
+            expect(iD.Way({tags: { highway: 'motorway', oneway: 'no' }}).isOneWay(), 'motorway').to.be.false;
         });
     });
 
@@ -323,48 +340,48 @@ describe('iD.Way', function() {
         });
     });
 
-    describe("#isDegenerate", function() {
-       it("returns true for a linear way with zero or one nodes", function () {
+    describe('#isDegenerate', function() {
+       it('returns true for a linear way with zero or one nodes', function () {
            expect(iD.Way({nodes: []}).isDegenerate()).to.equal(true);
            expect(iD.Way({nodes: ['a']}).isDegenerate()).to.equal(true);
        });
 
-        it("returns true for a circular way with only one unique node", function () {
+        it('returns true for a circular way with only one unique node', function () {
             expect(iD.Way({nodes: ['a', 'a']}).isDegenerate()).to.equal(true);
         });
 
-        it("returns false for a linear way with two or more nodes", function () {
+        it('returns false for a linear way with two or more nodes', function () {
             expect(iD.Way({nodes: ['a', 'b']}).isDegenerate()).to.equal(false);
         });
 
-        it("returns true for an area with zero, one, or two unique nodes", function () {
+        it('returns true for an area with zero, one, or two unique nodes', function () {
             expect(iD.Way({tags: {area: 'yes'}, nodes: []}).isDegenerate()).to.equal(true);
             expect(iD.Way({tags: {area: 'yes'}, nodes: ['a', 'a']}).isDegenerate()).to.equal(true);
             expect(iD.Way({tags: {area: 'yes'}, nodes: ['a', 'b', 'a']}).isDegenerate()).to.equal(true);
         });
 
-        it("returns false for an area with three or more unique nodes", function () {
+        it('returns false for an area with three or more unique nodes', function () {
             expect(iD.Way({tags: {area: 'yes'}, nodes: ['a', 'b', 'c', 'a']}).isDegenerate()).to.equal(false);
         });
     });
 
-    describe("#areAdjacent", function() {
-        it("returns false for nodes not in the way", function() {
+    describe('#areAdjacent', function() {
+        it('returns false for nodes not in the way', function() {
             expect(iD.Way().areAdjacent('a', 'b')).to.equal(false);
         });
 
-        it("returns false for non-adjacent nodes in the way", function() {
+        it('returns false for non-adjacent nodes in the way', function() {
             expect(iD.Way({nodes: ['a', 'b', 'c']}).areAdjacent('a', 'c')).to.equal(false);
         });
 
-        it("returns true for adjacent nodes in the way (forward)", function() {
+        it('returns true for adjacent nodes in the way (forward)', function() {
             var way = iD.Way({nodes: ['a', 'b', 'c', 'd']});
             expect(way.areAdjacent('a', 'b')).to.equal(true);
             expect(way.areAdjacent('b', 'c')).to.equal(true);
             expect(way.areAdjacent('c', 'd')).to.equal(true);
         });
 
-        it("returns true for adjacent nodes in the way (reverse)", function() {
+        it('returns true for adjacent nodes in the way (reverse)', function() {
             var way = iD.Way({nodes: ['a', 'b', 'c', 'd']});
             expect(way.areAdjacent('b', 'a')).to.equal(true);
             expect(way.areAdjacent('c', 'b')).to.equal(true);
@@ -372,84 +389,68 @@ describe('iD.Way', function() {
         });
     });
 
-    describe("#geometry", function() {
-        it("returns 'line' when the way is not an area", function () {
+    describe('#geometry', function() {
+        it('returns \'line\' when the way is not an area', function () {
             expect(iD.Way().geometry(iD.Graph())).to.equal('line');
         });
 
-        it("returns 'area' when the way is an area", function () {
+        it('returns \'area\' when the way is an area', function () {
             expect(iD.Way({tags: { area: 'yes' }}).geometry(iD.Graph())).to.equal('area');
         });
     });
 
-    describe("#addNode", function () {
-        it("adds a node to the end of a way", function () {
+    describe('#addNode', function () {
+        it('adds a node to the end of a way', function () {
             var w = iD.Way();
             expect(w.addNode('a').nodes).to.eql(['a']);
         });
 
-        it("adds a node to a way at index 0", function () {
+        it('adds a node to a way at index 0', function () {
             var w = iD.Way({nodes: ['a', 'b']});
             expect(w.addNode('c', 0).nodes).to.eql(['c', 'a', 'b']);
         });
 
-        it("adds a node to a way at a positive index", function () {
+        it('adds a node to a way at a positive index', function () {
             var w = iD.Way({nodes: ['a', 'b']});
             expect(w.addNode('c', 1).nodes).to.eql(['a', 'c', 'b']);
         });
 
-        it("adds a node to a way at a negative index", function () {
+        it('adds a node to a way at a negative index', function () {
             var w = iD.Way({nodes: ['a', 'b']});
             expect(w.addNode('c', -1).nodes).to.eql(['a', 'c', 'b']);
         });
     });
 
-    describe("#updateNode", function () {
-        it("updates the node id at the specified index", function () {
+    describe('#updateNode', function () {
+        it('updates the node id at the specified index', function () {
             var w = iD.Way({nodes: ['a', 'b', 'c']});
             expect(w.updateNode('d', 1).nodes).to.eql(['a', 'd', 'c']);
         });
     });
 
-    describe("#removeNode", function () {
-        it("removes the node", function () {
-            var a = iD.Node({id: 'a'}),
-                w = iD.Way({nodes: ['a']});
-
+    describe('#removeNode', function () {
+        it('removes the node', function () {
+            var w = iD.Way({nodes: ['a']});
             expect(w.removeNode('a').nodes).to.eql([]);
         });
 
-        it("prevents duplicate consecutive nodes", function () {
-            var a = iD.Node({id: 'a'}),
-                b = iD.Node({id: 'b'}),
-                c = iD.Node({id: 'c'}),
-                w = iD.Way({nodes: ['a', 'b', 'c', 'b']});
-
+        it('prevents duplicate consecutive nodes', function () {
+            var w = iD.Way({nodes: ['a', 'b', 'c', 'b']});
             expect(w.removeNode('c').nodes).to.eql(['a', 'b']);
         });
 
-        it("preserves circularity", function () {
-            var a = iD.Node({id: 'a'}),
-                b = iD.Node({id: 'b'}),
-                c = iD.Node({id: 'c'}),
-                d = iD.Node({id: 'd'}),
-                w = iD.Way({nodes: ['a', 'b', 'c', 'd', 'a']});
-
+        it('preserves circularity', function () {
+            var w = iD.Way({nodes: ['a', 'b', 'c', 'd', 'a']});
             expect(w.removeNode('a').nodes).to.eql(['b', 'c', 'd', 'b']);
         });
 
-        it("prevents duplicate consecutive nodes when preserving circularity", function () {
-            var a = iD.Node({id: 'a'}),
-                b = iD.Node({id: 'b'}),
-                c = iD.Node({id: 'c'}),
-                d = iD.Node({id: 'd'}),
-                w = iD.Way({nodes: ['a', 'b', 'c', 'd', 'b', 'a']});
-
+        it('prevents duplicate consecutive nodes when preserving circularity', function () {
+            var w = iD.Way({nodes: ['a', 'b', 'c', 'd', 'b', 'a']});
             expect(w.removeNode('a').nodes).to.eql(['b', 'c', 'd', 'b']);
         });
     });
 
-    describe("#asJXON", function () {
+    describe('#asJXON', function () {
         it('converts a way to jxon', function() {
             var node = iD.Way({id: 'w-1', nodes: ['n1', 'n2'], tags: {highway: 'residential'}});
             expect(node.asJXON()).to.eql({way: {
@@ -464,8 +465,8 @@ describe('iD.Way', function() {
         });
     });
 
-    describe("#asGeoJSON", function () {
-        it("converts a line to a GeoJSON LineString geometry", function () {
+    describe('#asGeoJSON', function () {
+        it('converts a line to a GeoJSON LineString geometry', function () {
             var a = iD.Node({loc: [1, 2]}),
                 b = iD.Node({loc: [3, 4]}),
                 w = iD.Way({tags: {highway: 'residential'}, nodes: [a.id, b.id]}),
@@ -476,7 +477,7 @@ describe('iD.Way', function() {
             expect(json.coordinates).to.eql([a.loc, b.loc]);
         });
 
-        it("converts an area to a GeoJSON Polygon geometry", function () {
+        it('converts an area to a GeoJSON Polygon geometry', function () {
             var a = iD.Node({loc: [1, 2]}),
                 b = iD.Node({loc: [5, 6]}),
                 c = iD.Node({loc: [3, 4]}),
@@ -488,7 +489,7 @@ describe('iD.Way', function() {
             expect(json.coordinates).to.eql([[a.loc, b.loc, c.loc, a.loc]]);
         });
 
-        it("converts an unclosed area to a GeoJSON LineString geometry", function () {
+        it('converts an unclosed area to a GeoJSON LineString geometry', function () {
             var a = iD.Node({loc: [1, 2]}),
                 b = iD.Node({loc: [5, 6]}),
                 c = iD.Node({loc: [3, 4]}),
@@ -501,8 +502,8 @@ describe('iD.Way', function() {
         });
     });
 
-    describe("#area", function() {
-        it("returns a relative measure of area", function () {
+    describe('#area', function() {
+        it('returns a relative measure of area', function () {
             var graph = iD.Graph([
                 iD.Node({id: 'a', loc: [-0.0002,  0.0001]}),
                 iD.Node({id: 'b', loc: [ 0.0002,  0.0001]}),
@@ -522,7 +523,7 @@ describe('iD.Way', function() {
             expect(s).to.be.lt(l);
         });
 
-        it("treats unclosed areas as if they were closed", function () {
+        it('treats unclosed areas as if they were closed', function () {
             var graph = iD.Graph([
                 iD.Node({id: 'a', loc: [-0.0002,  0.0001]}),
                 iD.Node({id: 'b', loc: [ 0.0002,  0.0001]}),
@@ -538,7 +539,7 @@ describe('iD.Way', function() {
             expect(s).to.equal(l);
         });
 
-        it("returns 0 for degenerate areas", function () {
+        it('returns 0 for degenerate areas', function () {
             var graph = iD.Graph([
                 iD.Node({id: 'a', loc: [-0.0002,  0.0001]}),
                 iD.Node({id: 'b', loc: [ 0.0002,  0.0001]}),
@@ -550,6 +551,244 @@ describe('iD.Way', function() {
             expect(graph.entity('0').area(graph)).to.equal(0);
             expect(graph.entity('1').area(graph)).to.equal(0);
             expect(graph.entity('2').area(graph)).to.equal(0);
+        });
+    });
+
+    describe('iD.Lanes', function() {
+
+        describe('default lane tags', function() {
+
+            describe('motorway', function() {
+
+                it('returns 2 lanes for highway=motorway', function() {
+                    expect(iD.Way({tags: { highway: 'motorway' }}).lanes().defaults, 'motorway lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                    expect(iD.Way({tags: { highway: 'motorway', oneway: 'yes' }}).lanes().defaults, 'motorway lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                });
+
+                it('returns 4 lanes for highway=motorway and oneway=no', function() {
+                    expect(iD.Way({tags: { highway: 'motorway', oneway: 'no' }}).lanes().defaults, 'motorway lanes')
+                        .to.eql({ lanes: {count: 4 } });
+                });
+
+                it('returns 1 lane for highway=motorway_link', function() {
+                    expect(iD.Way({tags: { highway: 'motorway_link' }}).lanes().defaults, 'motorway_link lanes')
+                        .to.eql({ lanes: { count: 1 } });
+                    expect(iD.Way({tags: { highway: 'motorway_link', oneway: 'yes' }}).lanes().defaults, 'motorway_link lanes')
+                        .to.eql({ lanes: { count: 1 } });
+                });
+
+                it('returns 2 lanes for highway=motorway_link and oneway=no', function() {
+                    expect(iD.Way({tags: { highway: 'motorway_link', oneway: 'no' }}).lanes().defaults, 'motorway_link lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                });
+
+            });
+
+            describe('trunk', function() {
+
+                it('returns 4 lanes for highway=trunk', function() {
+                    expect(iD.Way({tags: { highway: 'trunk' }}).lanes().defaults, 'trunk lanes')
+                        .to.eql({ lanes: { count: 4 } });
+                    expect(iD.Way({tags: { highway: 'trunk', oneway: 'no' }}).lanes().defaults, 'trunk lanes')
+                        .to.eql({ lanes: { count: 4 } });
+                });
+
+                it('returns 2 lanes for highway=trunk and oneway=yes', function() {
+                    expect(iD.Way({tags: { highway: 'trunk', oneway: 'yes' }}).lanes().defaults, 'trunk lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                });
+
+                it('returns 2 lanes for highway=trunk_link', function() {
+                    expect(iD.Way({tags: { highway: 'trunk_link' }}).lanes().defaults, 'trunk_link lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                    expect(iD.Way({tags: { highway: 'trunk_link', oneway: 'no' }}).lanes().defaults, 'trunk_link lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                });
+
+                it('returns 1 lane for highway=trunk_link and oneway=yes', function() {
+                    expect(iD.Way({tags: { highway: 'trunk_link', oneway: 'yes' }}).lanes().defaults, 'trunk_link lanes')
+                        .to.eql({ lanes: { count: 1 } });
+                });
+            });
+
+            describe('primary', function() {
+
+                it('returns 2 lanes for highway=primary', function() {
+                    expect(iD.Way({tags: { highway: 'primary' }}).lanes().defaults, 'primary lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                    expect(iD.Way({tags: { highway: 'primary', oneway: 'no' }}).lanes().defaults, 'primary lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                });
+
+                it('returns 1 lane for highway=primary and oneway=yes', function() {
+                    expect(iD.Way({tags: { highway: 'primary', oneway: 'yes' }}).lanes().defaults, 'primary lanes')
+                        .to.eql({ lanes: { count: 1 } });
+                });
+
+                it('returns 2 lanes for highway=primary_link', function() {
+                    expect(iD.Way({tags: { highway: 'primary_link' }}).lanes().defaults, 'primary lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                    expect(iD.Way({tags: { highway: 'primary_link', oneway: 'no' }}).lanes().defaults, 'primary lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                });
+
+                it('returns 1 lane for highway=primary_link and oneway=yes', function() {
+                    expect(iD.Way({tags: { highway: 'primary_link', oneway: 'yes' }}).lanes().defaults, 'primary lanes')
+                        .to.eql({ lanes: { count: 1 } });
+                });
+            });
+
+            describe('seconday', function() {
+
+                it('returns 2 lanes for highway=secondary', function() {
+                    expect(iD.Way({tags: { highway: 'secondary' }}).lanes().defaults, 'secondary lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                    expect(iD.Way({tags: { highway: 'secondary', oneway: 'no' }}).lanes().defaults, 'secondary lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                });
+
+                it('returns 1 lane for highway=secondary and oneway=yes', function() {
+                    expect(iD.Way({tags: { highway: 'secondary', oneway: 'yes' }}).lanes().defaults, 'secondary lanes')
+                        .to.eql({ lanes: { count: 1 } });
+                });
+
+                it('returns 2 lane for highway=secondary_link', function() {
+                    expect(iD.Way({tags: { highway: 'secondary_link' }}).lanes().defaults, 'secondary_link lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                    expect(iD.Way({tags: { highway: 'secondary_link', oneway: 'no' }}).lanes().defaults, 'secondary_link lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                });
+
+                it('returns 1 lane for highway=secondary_link and oneway=yes', function() {
+                    expect(iD.Way({tags: { highway: 'secondary_link', oneway: 'yes' }}).lanes().defaults, 'secondary_link lanes')
+                        .to.eql({ lanes: { count: 1 } });
+                });
+            });
+
+            describe('tertiary', function() {
+
+                it('returns 2 lanes for highway=tertiary', function() {
+                    expect(iD.Way({tags: { highway: 'tertiary' }}).lanes().defaults, 'tertiary lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                    expect(iD.Way({tags: { highway: 'tertiary', oneway: 'no' }}).lanes().defaults, 'tertiary lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                });
+
+                it('returns 1 lane for highway=tertiary and oneway=yes', function() {
+                    expect(iD.Way({tags: { highway: 'tertiary', oneway: 'yes' }}).lanes().defaults, 'tertiary lanes')
+                        .to.eql({ lanes: { count: 1 } });
+                });
+
+                it('returns 2 lane for highway=tertiary_link', function() {
+                    expect(iD.Way({tags: { highway: 'tertiary_link' }}).lanes().defaults, 'tertiary_link lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                    expect(iD.Way({tags: { highway: 'tertiary_link', oneway: 'no' }}).lanes().defaults, 'tertiary_link lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                });
+
+                it('returns 1 lane for highway=tertiary_link and oneway=yes', function() {
+                    expect(iD.Way({tags: { highway: 'tertiary_link', oneway: 'yes' }}).lanes().defaults, 'tertiary_link lanes')
+                        .to.eql({ lanes: { count: 1 } });
+                });
+            });
+
+            describe('residential', function() {
+
+                it('returns 2 lanes for highway=residential', function() {
+                    expect(iD.Way({tags: { highway: 'residential' }}).lanes().defaults, 'residential lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                    expect(iD.Way({tags: { highway: 'residential', oneway: 'no' }}).lanes().defaults, 'residential lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                });
+
+                it('returns 1 lane for highway=residential and oneway=yes', function() {
+                    expect(iD.Way({tags: { highway: 'residential', oneway: 'yes' }}).lanes().defaults, 'residential lanes')
+                        .to.eql({ lanes: { count: 1 } });
+                });
+            });
+
+            describe('service', function() {
+
+                it('returns 2 lanes for highway=service', function() {
+                    expect(iD.Way({tags: { highway: 'service' }}).lanes().defaults, 'service lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                    expect(iD.Way({tags: { highway: 'service', oneway: 'no' }}).lanes().defaults, 'service lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                });
+
+                it('returns 1 lane for highway=service and oneway=yes', function() {
+                    expect(iD.Way({tags: { highway: 'service', oneway: 'yes' }}).lanes().defaults, 'service lanes')
+                        .to.eql({ lanes: { count: 1 } });
+                });
+            });
+
+            describe('track', function() {
+
+                it('returns 2 lanes for highway=track', function() {
+                    expect(iD.Way({tags: { highway: 'track' }}).lanes().defaults, 'track lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                    expect(iD.Way({tags: { highway: 'track', oneway: 'no' }}).lanes().defaults, 'track lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                });
+
+                it('returns 1 lane for highway=track and oneway=yes', function() {
+                    expect(iD.Way({tags: { highway: 'track', oneway: 'yes' }}).lanes().defaults, 'track lanes')
+                        .to.eql({ lanes: { count: 1 } });
+                });
+            });
+
+            describe('path', function() {
+
+                it('returns 2 lanes for highway=path', function() {
+                    expect(iD.Way({tags: { highway: 'path' }}).lanes().defaults, 'path lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                    expect(iD.Way({tags: { highway: 'path', oneway: 'no' }}).lanes().defaults, 'path lanes')
+                        .to.eql({ lanes: { count: 2 } });
+                });
+
+                it('returns 1 lane for highway=path and oneway=yes', function() {
+                    expect(iD.Way({tags: { highway: 'path', oneway: 'yes' }}).lanes().defaults, 'path lanes')
+                        .to.eql({ lanes: { count: 1 } });
+                });
+            });
+        });
+
+        describe('tagged', function() {
+
+            it('correctly returns oneway when tagged as oneway', function() {
+                expect(iD.Way({tags: { highway: 'residential', oneway: 'yes' }}).lanes().tagged.oneway, 'service lanes')
+                    .to.be.true;
+                expect(iD.Way({tags: { highway: 'residential', oneway: 'no' }}).lanes().tagged.oneway, 'service lanes')
+                    .to.be.false;
+            });
+
+            it('correctly returns lane count', function() {
+                expect(iD.Way({tags: { highway: 'residential', oneway: 'yes', lanes: 4 }}).lanes().tagged.lanes, 'service lanes')
+                    .to.eql({ count: 4 });
+                expect(iD.Way({tags: { highway: 'path', lanes: 1 }}).lanes().tagged.lanes, 'service lanes')
+                    .to.eql({ count: 1 });
+            });
+
+            it('correctly returns the lane:forward and lane:backward count', function() {
+                expect(iD.Way({tags: { highway: 'residential', lanes: 2, 'lanes:forward': 1, 'lanes:backward': 1 }}).lanes().tagged.lanes, 'residential lanes')
+                    .to.eql({
+                        count: 2,
+                        forward: 1,
+                        backward: 1
+                    });
+                expect(iD.Way({tags: { highway: 'trunk', lanes: 2, oneway: 'yes' }}).lanes().tagged.lanes, 'trunk lanes')
+                    .to.eql({
+                        count: 2
+                    });
+                expect(iD.Way({tags: { highway: 'primary', lanes: 4, 'lanes:backward': 3, 'lanes:forward': 1 }}).lanes().tagged.lanes, 'primary lanes')
+                    .to.eql({
+                        count: 4,
+                        backward: 3,
+                        forward: 1
+                    });
+            });
         });
     });
 });

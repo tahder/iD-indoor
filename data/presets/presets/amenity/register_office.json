@@ -15,5 +15,6 @@
     "tags": {
         "amenity": "register_office"
     },
-    "name": "Register Office"
+    "name": "Register Office",
+    "searchable": false
 }

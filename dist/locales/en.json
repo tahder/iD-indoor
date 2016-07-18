@@ -660,9 +660,6 @@
             "category-route": {
                 "name": "Route Features"
             },
-            "category-shop": {
-                "name": "Shop Features"
-            },
             "category-shop_area": {
                 "name": "Shops"
             },
@@ -678,6 +675,9 @@
             "category-shop_features_vertex": {
                 "name": "Shop features"
             },
+            "category-shop": {
+                "name": "Shop Features"
+            },
             "category-water-area": {
                 "name": "Water Features"
             },
@@ -686,6 +686,13 @@
             }
         },
         "fields": {
+            "access_simple": {
+                "label": "Allowed Access",
+                "placeholder": "yes"
+            },
+            "access_toilets": {
+                "label": "Access"
+            },
             "access": {
                 "label": "Allowed Access",
                 "placeholder": "Not Specified",
@@ -726,13 +733,6 @@
                         "description": "Access permitted but rider must dismount"
                     }
                 }
-            },
-            "access_simple": {
-                "label": "Allowed Access",
-                "placeholder": "yes"
-            },
-            "access_toilets": {
-                "label": "Access"
             },
             "address": {
                 "label": "Address",
@@ -841,10 +841,10 @@
             "brand": {
                 "label": "Brand"
             },
-            "building": {
+            "building_area": {
                 "label": "Building"
             },
-            "building_area": {
+            "building": {
                 "label": "Building"
             },
             "buildingpart": {
@@ -971,10 +971,10 @@
             "dispense": {
                 "label": "Type of Goods"
             },
-            "display": {
+            "display_type": {
                 "label": "Display type"
             },
-            "display_type": {
+            "display": {
                 "label": "Display type"
             },
             "dock": {
@@ -1031,11 +1031,11 @@
             "fixme": {
                 "label": "Fix Me"
             },
-            "fuel": {
-                "label": "Fuel"
-            },
             "fuel_multi": {
                 "label": "Fuel Types"
+            },
+            "fuel": {
+                "label": "Fuel"
             },
             "gauge": {
                 "label": "Gauge"
@@ -1088,9 +1088,6 @@
             "icao": {
                 "label": "ICAO"
             },
-            "incline": {
-                "label": "Incline"
-            },
             "incline_steps": {
                 "label": "Incline",
                 "options": {
@@ -1098,14 +1095,17 @@
                     "down": "Down"
                 }
             },
-            "indoor": {
-                "label": "Type"
+            "incline": {
+                "label": "Incline"
             },
-            "information": {
+            "indoor": {
                 "label": "Type"
             },
             "information_type": {
                 "label": "Information context"
+            },
+            "information": {
+                "label": "Type"
             },
             "internet_access": {
                 "label": "Internet Access",
@@ -1116,6 +1116,12 @@
                     "wired": "Wired",
                     "terminal": "Terminal"
                 }
+            },
+            "internet_access/fee": {
+                "label": "Internet Access Fee"
+            },
+            "kerb": {
+                "label": "Curb Ramp"
             },
             "lamp_type": {
                 "label": "Type"
@@ -1130,6 +1136,15 @@
             "layer": {
                 "label": "Layer"
             },
+            "leaf_cycle_singular": {
+                "label": "Leaf Cycle",
+                "options": {
+                    "evergreen": "Evergreen",
+                    "deciduous": "Deciduous",
+                    "semi_evergreen": "Semi-Evergreen",
+                    "semi_deciduous": "Semi-Deciduous"
+                }
+            },
             "leaf_cycle": {
                 "label": "Leaf Cycle",
                 "options": {
@@ -1140,13 +1155,12 @@
                     "mixed": "Mixed"
                 }
             },
-            "leaf_cycle_singular": {
-                "label": "Leaf Cycle",
+            "leaf_type_singular": {
+                "label": "Leaf Type",
                 "options": {
-                    "evergreen": "Evergreen",
-                    "deciduous": "Deciduous",
-                    "semi_evergreen": "Semi-Evergreen",
-                    "semi_deciduous": "Semi-Deciduous"
+                    "broadleaved": "Broadleaved",
+                    "needleleaved": "Needleleaved",
+                    "leafless": "Leafless"
                 }
             },
             "leaf_type": {
@@ -1155,14 +1169,6 @@
                     "broadleaved": "Broadleaved",
                     "needleleaved": "Needleleaved",
                     "mixed": "Mixed",
-                    "leafless": "Leafless"
-                }
-            },
-            "leaf_type_singular": {
-                "label": "Leaf Type",
-                "options": {
-                    "broadleaved": "Broadleaved",
-                    "needleleaved": "Needleleaved",
                     "leafless": "Leafless"
                 }
             },
@@ -1257,18 +1263,18 @@
             "office": {
                 "label": "Type"
             },
-            "oneway": {
-                "label": "One Way",
-                "options": {
-                    "undefined": "Assumed to be No",
-                    "yes": "Yes",
-                    "no": "No"
-                }
-            },
             "oneway_yes": {
                 "label": "One Way",
                 "options": {
                     "undefined": "Assumed to be Yes",
+                    "yes": "Yes",
+                    "no": "No"
+                }
+            },
+            "oneway": {
+                "label": "One Way",
+                "options": {
+                    "undefined": "Assumed to be No",
                     "yes": "Yes",
                     "no": "No"
                 }
@@ -1282,6 +1288,13 @@
             "par": {
                 "label": "Par",
                 "placeholder": "3, 4, 5..."
+            },
+            "parallel_direction": {
+                "label": "Direction",
+                "options": {
+                    "forward": "Forward",
+                    "backward": "Backward"
+                }
             },
             "park_ride": {
                 "label": "Park and Ride"
@@ -1349,11 +1362,11 @@
             "population": {
                 "label": "Population"
             },
-            "power": {
-                "label": "Type"
-            },
             "power_supply": {
                 "label": "Power Supply"
+            },
+            "power": {
+                "label": "Type"
             },
             "railway": {
                 "label": "Type"
@@ -1379,10 +1392,13 @@
             "room": {
                 "label": "Type"
             },
-            "route": {
-                "label": "Type"
+            "rooms": {
+                "label": "Rooms"
             },
             "route_master": {
+                "label": "Type"
+            },
+            "route": {
                 "label": "Type"
             },
             "sac_scale": {
@@ -1407,6 +1423,15 @@
                 "label": "Amount of seats",
                 "placeholder": "1, 2, 3..."
             },
+            "service_rail": {
+                "label": "Service Type",
+                "options": {
+                    "spur": "Spur",
+                    "yard": "Yard",
+                    "siding": "Siding",
+                    "crossover": "Crossover"
+                }
+            },
             "service": {
                 "label": "Type"
             },
@@ -1426,29 +1451,17 @@
                     "no": "No"
                 }
             },
-            "service_rail": {
-                "label": "Service Type",
-                "options": {
-                    "spur": "Spur",
-                    "yard": "Yard",
-                    "siding": "Siding",
-                    "crossover": "Crossover"
-                }
+            "shelter_type": {
+                "label": "Type"
             },
             "shelter": {
                 "label": "Shelter"
-            },
-            "shelter_type": {
-                "label": "Type"
             },
             "shop": {
                 "label": "Type"
             },
             "site": {
                 "label": "Type"
-            },
-            "sloped_curb": {
-                "label": "Sloped Curb"
             },
             "smoking": {
                 "label": "Smoking",
@@ -1483,14 +1496,24 @@
             "source": {
                 "label": "Source"
             },
-            "sport": {
-                "label": "Sport"
-            },
             "sport_ice": {
                 "label": "Sport"
             },
             "sport_racing": {
                 "label": "Sport"
+            },
+            "sport": {
+                "label": "Sport"
+            },
+            "stars": {
+                "label": "Stars"
+            },
+            "stop": {
+                "label": "Stop Type",
+                "options": {
+                    "all": "All Ways",
+                    "minor": "Minor Road"
+                }
             },
             "structure": {
                 "label": "Structure",
@@ -1580,11 +1603,11 @@
             "vending": {
                 "label": "Type of Goods"
             },
-            "water": {
-                "label": "Type"
-            },
             "water_point": {
                 "label": "Water Point"
+            },
+            "water": {
+                "label": "Type"
             },
             "waterway": {
                 "label": "Type"
@@ -1703,19 +1726,19 @@
                 "name": "ATM",
                 "terms": "money,cash,machine"
             },
-            "amenity/bank": {
-                "name": "Bank",
-                "terms": "credit union,check,deposit,fund,investment,repository,reserve,safe,savings,stock,treasury,trust,vault"
-            },
             "amenity/bank_area": {
                 "name": "Bank",
                 "terms": "credit union,check,deposit,fund,investment,repository,reserve,safe,savings,stock,treasury,trust,vault"
             },
-            "amenity/bar": {
+            "amenity/bank": {
+                "name": "Bank",
+                "terms": "credit union,check,deposit,fund,investment,repository,reserve,safe,savings,stock,treasury,trust,vault"
+            },
+            "amenity/bar_area": {
                 "name": "Bar",
                 "terms": "dive,beer,bier,booze"
             },
-            "amenity/bar_area": {
+            "amenity/bar": {
                 "name": "Bar",
                 "terms": "dive,beer,bier,booze"
             },
@@ -1739,11 +1762,11 @@
                 "name": "Bicycle Repair Tool Stand",
                 "terms": "bike,repair,chain,pump"
             },
-            "amenity/biergarten": {
+            "amenity/biergarten_area": {
                 "name": "Beer Garden",
                 "terms": "beer,bier,booze"
             },
-            "amenity/biergarten_area": {
+            "amenity/biergarten": {
                 "name": "Beer Garden",
                 "terms": "beer,bier,booze"
             },
@@ -1751,11 +1774,11 @@
                 "name": "Boat Rental",
                 "terms": ""
             },
-            "amenity/bureau_de_change": {
+            "amenity/bureau_de_change_area": {
                 "name": "Currency Exchange",
                 "terms": "bureau de change,money changer"
             },
-            "amenity/bureau_de_change_area": {
+            "amenity/bureau_de_change": {
                 "name": "Currency Exchange",
                 "terms": "bureau de change,money changer"
             },
@@ -1763,19 +1786,19 @@
                 "name": "Bus Station",
                 "terms": ""
             },
-            "amenity/cafe": {
-                "name": "Cafe",
-                "terms": "bistro,coffee,tea"
-            },
             "amenity/cafe_area": {
                 "name": "Cafe",
                 "terms": "bistro,coffee,tea"
             },
-            "amenity/car_rental": {
+            "amenity/cafe": {
+                "name": "Cafe",
+                "terms": "bistro,coffee,tea"
+            },
+            "amenity/car_rental_area": {
                 "name": "Car Rental",
                 "terms": ""
             },
-            "amenity/car_rental_area": {
+            "amenity/car_rental": {
                 "name": "Car Rental",
                 "terms": ""
             },
@@ -1799,11 +1822,11 @@
                 "name": "Nursery/Childcare",
                 "terms": "daycare,orphanage,playgroup"
             },
-            "amenity/cinema": {
+            "amenity/cinema_area": {
                 "name": "Cinema",
                 "terms": "drive-in,film,flick,movie,theater,picture,show,screen"
             },
-            "amenity/cinema_area": {
+            "amenity/cinema": {
                 "name": "Cinema",
                 "terms": "drive-in,film,flick,movie,theater,picture,show,screen"
             },
@@ -1851,11 +1874,11 @@
                 "name": "Embassy",
                 "terms": ""
             },
-            "amenity/fast_food": {
+            "amenity/fast_food_area": {
                 "name": "Fast Food",
                 "terms": "restaurant"
             },
-            "amenity/fast_food_area": {
+            "amenity/fast_food": {
                 "name": "Fast Food",
                 "terms": "restaurant"
             },
@@ -1895,11 +1918,11 @@
                 "name": "Preschool/Kindergarten Grounds",
                 "terms": "kindergarden,pre-school"
             },
-            "amenity/library": {
+            "amenity/library_area": {
                 "name": "Library",
                 "terms": "book"
             },
-            "amenity/library_area": {
+            "amenity/library": {
                 "name": "Library",
                 "terms": "book"
             },
@@ -1915,10 +1938,6 @@
                 "name": "Nightclub",
                 "terms": "disco*,night club,dancing,dance club"
             },
-            "amenity/parking": {
-                "name": "Car Parking",
-                "terms": ""
-            },
             "amenity/parking_entrance": {
                 "name": "Parking Garage Entrance/Exit",
                 "terms": ""
@@ -1927,13 +1946,17 @@
                 "name": "Parking Space",
                 "terms": ""
             },
-            "amenity/pharmacy": {
-                "name": "Pharmacy",
-                "terms": "drug,medicine"
+            "amenity/parking": {
+                "name": "Car Parking",
+                "terms": ""
             },
             "amenity/pharmacy_area": {
                 "name": "Pharmacy",
                 "terms": "drug,medicine"
+            },
+            "amenity/pharmacy": {
+                "name": "Pharmacy",
+                "terms": "drug*,med*,prescription"
             },
             "amenity/place_of_worship": {
                 "name": "Place of Worship",
@@ -1963,11 +1986,11 @@
                 "name": "Mailbox",
                 "terms": "letter,post"
             },
-            "amenity/post_office": {
+            "amenity/post_office_area": {
                 "name": "Post Office",
                 "terms": "letter,mail"
             },
-            "amenity/post_office_area": {
+            "amenity/post_office": {
                 "name": "Post Office",
                 "terms": "letter,mail"
             },
@@ -1975,11 +1998,11 @@
                 "name": "Prison Grounds",
                 "terms": "cell,jail"
             },
-            "amenity/pub": {
+            "amenity/pub_area": {
                 "name": "Pub",
                 "terms": "dive,beer,bier,booze"
             },
-            "amenity/pub_area": {
+            "amenity/pub": {
                 "name": "Pub",
                 "terms": "dive,beer,bier,booze"
             },
@@ -1999,11 +2022,11 @@
                 "name": "Register Office",
                 "terms": ""
             },
-            "amenity/restaurant": {
+            "amenity/restaurant_area": {
                 "name": "Restaurant",
                 "terms": "bar,breakfast,cafe,café,canteen,coffee,dine,dining,dinner,drive-in,eat,grill,lunch,table"
             },
-            "amenity/restaurant_area": {
+            "amenity/restaurant": {
                 "name": "Restaurant",
                 "terms": "bar,breakfast,cafe,café,canteen,coffee,dine,dining,dinner,drive-in,eat,grill,lunch,table"
             },
@@ -2063,11 +2086,11 @@
                 "name": "Ticket validator",
                 "terms": "ticket,validator,stamping,machine"
             },
-            "amenity/toilets": {
+            "amenity/toilets_area": {
                 "name": "Toilets",
                 "terms": "bathroom,restroom,outhouse,privy,head,lavatory,latrine,water closet,WC,W.C."
             },
-            "amenity/toilets_area": {
+            "amenity/toilets": {
                 "name": "Toilets",
                 "terms": "bathroom,restroom,outhouse,privy,head,lavatory,latrine,water closet,WC,W.C."
             },
@@ -2695,16 +2718,16 @@
                 "name": "Foot Path",
                 "terms": "hike,hiking,trackway,trail,walk"
             },
+            "highway/give_way": {
+                "name": "Yield Sign",
+                "terms": "give way,yield,sign"
+            },
             "highway/living_street": {
                 "name": "Living Street",
                 "terms": ""
             },
             "highway/mini_roundabout": {
                 "name": "Mini-Roundabout",
-                "terms": ""
-            },
-            "highway/motorway": {
-                "name": "Motorway",
                 "terms": ""
             },
             "highway/motorway_junction": {
@@ -2715,6 +2738,10 @@
                 "name": "Motorway Link",
                 "terms": "ramp,on ramp,off ramp"
             },
+            "highway/motorway": {
+                "name": "Motorway",
+                "terms": ""
+            },
             "highway/path": {
                 "name": "Path",
                 "terms": "hike,hiking,trackway,trail,walk"
@@ -2723,13 +2750,13 @@
                 "name": "Pedestrian Street",
                 "terms": ""
             },
-            "highway/primary": {
-                "name": "Primary Road",
-                "terms": ""
-            },
             "highway/primary_link": {
                 "name": "Primary Link",
                 "terms": "ramp,on ramp,off ramp"
+            },
+            "highway/primary": {
+                "name": "Primary Road",
+                "terms": ""
             },
             "highway/raceway": {
                 "name": "Motor Raceway",
@@ -2747,13 +2774,13 @@
                 "name": "Unknown Road",
                 "terms": ""
             },
-            "highway/secondary": {
-                "name": "Secondary Road",
-                "terms": ""
-            },
             "highway/secondary_link": {
                 "name": "Secondary Link",
                 "terms": "ramp,on ramp,off ramp"
+            },
+            "highway/secondary": {
+                "name": "Secondary Road",
+                "terms": ""
             },
             "highway/service": {
                 "name": "Service Road",
@@ -2789,19 +2816,19 @@
             },
             "highway/stop": {
                 "name": "Stop Sign",
-                "terms": "stop sign"
+                "terms": "stop,halt,sign"
             },
             "highway/street_lamp": {
                 "name": "Street Lamp",
                 "terms": "streetlight,street light,lamp,light,gaslight"
             },
-            "highway/tertiary": {
-                "name": "Tertiary Road",
-                "terms": ""
-            },
             "highway/tertiary_link": {
                 "name": "Tertiary Link",
                 "terms": "ramp,on ramp,off ramp"
+            },
+            "highway/tertiary": {
+                "name": "Tertiary Road",
+                "terms": ""
             },
             "highway/track": {
                 "name": "Unmaintained Track Road",
@@ -2811,13 +2838,13 @@
                 "name": "Traffic Signals",
                 "terms": "light,stoplight,traffic light"
             },
-            "highway/trunk": {
-                "name": "Trunk Road",
-                "terms": ""
-            },
             "highway/trunk_link": {
                 "name": "Trunk Link",
                 "terms": "ramp,on ramp,off ramp"
+            },
+            "highway/trunk": {
+                "name": "Trunk Road",
+                "terms": ""
             },
             "highway/turning_circle": {
                 "name": "Turning Circle",
@@ -3135,6 +3162,10 @@
                 "name": "Breakwater",
                 "terms": ""
             },
+            "man_made/bridge": {
+                "name": "Bridge",
+                "terms": ""
+            },
             "man_made/chimney": {
                 "name": "Chimney",
                 "terms": ""
@@ -3319,12 +3350,12 @@
                 "name": "Spring",
                 "terms": ""
             },
-            "natural/tree": {
-                "name": "Tree",
-                "terms": ""
-            },
             "natural/tree_row": {
                 "name": "Tree row",
+                "terms": ""
+            },
+            "natural/tree": {
+                "name": "Tree",
                 "terms": ""
             },
             "natural/volcano": {
@@ -3394,6 +3425,10 @@
             "office/government": {
                 "name": "Government Office",
                 "terms": ""
+            },
+            "office/government/register_office": {
+                "name": "Register Office",
+                "terms": "clerk,marriage,death,birth,certificate"
             },
             "office/insurance": {
                 "name": "Insurance Office",
@@ -3583,12 +3618,12 @@
                 "name": "Railway Station",
                 "terms": "train station,station"
             },
-            "railway/subway": {
-                "name": "Subway",
-                "terms": ""
-            },
             "railway/subway_entrance": {
                 "name": "Subway Entrance",
+                "terms": ""
+            },
+            "railway/subway": {
+                "name": "Subway",
                 "terms": ""
             },
             "railway/tram": {
@@ -3605,454 +3640,6 @@
             },
             "route/ferry": {
                 "name": "Ferry Route",
-                "terms": ""
-            },
-            "shop": {
-                "name": "Shop",
-                "terms": ""
-            },
-            "shop/alcohol": {
-                "name": "Liquor Store",
-                "terms": "alcohol,beer,booze,wine"
-            },
-            "shop/anime": {
-                "name": "Anime Shop",
-                "terms": ""
-            },
-            "shop/antiques": {
-                "name": "Antiques Shop",
-                "terms": ""
-            },
-            "shop/art": {
-                "name": "Art Store",
-                "terms": "art*,exhibit*,gallery"
-            },
-            "shop/baby_goods": {
-                "name": "Baby Goods Store",
-                "terms": ""
-            },
-            "shop/bag": {
-                "name": "Bag/Luggage Store",
-                "terms": "handbag,purse"
-            },
-            "shop/bakery": {
-                "name": "Bakery",
-                "terms": ""
-            },
-            "shop/bathroom_furnishing": {
-                "name": "Bathroom Furnishing Store",
-                "terms": ""
-            },
-            "shop/beauty": {
-                "name": "Beauty Shop",
-                "terms": "nail spa,spa,salon,tanning"
-            },
-            "shop/bed": {
-                "name": "Bedding/Mattress Store",
-                "terms": ""
-            },
-            "shop/beverages": {
-                "name": "Beverage Store",
-                "terms": ""
-            },
-            "shop/bicycle": {
-                "name": "Bicycle Shop",
-                "terms": "bike,repair"
-            },
-            "shop/bookmaker": {
-                "name": "Bookmaker",
-                "terms": ""
-            },
-            "shop/books": {
-                "name": "Book Store",
-                "terms": ""
-            },
-            "shop/boutique": {
-                "name": "Boutique",
-                "terms": ""
-            },
-            "shop/butcher": {
-                "name": "Butcher",
-                "terms": "meat"
-            },
-            "shop/candles": {
-                "name": "Candle Shop",
-                "terms": ""
-            },
-            "shop/car": {
-                "name": "Car Dealership",
-                "terms": "auto"
-            },
-            "shop/car_parts": {
-                "name": "Car Parts Store",
-                "terms": "auto"
-            },
-            "shop/car_repair": {
-                "name": "Car Repair Shop",
-                "terms": "auto"
-            },
-            "shop/carpet": {
-                "name": "Carpet Store",
-                "terms": "rug"
-            },
-            "shop/cheese": {
-                "name": "Cheese Store",
-                "terms": ""
-            },
-            "shop/chemist": {
-                "name": "Chemist",
-                "terms": ""
-            },
-            "shop/chocolate": {
-                "name": "Chocolate Store",
-                "terms": ""
-            },
-            "shop/clothes": {
-                "name": "Clothing Store",
-                "terms": ""
-            },
-            "shop/coffee": {
-                "name": "Coffee Store",
-                "terms": ""
-            },
-            "shop/computer": {
-                "name": "Computer Store",
-                "terms": ""
-            },
-            "shop/confectionery": {
-                "name": "Candy Store",
-                "terms": ""
-            },
-            "shop/convenience": {
-                "name": "Convenience Store",
-                "terms": ""
-            },
-            "shop/copyshop": {
-                "name": "Copy Store",
-                "terms": ""
-            },
-            "shop/cosmetics": {
-                "name": "Cosmetics Store",
-                "terms": ""
-            },
-            "shop/craft": {
-                "name": "Arts and Crafts Store",
-                "terms": "art*,paint*,frame"
-            },
-            "shop/curtain": {
-                "name": "Curtain Store",
-                "terms": "drape*,window"
-            },
-            "shop/dairy": {
-                "name": "Dairy Store",
-                "terms": "milk,egg,cheese"
-            },
-            "shop/deli": {
-                "name": "Deli",
-                "terms": "lunch,meat,sandwich"
-            },
-            "shop/department_store": {
-                "name": "Department Store",
-                "terms": ""
-            },
-            "shop/doityourself": {
-                "name": "DIY Store",
-                "terms": ""
-            },
-            "shop/dry_cleaning": {
-                "name": "Dry Cleaner",
-                "terms": ""
-            },
-            "shop/electronics": {
-                "name": "Electronics Store",
-                "terms": "appliance,audio,computer,tv"
-            },
-            "shop/erotic": {
-                "name": "Erotic Store",
-                "terms": "sex,porn"
-            },
-            "shop/fabric": {
-                "name": "Fabric Store",
-                "terms": "sew"
-            },
-            "shop/farm": {
-                "name": "Produce Stand",
-                "terms": "farm shop,farm stand"
-            },
-            "shop/fashion": {
-                "name": "Fashion Store",
-                "terms": ""
-            },
-            "shop/fishmonger": {
-                "name": "Fishmonger",
-                "terms": ""
-            },
-            "shop/florist": {
-                "name": "Florist",
-                "terms": "flower"
-            },
-            "shop/frame": {
-                "name": "Framing Shop",
-                "terms": "art*,paint*,photo*,frame"
-            },
-            "shop/funeral_directors": {
-                "name": "Funeral Home",
-                "terms": "undertaker,memorial home"
-            },
-            "shop/furnace": {
-                "name": "Furnace Store",
-                "terms": "oven,stove"
-            },
-            "shop/furniture": {
-                "name": "Furniture Store",
-                "terms": "chair,sofa,table"
-            },
-            "shop/garden_centre": {
-                "name": "Garden Center",
-                "terms": "landscape,mulch,shrub,tree"
-            },
-            "shop/gift": {
-                "name": "Gift Shop",
-                "terms": ""
-            },
-            "shop/greengrocer": {
-                "name": "Greengrocer",
-                "terms": "fruit,vegetable"
-            },
-            "shop/hairdresser": {
-                "name": "Hairdresser",
-                "terms": ""
-            },
-            "shop/hardware": {
-                "name": "Hardware Store",
-                "terms": ""
-            },
-            "shop/hearing_aids": {
-                "name": "Hearing Aids Store",
-                "terms": ""
-            },
-            "shop/herbalist": {
-                "name": "Herbalist",
-                "terms": ""
-            },
-            "shop/hifi": {
-                "name": "Hifi Store",
-                "terms": "stereo,video"
-            },
-            "shop/houseware": {
-                "name": "Houseware Store",
-                "terms": "home,household"
-            },
-            "shop/interior_decoration": {
-                "name": "Interior Decoration Store",
-                "terms": ""
-            },
-            "shop/jewelry": {
-                "name": "Jeweler",
-                "terms": "diamond,gem,ring"
-            },
-            "shop/kiosk": {
-                "name": "News Kiosk",
-                "terms": ""
-            },
-            "shop/kitchen": {
-                "name": "Kitchen Design Store",
-                "terms": ""
-            },
-            "shop/laundry": {
-                "name": "Laundry",
-                "terms": ""
-            },
-            "shop/leather": {
-                "name": "Leather Store",
-                "terms": ""
-            },
-            "shop/locksmith": {
-                "name": "Locksmith",
-                "terms": "key,lockpick"
-            },
-            "shop/lottery": {
-                "name": "Lottery Shop",
-                "terms": ""
-            },
-            "shop/mall": {
-                "name": "Mall",
-                "terms": ""
-            },
-            "shop/massage": {
-                "name": "Massage Shop",
-                "terms": ""
-            },
-            "shop/medical_supply": {
-                "name": "Medical Supply Store",
-                "terms": ""
-            },
-            "shop/mobile_phone": {
-                "name": "Mobile Phone Store",
-                "terms": ""
-            },
-            "shop/money_lender": {
-                "name": "Money Lender",
-                "terms": ""
-            },
-            "shop/motorcycle": {
-                "name": "Motorcycle Dealership",
-                "terms": ""
-            },
-            "shop/music": {
-                "name": "Music Store",
-                "terms": "CD,vinyl"
-            },
-            "shop/musical_instrument": {
-                "name": "Musical Instrument Store",
-                "terms": ""
-            },
-            "shop/newsagent": {
-                "name": "Newspaper/Magazine Shop",
-                "terms": ""
-            },
-            "shop/nutrition_supplements": {
-                "name": "Nutrition Supplements Store",
-                "terms": ""
-            },
-            "shop/optician": {
-                "name": "Optician",
-                "terms": "eye,glasses"
-            },
-            "shop/organic": {
-                "name": "Organic Goods Store",
-                "terms": ""
-            },
-            "shop/outdoor": {
-                "name": "Outdoors Store",
-                "terms": "camping,climbing,hiking"
-            },
-            "shop/paint": {
-                "name": "Paint Store",
-                "terms": ""
-            },
-            "shop/pawnbroker": {
-                "name": "Pawn Shop",
-                "terms": ""
-            },
-            "shop/pet": {
-                "name": "Pet Store",
-                "terms": "cat,dog,fish"
-            },
-            "shop/photo": {
-                "name": "Photography Store",
-                "terms": "camera,film"
-            },
-            "shop/pyrotechnics": {
-                "name": "Fireworks Store",
-                "terms": ""
-            },
-            "shop/radiotechnics": {
-                "name": "Radio/Electronic Component Store",
-                "terms": ""
-            },
-            "shop/religion": {
-                "name": "Religious Store",
-                "terms": ""
-            },
-            "shop/scuba_diving": {
-                "name": "Scuba Diving Shop",
-                "terms": ""
-            },
-            "shop/seafood": {
-                "name": "Seafood Shop",
-                "terms": "fishmonger"
-            },
-            "shop/second_hand": {
-                "name": "Consignment/Thrift Store",
-                "terms": "secondhand,second hand,resale,thrift,used"
-            },
-            "shop/shoes": {
-                "name": "Shoe Store",
-                "terms": ""
-            },
-            "shop/sports": {
-                "name": "Sporting Goods Store",
-                "terms": ""
-            },
-            "shop/stationery": {
-                "name": "Stationery Store",
-                "terms": "card,paper"
-            },
-            "shop/storage_rental": {
-                "name": "Storage Rental",
-                "terms": ""
-            },
-            "shop/supermarket": {
-                "name": "Supermarket",
-                "terms": "grocery,store,shop"
-            },
-            "shop/tailor": {
-                "name": "Tailor",
-                "terms": "clothes,suit"
-            },
-            "shop/tattoo": {
-                "name": "Tattoo Parlor",
-                "terms": ""
-            },
-            "shop/tea": {
-                "name": "Tea Store",
-                "terms": ""
-            },
-            "shop/ticket": {
-                "name": "Ticket Seller",
-                "terms": ""
-            },
-            "shop/tobacco": {
-                "name": "Tobacco Shop",
-                "terms": ""
-            },
-            "shop/toys": {
-                "name": "Toy Store",
-                "terms": ""
-            },
-            "shop/travel_agency": {
-                "name": "Travel Agency",
-                "terms": ""
-            },
-            "shop/tyres": {
-                "name": "Tire Store",
-                "terms": ""
-            },
-            "shop/vacant": {
-                "name": "Vacant Shop",
-                "terms": ""
-            },
-            "shop/vacuum_cleaner": {
-                "name": "Vacuum Cleaner Store",
-                "terms": ""
-            },
-            "shop/variety_store": {
-                "name": "Variety Store",
-                "terms": ""
-            },
-            "shop/video": {
-                "name": "Video Store",
-                "terms": "DVD"
-            },
-            "shop/video_games": {
-                "name": "Video Game Store",
-                "terms": ""
-            },
-            "shop/water_sports": {
-                "name": "Watersport/Swim Shop",
-                "terms": ""
-            },
-            "shop/weapons": {
-                "name": "Weapon Shop",
-                "terms": "ammo,gun,knife,knives"
-            },
-            "shop/window_blind": {
-                "name": "Window Blind Store",
-                "terms": ""
-            },
-            "shop/wine": {
-                "name": "Wine Shop",
                 "terms": ""
             },
             "shop_area": {
@@ -4127,16 +3714,16 @@
                 "name": "Candle Shop",
                 "terms": ""
             },
-            "shop_area/car": {
-                "name": "Car Dealership",
-                "terms": "auto"
-            },
             "shop_area/car_parts": {
                 "name": "Car Parts Store",
                 "terms": "auto"
             },
             "shop_area/car_repair": {
                 "name": "Car Repair Shop",
+                "terms": "auto"
+            },
+            "shop_area/car": {
+                "name": "Car Dealership",
                 "terms": "auto"
             },
             "shop_area/carpet": {
@@ -4479,13 +4066,13 @@
                 "name": "Variety Store",
                 "terms": ""
             },
-            "shop_area/video": {
-                "name": "Video Store",
-                "terms": "DVD"
-            },
             "shop_area/video_games": {
                 "name": "Video Game Store",
                 "terms": ""
+            },
+            "shop_area/video": {
+                "name": "Video Store",
+                "terms": "DVD"
             },
             "shop_area/water_sports": {
                 "name": "Watersport/Swim Shop",
@@ -4500,6 +4087,454 @@
                 "terms": ""
             },
             "shop_area/wine": {
+                "name": "Wine Shop",
+                "terms": ""
+            },
+            "shop": {
+                "name": "Shop",
+                "terms": ""
+            },
+            "shop/alcohol": {
+                "name": "Liquor Store",
+                "terms": "alcohol,beer,booze,wine"
+            },
+            "shop/anime": {
+                "name": "Anime Shop",
+                "terms": ""
+            },
+            "shop/antiques": {
+                "name": "Antiques Shop",
+                "terms": ""
+            },
+            "shop/art": {
+                "name": "Art Store",
+                "terms": "art*,exhibit*,gallery"
+            },
+            "shop/baby_goods": {
+                "name": "Baby Goods Store",
+                "terms": ""
+            },
+            "shop/bag": {
+                "name": "Bag/Luggage Store",
+                "terms": "handbag,purse"
+            },
+            "shop/bakery": {
+                "name": "Bakery",
+                "terms": ""
+            },
+            "shop/bathroom_furnishing": {
+                "name": "Bathroom Furnishing Store",
+                "terms": ""
+            },
+            "shop/beauty": {
+                "name": "Beauty Shop",
+                "terms": "nail spa,spa,salon,tanning"
+            },
+            "shop/bed": {
+                "name": "Bedding/Mattress Store",
+                "terms": ""
+            },
+            "shop/beverages": {
+                "name": "Beverage Store",
+                "terms": ""
+            },
+            "shop/bicycle": {
+                "name": "Bicycle Shop",
+                "terms": "bike,repair"
+            },
+            "shop/bookmaker": {
+                "name": "Bookmaker",
+                "terms": ""
+            },
+            "shop/books": {
+                "name": "Book Store",
+                "terms": ""
+            },
+            "shop/boutique": {
+                "name": "Boutique",
+                "terms": ""
+            },
+            "shop/butcher": {
+                "name": "Butcher",
+                "terms": "meat"
+            },
+            "shop/candles": {
+                "name": "Candle Shop",
+                "terms": ""
+            },
+            "shop/car_parts": {
+                "name": "Car Parts Store",
+                "terms": "auto"
+            },
+            "shop/car_repair": {
+                "name": "Car Repair Shop",
+                "terms": "auto"
+            },
+            "shop/car": {
+                "name": "Car Dealership",
+                "terms": "auto"
+            },
+            "shop/carpet": {
+                "name": "Carpet Store",
+                "terms": "rug"
+            },
+            "shop/cheese": {
+                "name": "Cheese Store",
+                "terms": ""
+            },
+            "shop/chemist": {
+                "name": "Drugstore",
+                "terms": "med*,drug*,gift"
+            },
+            "shop/chocolate": {
+                "name": "Chocolate Store",
+                "terms": ""
+            },
+            "shop/clothes": {
+                "name": "Clothing Store",
+                "terms": ""
+            },
+            "shop/coffee": {
+                "name": "Coffee Store",
+                "terms": ""
+            },
+            "shop/computer": {
+                "name": "Computer Store",
+                "terms": ""
+            },
+            "shop/confectionery": {
+                "name": "Candy Store",
+                "terms": ""
+            },
+            "shop/convenience": {
+                "name": "Convenience Store",
+                "terms": ""
+            },
+            "shop/copyshop": {
+                "name": "Copy Store",
+                "terms": ""
+            },
+            "shop/cosmetics": {
+                "name": "Cosmetics Store",
+                "terms": ""
+            },
+            "shop/craft": {
+                "name": "Arts and Crafts Store",
+                "terms": "art*,paint*,frame"
+            },
+            "shop/curtain": {
+                "name": "Curtain Store",
+                "terms": "drape*,window"
+            },
+            "shop/dairy": {
+                "name": "Dairy Store",
+                "terms": "milk,egg,cheese"
+            },
+            "shop/deli": {
+                "name": "Deli",
+                "terms": "lunch,meat,sandwich"
+            },
+            "shop/department_store": {
+                "name": "Department Store",
+                "terms": ""
+            },
+            "shop/doityourself": {
+                "name": "DIY Store",
+                "terms": ""
+            },
+            "shop/dry_cleaning": {
+                "name": "Dry Cleaner",
+                "terms": ""
+            },
+            "shop/electronics": {
+                "name": "Electronics Store",
+                "terms": "appliance,audio,computer,tv"
+            },
+            "shop/erotic": {
+                "name": "Erotic Store",
+                "terms": "sex,porn"
+            },
+            "shop/fabric": {
+                "name": "Fabric Store",
+                "terms": "sew"
+            },
+            "shop/farm": {
+                "name": "Produce Stand",
+                "terms": "farm shop,farm stand"
+            },
+            "shop/fashion": {
+                "name": "Fashion Store",
+                "terms": ""
+            },
+            "shop/fishmonger": {
+                "name": "Fishmonger",
+                "terms": ""
+            },
+            "shop/florist": {
+                "name": "Florist",
+                "terms": "flower"
+            },
+            "shop/frame": {
+                "name": "Framing Shop",
+                "terms": "art*,paint*,photo*,frame"
+            },
+            "shop/funeral_directors": {
+                "name": "Funeral Home",
+                "terms": "undertaker,memorial home"
+            },
+            "shop/furnace": {
+                "name": "Furnace Store",
+                "terms": "oven,stove"
+            },
+            "shop/furniture": {
+                "name": "Furniture Store",
+                "terms": "chair,sofa,table"
+            },
+            "shop/garden_centre": {
+                "name": "Garden Center",
+                "terms": "landscape,mulch,shrub,tree"
+            },
+            "shop/gift": {
+                "name": "Gift Shop",
+                "terms": ""
+            },
+            "shop/greengrocer": {
+                "name": "Greengrocer",
+                "terms": "fruit,vegetable"
+            },
+            "shop/hairdresser": {
+                "name": "Hairdresser",
+                "terms": ""
+            },
+            "shop/hardware": {
+                "name": "Hardware Store",
+                "terms": ""
+            },
+            "shop/hearing_aids": {
+                "name": "Hearing Aids Store",
+                "terms": ""
+            },
+            "shop/herbalist": {
+                "name": "Herbalist",
+                "terms": ""
+            },
+            "shop/hifi": {
+                "name": "Hifi Store",
+                "terms": "stereo,video"
+            },
+            "shop/houseware": {
+                "name": "Houseware Store",
+                "terms": "home,household"
+            },
+            "shop/interior_decoration": {
+                "name": "Interior Decoration Store",
+                "terms": ""
+            },
+            "shop/jewelry": {
+                "name": "Jeweler",
+                "terms": "diamond,gem,ring"
+            },
+            "shop/kiosk": {
+                "name": "News Kiosk",
+                "terms": ""
+            },
+            "shop/kitchen": {
+                "name": "Kitchen Design Store",
+                "terms": ""
+            },
+            "shop/laundry": {
+                "name": "Laundry",
+                "terms": ""
+            },
+            "shop/leather": {
+                "name": "Leather Store",
+                "terms": ""
+            },
+            "shop/locksmith": {
+                "name": "Locksmith",
+                "terms": "key,lockpick"
+            },
+            "shop/lottery": {
+                "name": "Lottery Shop",
+                "terms": ""
+            },
+            "shop/mall": {
+                "name": "Mall",
+                "terms": ""
+            },
+            "shop/massage": {
+                "name": "Massage Shop",
+                "terms": ""
+            },
+            "shop/medical_supply": {
+                "name": "Medical Supply Store",
+                "terms": ""
+            },
+            "shop/mobile_phone": {
+                "name": "Mobile Phone Store",
+                "terms": ""
+            },
+            "shop/money_lender": {
+                "name": "Money Lender",
+                "terms": ""
+            },
+            "shop/motorcycle": {
+                "name": "Motorcycle Dealership",
+                "terms": ""
+            },
+            "shop/music": {
+                "name": "Music Store",
+                "terms": "CD,vinyl"
+            },
+            "shop/musical_instrument": {
+                "name": "Musical Instrument Store",
+                "terms": ""
+            },
+            "shop/newsagent": {
+                "name": "Newspaper/Magazine Shop",
+                "terms": ""
+            },
+            "shop/nutrition_supplements": {
+                "name": "Nutrition Supplements Store",
+                "terms": ""
+            },
+            "shop/optician": {
+                "name": "Optician",
+                "terms": "eye,glasses"
+            },
+            "shop/organic": {
+                "name": "Organic Goods Store",
+                "terms": ""
+            },
+            "shop/outdoor": {
+                "name": "Outdoors Store",
+                "terms": "camping,climbing,hiking"
+            },
+            "shop/paint": {
+                "name": "Paint Store",
+                "terms": ""
+            },
+            "shop/pawnbroker": {
+                "name": "Pawn Shop",
+                "terms": ""
+            },
+            "shop/pet": {
+                "name": "Pet Store",
+                "terms": "cat,dog,fish"
+            },
+            "shop/photo": {
+                "name": "Photography Store",
+                "terms": "camera,film"
+            },
+            "shop/pyrotechnics": {
+                "name": "Fireworks Store",
+                "terms": ""
+            },
+            "shop/radiotechnics": {
+                "name": "Radio/Electronic Component Store",
+                "terms": ""
+            },
+            "shop/religion": {
+                "name": "Religious Store",
+                "terms": ""
+            },
+            "shop/scuba_diving": {
+                "name": "Scuba Diving Shop",
+                "terms": ""
+            },
+            "shop/seafood": {
+                "name": "Seafood Shop",
+                "terms": "fishmonger"
+            },
+            "shop/second_hand": {
+                "name": "Consignment/Thrift Store",
+                "terms": "secondhand,second hand,resale,thrift,used"
+            },
+            "shop/shoes": {
+                "name": "Shoe Store",
+                "terms": ""
+            },
+            "shop/sports": {
+                "name": "Sporting Goods Store",
+                "terms": ""
+            },
+            "shop/stationery": {
+                "name": "Stationery Store",
+                "terms": "card,paper"
+            },
+            "shop/storage_rental": {
+                "name": "Storage Rental",
+                "terms": ""
+            },
+            "shop/supermarket": {
+                "name": "Supermarket",
+                "terms": "grocery,store,shop"
+            },
+            "shop/tailor": {
+                "name": "Tailor",
+                "terms": "clothes,suit"
+            },
+            "shop/tattoo": {
+                "name": "Tattoo Parlor",
+                "terms": ""
+            },
+            "shop/tea": {
+                "name": "Tea Store",
+                "terms": ""
+            },
+            "shop/ticket": {
+                "name": "Ticket Seller",
+                "terms": ""
+            },
+            "shop/tobacco": {
+                "name": "Tobacco Shop",
+                "terms": ""
+            },
+            "shop/toys": {
+                "name": "Toy Store",
+                "terms": ""
+            },
+            "shop/travel_agency": {
+                "name": "Travel Agency",
+                "terms": ""
+            },
+            "shop/tyres": {
+                "name": "Tire Store",
+                "terms": ""
+            },
+            "shop/vacant": {
+                "name": "Vacant Shop",
+                "terms": ""
+            },
+            "shop/vacuum_cleaner": {
+                "name": "Vacuum Cleaner Store",
+                "terms": ""
+            },
+            "shop/variety_store": {
+                "name": "Variety Store",
+                "terms": ""
+            },
+            "shop/video_games": {
+                "name": "Video Game Store",
+                "terms": ""
+            },
+            "shop/video": {
+                "name": "Video Store",
+                "terms": "DVD"
+            },
+            "shop/water_sports": {
+                "name": "Watersport/Swim Shop",
+                "terms": ""
+            },
+            "shop/weapons": {
+                "name": "Weapon Shop",
+                "terms": "ammo,gun,knife,knives"
+            },
+            "shop/window_blind": {
+                "name": "Window Blind Store",
+                "terms": ""
+            },
+            "shop/wine": {
                 "name": "Wine Shop",
                 "terms": ""
             },
@@ -4635,6 +4670,10 @@
                 "name": "No Turns",
                 "terms": ""
             },
+            "type/route_master": {
+                "name": "Route Master",
+                "terms": ""
+            },
             "type/route": {
                 "name": "Route",
                 "terms": ""
@@ -4685,10 +4724,6 @@
             },
             "type/route/tram": {
                 "name": "Tram Route",
-                "terms": ""
-            },
-            "type/route_master": {
-                "name": "Route Master",
                 "terms": ""
             },
             "type/site": {

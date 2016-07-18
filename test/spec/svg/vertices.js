@@ -1,4 +1,4 @@
-describe("iD.svg.Vertices", function () {
+describe('iD.svg.Vertices', function () {
     var surface,
         projection = Object,
         context;
@@ -6,10 +6,10 @@ describe("iD.svg.Vertices", function () {
     beforeEach(function () {
         context = iD();
         surface = d3.select(document.createElementNS('http://www.w3.org/2000/svg', 'svg'))
-            .call(iD.svg.Layers(context));
+            .call(iD.svg.Layers(projection, context));
     });
 
-    it("adds the .shared class to vertices that are members of two or more ways", function () {
+    it('adds the .shared class to vertices that are members of two or more ways', function () {
         var node = iD.Node({loc: [0, 0]}),
             way1 = iD.Way({nodes: [node.id], tags: {highway: 'residential'}}),
             way2 = iD.Way({nodes: [node.id], tags: {highway: 'residential'}}),

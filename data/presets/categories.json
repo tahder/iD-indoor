@@ -88,6 +88,9 @@
         "name": "Path Features",
         "icon": "category-path",
         "members": [
+            "highway/pedestrian",
+            "footway/crosswalk",
+            "footway/sidewalk",
             "highway/footway",
             "highway/steps",
             "highway/conveying_steps",
@@ -193,30 +196,6 @@
             "type/route"
         ]
     },
-    "category-shop": {
-        "geometry": "point",
-        "name": "Shop Features",
-        "icon": "shop",
-        "members": [
-            "shop/convenience",
-            "shop/supermarket",
-            "shop/mall",
-            "shop/department_store",
-            "shop/clothes",
-            "shop/bakery",
-            "shop/kiosk",
-            "shop/doityourself",
-            "shop/butcher",
-            "shop/furniture",
-            "shop/shoes",
-            "shop/alcohol",
-            "shop/beauty",
-            "shop/books",
-            "shop/mobile_phone",
-            "shop/jewelry",
-            "shop"
-        ]
-    },
     "category-shop_area": {
         "geometry": "area",
         "name": "Shops",
@@ -280,6 +259,30 @@
             "barrier/checkout",
             "barrier/self_checkout",
             "information/price_checker"
+        ]
+    },
+    "category-shop": {
+        "geometry": "point",
+        "name": "Shop Features",
+        "icon": "shop",
+        "members": [
+            "shop/convenience",
+            "shop/supermarket",
+            "shop/mall",
+            "shop/department_store",
+            "shop/clothes",
+            "shop/bakery",
+            "shop/kiosk",
+            "shop/doityourself",
+            "shop/butcher",
+            "shop/furniture",
+            "shop/shoes",
+            "shop/alcohol",
+            "shop/beauty",
+            "shop/books",
+            "shop/mobile_phone",
+            "shop/jewelry",
+            "shop"
         ]
     },
     "category-water-area": {

@@ -1,5 +1,5 @@
 {
-    "icon": "chemist",
+    "icon": "grocery",
     "fields": [
         "operator",
         "address",
@@ -12,5 +12,10 @@
     "tags": {
         "shop": "chemist"
     },
-    "name": "Chemist"
+    "terms": [
+        "med*",
+        "drug*",
+        "gift"
+    ],
+    "name": "Drugstore"
 }
